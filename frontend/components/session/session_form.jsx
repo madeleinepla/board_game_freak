@@ -9,6 +9,7 @@ class SessionForm extends React.Component {
       email: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDemoUser = this.handleDemoUser.bind(this);
   }
 
   update(field) {
@@ -19,6 +20,17 @@ class SessionForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    const user = Object.assign({}, this.state);
+    this.props.processForm(user);
+  }
+
+  handleDemoUser() {
+    
+
+    this.setState({
+      username: 'demo_user',
+      password: '123123',
+    });
     const user = Object.assign({}, this.state);
     this.props.processForm(user);
   }
@@ -76,6 +88,12 @@ class SessionForm extends React.Component {
             </label>
             <br />
             <input className="session-submit" type="submit" value={this.props.formType} />
+            <br />
+            { this.props.formType === 'login' ? 
+            <button onClick={this.handleDemoUser}>demo user</button>
+            :
+            ''
+            }
           </div>
         </form>
       </div>
