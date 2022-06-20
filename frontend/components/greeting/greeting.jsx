@@ -17,6 +17,7 @@ const Greeting = ({ currentUser, logout }) => {
 
   return <div>
     {display}
+    <Link to="/games">All Games</Link>
   </div>
 };
 

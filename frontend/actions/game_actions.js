@@ -1,0 +1,25 @@
+import * as GameApiUtil from '../util/game_api_util';
+
+export const RECEIVE_GAMES = 'RECEIVE_GAMES';
+export const RECEIVE_GAME = 'RECEIVE_GAME';
+
+
+export const receiveGames = games => ({
+  type: RECEIVE_GAMES,
+  games
+});
+
+const receiveGame = game => ({
+  type: RECEIVE_GAME,
+  game
+});
+
+export const requestGames = () => dispatch => (
+  GameApiUtil.fetchGames()
+    .then(games => dispatch(receiveGames(games)))
+);
+
+export const requestGame = () => dispatch => (
+  GameApiUtil.fetchGame()
+    .then(game => dispatch(receiveGame(game)))
+);

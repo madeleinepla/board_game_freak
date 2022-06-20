@@ -5,6 +5,8 @@ Rails.application.routes.draw do
     resources :users 
 
     resource :session, only: [:create, :destroy]
+
+    resources :games, only: [:show, :index]
   end
 
   root to: 'static_pages#root'
