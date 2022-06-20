@@ -11,7 +11,6 @@ class GameShow extends React.Component {
 
   render() {
     const { game } = this.props
-    console.log(this.props)
     return <div>
       <h1>Game show page</h1>
       {/* <p>{game.title}</p>

@@ -1,6 +1,5 @@
 class Api::GamesController < ApplicationController
   def show
-    # debugger
     @game = Game.find(params[:id])
     if @game
       render :show

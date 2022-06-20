@@ -7,7 +7,6 @@ import { requestGame } from '../../actions/game_actions';
 // })
 
 const mSTP = (state, ownProps) => {
-  // debugger;
   return {
     game: state.entities.games[ownProps.match.params.gameId]
   }
