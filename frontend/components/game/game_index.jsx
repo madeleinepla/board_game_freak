@@ -13,10 +13,9 @@ class GameIndex extends React.Component {
   render() {
     const { games } = this.props;
     return (
-      <div>
-        <h1>Games Index</h1>
+      <div className='main-content'>
         <table className='index-table'>
-          <tr>
+          <tr className='index-table-headers'>
             <th className='table-rank'>Board Game Rank</th>
             <th className='table-img'></th>
             <th className='table-title'>Title</th>
@@ -39,8 +38,10 @@ class GameIndex extends React.Component {
                   </Link>
                 </td>
                 <td className='table-title'>
-                  <Link to={`/games/${game.id}`}>{game.title}</Link>
-                  <p>{game.year}</p>
+                  <div>
+                    <Link to={`/games/${game.id}`} className='table-title-link'>{game.title}</Link>
+                    <p>({game.year})</p>
+                  </div>
                   <p>{game.tagline}</p>
                 </td>
                 <td className='table-your-rating'>N/A</td>

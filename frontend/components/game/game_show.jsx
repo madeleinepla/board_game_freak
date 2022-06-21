@@ -13,7 +13,7 @@ class GameShow extends React.Component {
   render() {
     const { game } = this.props
     // debugger;
-    return <div>
+    return <div className='main-content'>
       <div className='game-header'>
         <div className='game-header-image'>
           <img
@@ -61,6 +61,35 @@ class GameShow extends React.Component {
           </div>
         </div>
       </div> 
+
+      <div className='game-body'>
+        <div className='game-body-description-title'>
+          Description
+        </div>
+
+        <div className='game-body-main'>
+
+          <div className='game-body-main-content'>
+            <div className='game-body-description'>
+              <p>{game.description}</p>
+            </div>
+
+            <div className='game-body-awards'>
+              <h1>Awards &amp; Honors</h1>
+              <p>add awards</p>
+            </div>
+          </div>
+
+          <div className='game-body-classification'>
+            <h1>Classification</h1>
+            <ul>
+              <li>Type</li>
+              <li>Category</li>
+              <li>Mechanisms</li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
   }
 }

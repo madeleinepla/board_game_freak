@@ -139,6 +139,9 @@ table {
 }
 
 
+
+
+
 // Nav Bar Styling
 
 body { 
@@ -153,8 +156,18 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding-left: 15px;
+  justify-content: space-between;
 }
+
+.navbar-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.home-icon {
+  margin: 0 20px 0 20px;
+} 
 
 .dropdown {
   float: left;
@@ -229,10 +242,14 @@ body {
 
 .main-content {
   background-color: #efefef;
-  width: 95%;
+  width: 97%;
   height: 100%;
   margin: 0 auto;
   margin-top: 20px;
-  // padding-top: 20px;
-  
+}
+
+.home-ad {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
 }

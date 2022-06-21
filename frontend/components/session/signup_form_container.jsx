@@ -7,7 +7,7 @@ import { signup } from "../../actions/session_actions"
 const mSTP = state => ({
   errors: state.errors,
   formType: 'signup',
-  navLink: <Link to="/login">log in instead</Link>,
+  navLink: <Link to="/login">Sign in</Link>,
 })
 
 const mDTP = dispatch => ({

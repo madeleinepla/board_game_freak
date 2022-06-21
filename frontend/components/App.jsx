@@ -6,6 +6,7 @@ import SignupFormContainer from "./session/signup_form_container";
 import GameIndexContainer from "./game/game_index_container";
 import GameShowContainer from "./game/game_show_container";
 import { AuthRoute } from "../util/route_util";
+import Home from "./home/home";
 
 const App = () => (
   <div>
@@ -15,8 +16,9 @@ const App = () => (
       <NavBarContainer />
     </header>
 
-    <div className="main-content">
+    <div>
       <Switch>
+        <Route exact path="/" component={Home}></Route>
         <AuthRoute exact path="/login" component={LoginFormContainer} />
         <AuthRoute exact path="/signup" component={SignupFormContainer} />
         <Route exact path="/games" component={GameIndexContainer} />
