@@ -114,3 +114,60 @@
 .game-header-credits p {
   padding-bottom: 10px;
 }
+
+.index-table tr {
+  display: flex;
+  align-items: center;
+}
+
+.index-table td {
+  display: flex;
+  // flex-direction: column;
+  align-items: center;
+}
+
+.table-rank {
+  width: 60px;
+}
+
+.table-img {
+  width: 80px;
+}
+
+.table-title {
+  width: 200px;
+}
+
+td.table-title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.table-your-rating {
+  width: 69px;
+}
+
+.table-freak-rating {
+  width: 65px;
+}
+
+.table-avg-rating {
+  width: 65px;
+}
+
+.table-num-voters {
+  width: 65px;
+}
+
+.table-status {
+  width: 105px;
+}
+
+.table-your-plays {
+  width: 65px;
+}
+
+.table-shop {
+  width: 160px;
+}
