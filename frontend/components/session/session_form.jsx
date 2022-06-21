@@ -24,38 +24,41 @@ class SessionForm extends React.Component {
     this.props.processForm(user);
   }
 
-  handleDemoUser() {
+  handleDemoUser(e) {
+    e.preventDefault();
     const demoUsername = 'demo_user';
     const demoPassword = '123123';
 
     let i = 0;
-    const displayDemoUsername = setInterval(() => {
+    const displayDemoUsername = () => {
+      const displayUsernameInterval = setInterval(() => {
       this.setState({ username: demoUsername.slice(0, i + 1) })
 
       if (i >= demoUsername.length - 1) {
-        clearInterval(displayDemoUsername);
+        clearInterval(displayUsernameInterval);
+        displayDemoPassword();
+      }
+
+      i++;
+      }, 100);
+    }
+
+    let j = 0;
+    const displayDemoPassword = () => {
+      const displayPasswordInterval = setInterval(() => {
+      this.setState({ password: demoPassword.slice(0, j + 1) })
+
+      if (j >= demoPassword.length - 1) {
+        clearInterval(displayPasswordInterval);
         const user = Object.assign({}, this.state);
         this.props.processForm(user);
       }
 
-      i++;
-    }, 100);
-
-    let j = 0;
-    const displayDemoPassword = setInterval(() => {
-      this.setState({ password: demoPassword.slice(0, j + 1) })
-
-      if (j >= demoPassword.length - 1) {
-        clearInterval(displayDemoPassword);
-      }
-
       j++;
-    }, 100);
-
-
-    displayDemoUsername();
-    displayDemoPassword();
+      }, 100);
+    }
     
+    displayDemoUsername();
   }
 
   
@@ -63,11 +66,11 @@ class SessionForm extends React.Component {
   renderErrors() {
     return (
       <ul>
-        {/* {this.props.errors.map((error, i) => (
+        {this.props.errors.session.map((error, i) => (
           <li key={`error-${i}`}>
             {error}
           </li>
-        ))} */}
+        ))}
       </ul>
     );
   }

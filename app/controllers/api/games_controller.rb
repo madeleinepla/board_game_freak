@@ -10,6 +10,6 @@ class Api::GamesController < ApplicationController
 
   def index
     @games = Game.all
-    render :index
+    # render :index
   end
 end

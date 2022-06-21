@@ -1,14 +1,19 @@
 import GameIndex from './game_index';
 import { connect } from 'react-redux';
-import { requestGames, requestGame } from '../../actions/game_actions';
+import { requestGames } from '../../actions/game_actions';
 
-const mapStateToProps = (state) => ({
+// const mapStateToProps = (state) => ({
+//   games: Object.values(state.entities.games)
+// });
+
+const mapStateToProps = (state) => {
+  return {
   games: Object.values(state.entities.games)
-});
+}
+}
 
 const mapDispatchToProps = (dispatch) => ({
   requestGames: () => dispatch(requestGames()),
-  // requestGame: id => dispatch(requestGame(id))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(GameIndex);

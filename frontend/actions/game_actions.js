@@ -19,7 +19,7 @@ export const requestGames = () => dispatch => (
     .then(games => dispatch(receiveGames(games)))
 );
 
-export const requestGame = () => dispatch => (
-  GameApiUtil.fetchGame()
+export const requestGame = (gameId) => dispatch => (
+  GameApiUtil.fetchGame(gameId)
     .then(game => dispatch(receiveGame(game)))
 );
