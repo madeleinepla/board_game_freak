@@ -20,7 +20,8 @@ g1 = Game.create!(
   max_players: 4,
   min_playtime: 60,
   max_playtime: 120,
-  age: 10
+  age: 10,
+  header_img: 'https://cf.geekdo-images.com/W3Bsga_uLP9kO91gZ7H8yw__itemrep/img/IzYEUm_gWFuRFOL8gQYqGm5gU6A=/fit-in/246x300/filters:strip_icc()/pic2419375.jpg'
 )
 
 g2 = Game.create!(
@@ -35,7 +36,8 @@ g2 = Game.create!(
   max_players: 4,
   min_playtime: 60,
   max_playtime: 120,
-  age: 14
+  age: 14,
+  header_img: 'https://cf.geekdo-images.com/sZYp_3BTDGjh2unaZfZmuA__itemrep/img/0IdBRA_G-ZdrNaxI4Z1LPQMZD0I=/fit-in/246x300/filters:strip_icc()/pic2437871.jpg'
 )
 
 g3 = Game.create!(
@@ -50,7 +52,8 @@ g3 = Game.create!(
   max_players: 5,
   min_playtime: 90,
   max_playtime: 180,
-  age: 12
+  age: 12,
+  header_img: 'https://cf.geekdo-images.com/tAqLpWxQ0Oo3GaPP3MER1g__itemrep/img/GcRdGHHeKlE4W4TLwcvW3tloDT0=/fit-in/246x300/filters:strip_icc()/pic5073276.jpg'
 )
 
 # g4 = Game.create!(
