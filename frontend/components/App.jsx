@@ -7,6 +7,7 @@ import GameIndexContainer from "./game/game_index_container";
 import GameShowContainer from "./game/game_show_container";
 import { AuthRoute } from "../util/route_util";
 import Home from "./home/home";
+import Footer from "./footer/footer";
 
 const App = () => (
   <div>
@@ -26,7 +27,9 @@ const App = () => (
       </Switch>
     </div>
 
-    
+    <footer>
+      <Footer />
+    </footer>
   </div>
 );
 

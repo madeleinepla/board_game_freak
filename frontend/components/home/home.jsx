@@ -88,7 +88,7 @@ class Home extends React.Component {
         <div className='home-hot'>
           <div className='home-title'>
             <h1>THE HOTNESS</h1>
-            <p>The top 10 trending games today.</p>
+            <p>The top 5 trending games today.</p>
           </div>
 
           <ul className='home-hot-carousel'>
