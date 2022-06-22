@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { requestGames } from '../../actions/game_actions';
+import { Link } from 'react-router-dom';
 
 class Home extends React.Component {
   componentDidMount() {
@@ -85,12 +86,29 @@ class Home extends React.Component {
         </div>
 
         <div className='home-hot'>
-          <h1>THE HOTNESS</h1>
-          <p>The top 10 trending games today.</p>
-          <ul>
-            {/* {
-            games.map(game => <li>{game.title}</li>)
-            } */}
+          <div className='home-hot-title'>
+            <h1>THE HOTNESS</h1>
+            <p>The top 10 trending games today.</p>
+          </div>
+
+          <ul className='home-hot-carousel'>
+            {
+              games.map(game => {
+                return <Link key={game.id} to={`/games/${game.id}`} className='home-hot-carousel-item'>
+                  <div className='home-hot-thumbnail'>
+                    <img 
+                      src={game.header_img} 
+                      alt={`${game.title} thumbnail`} 
+                    />
+                  </div>
+
+                  <div className='home-hot-info'>
+                    <h1>{game.id}{game.title}</h1>
+                    <p>{game.tagline}</p>
+                  </div>
+                </Link>
+              })
+            }
           </ul>
         </div>
 
@@ -114,7 +132,7 @@ class Home extends React.Component {
 // export default Home;
 
 const mSTP = (state) => {
-  const games = state.entities.games || [];
+  const games = Object.values(state.entities.games)
   // debugger;
   return {
     games

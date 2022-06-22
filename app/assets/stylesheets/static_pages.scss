@@ -327,3 +327,29 @@ body {
   margin-right: 15px;
 }
 
+.home-hot {
+  padding: 35px;
+  overflow: hidden;
+  border-top: 1px solid lightgray;
+}
+
+.home-hot-carousel {
+  display: flex;
+  flex-direction: row;
+  
+}
+
+.home-hot-carousel-item {
+  width: 20%;
+  padding: 15px 15px 15px 0;
+}
+
+.home-hot-thumbnail {
+  overflow: hidden;
+  height: 150px;
+  border-radius: 5px;
+}
+
+.home-hot-thumbnail img{
+  margin: auto 0;
+}
