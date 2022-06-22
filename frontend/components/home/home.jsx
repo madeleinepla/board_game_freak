@@ -86,14 +86,14 @@ class Home extends React.Component {
         </div>
 
         <div className='home-hot'>
-          <div className='home-hot-title'>
+          <div className='home-title'>
             <h1>THE HOTNESS</h1>
             <p>The top 10 trending games today.</p>
           </div>
 
           <ul className='home-hot-carousel'>
             {
-              games.map(game => {
+              games.slice(0, 5).map(game => {
                 return <Link key={game.id} to={`/games/${game.id}`} className='home-hot-carousel-item'>
                   <div className='home-hot-thumbnail'>
                     <img 
@@ -103,7 +103,7 @@ class Home extends React.Component {
                   </div>
 
                   <div className='home-hot-info'>
-                    <h1>{game.id}{game.title}</h1>
+                    <h1>{game.id} - {game.title}</h1>
                     <p>{game.tagline}</p>
                   </div>
                 </Link>
@@ -121,8 +121,14 @@ class Home extends React.Component {
           />
         </div>
 
-        <div className='home-crowdfund'>
-          <h1>CROWDFUNDING COUNTDOWN</h1>
+        <div className='home-lists'>
+          <div className='home-title'>
+            <h1>HOT FREAKLISTS</h1>
+          </div>
+
+          <div className='home-lists-carousel'>
+            add once lists are made
+          </div>
         </div>
       </div>
     </div>

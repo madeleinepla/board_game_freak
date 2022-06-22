@@ -241,7 +241,7 @@ body {
 }
 
 .main-content {
-  background-color: #efefef;
+  background-color: white;
   width: 97%;
   height: 100%;
   margin: 0 auto;
@@ -331,6 +331,18 @@ body {
   padding: 35px;
   overflow: hidden;
   border-top: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
+}
+
+.home-title {
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.home-title h1{
+  font-size: 18px;
+  font-weight: 600;
+  margin: 10px 0 10px 0;
 }
 
 .home-hot-carousel {
@@ -342,6 +354,12 @@ body {
 .home-hot-carousel-item {
   width: 20%;
   padding: 15px 15px 15px 0;
+  text-decoration: none;
+  color: black;
+}
+
+.home-hot-carousel-item:hover {
+  opacity: 0.5;
 }
 
 .home-hot-thumbnail {
@@ -352,4 +370,21 @@ body {
 
 .home-hot-thumbnail img{
   margin: auto 0;
+}
+
+.home-hot-info * {
+  margin-top: 10px;
+}
+
+.home-hot-info h1{
+  font-weight: 600;
+}
+
+
+.home-lists {
+  padding: 35px;
+  overflow: hidden;
+  border-top: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
+  margin-top: 15px;
 }
