@@ -40,7 +40,7 @@ const NavBar = ({ currentUser, logout }) => {
         <div className="dropdown-content">
           <Link to="/lists">Hot</Link>
           <a href="#">Recent</a>
-          <a href="#">Create New</a>
+          <Link to="/lists/new">Create New</Link>
         </div>
       </div>
 

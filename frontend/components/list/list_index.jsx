@@ -1,20 +1,21 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-class GameIndex extends React.Component {
+class ListIndex extends React.Component {
   constructor(props) {
     super(props);
   }
 
   componentDidMount() {
-    this.props.requestGames();
+    this.props.requestLists();
   }
 
   render() {
-    const { games } = this.props;
+    const { lists } = this.props;
     return (
       <div className='main-content'>
-        <table className='index-table'>
+        <h1>List index page!</h1>
+        {/* <table className='index-table'>
           <tr className='index-table-headers'>
             <th className='table-rank'>Board Game Rank</th>
             <th className='table-img'></th>
@@ -34,7 +35,7 @@ class GameIndex extends React.Component {
                 <td className='table-rank'>{game.id}</td>
                 <td className='table-img'>
                   <Link to={`/games/${game.id}`}>
-                    <img src={game.header_img} width='65'alt="" />
+                    <img src={game.header_img} width='65' alt="" />
                   </Link>
                 </td>
                 <td className='table-title'>
@@ -53,12 +54,12 @@ class GameIndex extends React.Component {
                 <td className='table-shop'>link to shopping</td>
               </tr>
             )
-          )
-        }
-        </table>
+            )
+          }
+        </table> */}
       </div>
     )
   }
 }
 
-export default GameIndex;
+export default ListIndex;
