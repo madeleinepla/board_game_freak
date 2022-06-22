@@ -146,18 +146,193 @@ g3 = Game.create!(
   your character meets a terrible fate.',
 )
 
-# g4 = Game.create!(
-#   title: ,
-#   tagline: ,
-#   year: ,
-#   designer: ,
-#   artist: ,
-#   publisher: ,
-#   min_players: ,
-#   max_players: ,
-#   min_playtime: ,
-#   max_playtime: ,
-#   age: ,
-#   header_img: ,
-#   description: ,
-# )
+g4 = Game.create!(
+  title: 'Clue',
+  tagline: 'Catch the culprit of a crime by identifying who did it, with what, and where.',
+  year: 1949,
+  designer: 'Anthony E. Pratt',
+  artist: 'Peter Dobbin, René Goscinny, Matt Groening, Rune Johansson',
+  publisher: 'Hasbro, John Waddington Ltd.',
+  min_players: 2,
+  max_players: 6,
+  min_playtime: 45,
+  max_playtime: 60,
+  age: 8,
+  header_img: 'https://cf.geekdo-images.com/owlmDA10KegcwPaapY5auw__itemrep/img/l389R4AqZbn89WSROMFpvBb11fo=/fit-in/246x300/filters:strip_icc()/pic5146918.png',
+  description: 'The classic detective game! In Clue, players move from room to 
+  room in a mansion to solve the mystery of: who done it, with what, and where? 
+  Players are dealt character, weapon, and location cards after the top card 
+  from each card type is secretly placed in the confidential file in the middle 
+  of the board. Players must move to a room and then make a suggestion against 
+  a character saying they did it in that room with a specific weapon. The player 
+  to the left must show one of any cards mentioned if in that player\'s hand. 
+  Through deductive reasoning each player must figure out which character, 
+  weapon, and location are in the secret file. To do this, each player must 
+  uncover what cards are in other players hands by making more and more 
+  suggestions. Once a player knows what cards the other players are holding, 
+  they will know what cards are in the secret file, and then make an 
+  accusation. If correct, the player wins, but if incorrect, the player must 
+  return the cards to the file without revealing them and may no longer make 
+  suggestions or accusations. A great game for those who enjoy reasoning and 
+  thinking things out.
+  Note: There are some early versions of Clue which are labeled as 2-6 players. 
+  Recent and current issues of the game state 3-6 players.',
+)
+
+g5 = Game.create!(
+  title: 'Scythe',
+  tagline: 'Five factions vie for dominance in a war-torn, mech-filled, dieselpunk 1920s Europe.',
+  year: 2016,
+  designer: 'Jamey Stegmaier',
+  artist: 'Jakub Rozalski',
+  publisher: 'Stonemaier Games',
+  min_players: 1,
+  max_players: 5,
+  min_playtime: 90,
+  max_playtime: 115,
+  age: 14,
+  header_img: 'https://cf.geekdo-images.com/7k_nOxpO9OGIjhLq2BUZdA__itemrep/img/RVh5N-_HcMziJ3M6Q1eLTlj8XIQ=/fit-in/246x300/filters:strip_icc()/pic3163924.jpg',
+  description: 'It is a time of unrest in 1920s Europa. The ashes from the first 
+  great war still darken the snow. The capitalistic city-state known simply as 
+  “The Factory”, which fueled the war with heavily armored mechs, has closed its 
+  doors, drawing the attention of several nearby countries. Scythe is an 
+  engine-building game set in an alternate-history 1920s period. It is a time of 
+  farming and war, broken hearts and rusted gears, innovation and valor. In 
+  Scythe, each player represents a character from one of five factions of 
+  Eastern Europe who are attempting to earn their fortune and claim their 
+  faction\'s stake in the land around the mysterious Factory. Players conquer 
+  territory, enlist new recruits, reap resources, gain villagers, build 
+  structures, and activate monstrous mechs.
+  Each player begins the game with different resources (power, coins, combat 
+  acumen, and popularity), a different starting location, and a hidden goal. 
+  Starting positions are specially calibrated to contribute to each faction\'s 
+  uniqueness and the asymmetrical nature of the game (each faction always starts 
+  in the same place). Scythe gives players almost complete control over their 
+  fate. Other than each player\'s individual hidden objective card, the only 
+  elements of luck or variability are “encounter” cards that players will draw 
+  as they interact with the citizens of newly explored lands. Each encounter 
+  card provides the player with several options, allowing them to mitigate the 
+  luck of the draw through their selection. Combat is also driven by choices, 
+  not luck or randomness. Scythe uses a streamlined action-selection mechanism 
+  (no rounds or phases) to keep gameplay moving at a brisk pace and reduce 
+  downtime between turns. While there is plenty of direct conflict for players 
+  who seek it, there is no player elimination. Every part of Scythe has an 
+  aspect of engine-building to it. Players can upgrade actions to become more 
+  efficient, build structures that improve their position on the map, enlist new 
+  recruits to enhance character abilities, activate mechs to deter opponents 
+  from invading, and expand their borders to reap greater types and quantities 
+  of resources. These engine-building aspects create a sense of momentum and 
+  progress throughout the game. The order in which players improve their engine 
+  adds to the unique feel of each game, even when playing one faction multiple 
+  times.',
+)
+
+
+
+g6 = Game.create!(
+  title: 'Grind House',
+  tagline: 'A narrative horror game for 2-6 players where you would be considered lucky if survival only costs an arm and a leg.',
+  year: 2020,
+  designer: 'Jon Cohn',
+  artist: 'Boris Polonsky, Ivan Shavrin',
+  publisher: 'Everything Epic Games',
+  min_players: 2,
+  max_players: 6,
+  min_playtime: 20,
+  max_playtime: 30,
+  age: 15,
+  header_img: 'https://cf.geekdo-images.com/vAkfMGXl5TvN_0zpRv7FjA__itemrep/img/1WneuT7ZhqoPynnZwTsvxjEcmn4=/fit-in/246x300/filters:strip_icc()/pic4839345.png',
+  description: 'You receive an invitation to take part in a mysterious contest at the “Grind House,” an old mansion that once stood as the largest slaughterhouse in the state. The invitation is signed simply by an individual known as “The Host.” The letter promises you the opportunity to play a game to win a reward greater than you could possibly imagine. You arrive at a decaying mansion on a hill along with five other strangers. A tall, narrow man in a tuxedo opens the huge ominous doors to usher you inside. “Thank you for attending this evening...” The Host says in a deep, ominous voice. “The entertainment will be… to die for!” The Host bursts into a sinister echoing laugh. Behind you, the door slams shut and the sound of a heavy deadbolt clicks into place. You and your fellow guests are trapped at the mercy and whims of The Host. “Shall we play a little game?”
+
+Grind House is a narrative horror game for 2-6 players where you would be considered lucky if survival only costs an arm and a leg. While survival is the ultimate goal, each player has a classic archetype with a secret motive. Some characters like the Doctor may try to keep everyone alive, while the psychopath with surely attempt to split everyone apart. Others, like the Pianist, just want to keep their hands intact.
+
+For those unfortunate souls who do perish in the house, the game is not over. Players may return as ghosts to haunt the remaining survivors as they try to make it through the Grind House unscathed. After exploring all 5 randomized rooms in the house, any survivors left total up their score to determine the winner.',
+)
+
+g7 = Game.create!(
+  title: 'Paranormal Detectives',
+  tagline: 'Deduce the circumstances of the recently-deceased ghost with various occult methods! ',
+  year: 2019,
+  designer: 'Szymon Maliński, Adrian Orzechowski, Marcin Łączyński',
+  artist: 'JocArt, Mateusz Komada, Katarzyna Kosobucka',
+  publisher: 'Lucky Duck Games',
+  min_players: 2,
+  max_players: 6,
+  min_playtime: 30,
+  max_playtime: 50,
+  age: 12,
+  header_img: 'https://cf.geekdo-images.com/2eV2FXx4DaSPpNJzG-eung__itemrep/img/8VA_oDjoqvJxpktdbcPbmsZrReA=/fit-in/246x300/filters:strip_icc()/pic4746947.png',
+  description: 'You open your eyes to discover the most horrible truth of a lifetime... It has just come to an end and you are a ghost, floating in the air! Terrified, you look at your own body. A group of strange individuals have gathered around your mortal remains, watching it closely with sparks of fascination in their eyes. They want to communicate with you to discover how your life ended. You need to talk to them and reveal the truth so the culprit can be judged!
+
+Paranormal Detectives is a deduction party game. One player takes the role of a Ghost. All other players work as Paranormal Detectives and need to discover how the victim died. Using paranormal abilities they will communicate with the Ghost, asking open questions about the details of the crime. The Ghost answers in a variety of ghostly ways - by arranging a hangman\'s knot, playing chosen tarot cards, creating a word puzzle on a talking board, drawing by holding the hand of a detective and many more!
+
+At the beginning of the game, the Ghost player receives a story card with a full description of the murder. Each card depicts all the details of the case. Each Detective receives asymmetrical, pre-constructed set of interaction cards, player investigation sheet, and a player screen.
+
+On their turn, each Detective asks the Ghost any open question they want and plays a single interaction card. The card implies the way the Ghost may answer the question. There are 9 different interactions total, most of them giving information to all Detectives. Since Detectives may ask any open questions and interaction cards vary, the game allows for lots of creativity for both the Ghost and Paranormal Detectives.
+
+Detectives may try, twice during the game, to guess what has actually happened to the victim stating who was the killer, where did it happen, what was the motive, how was it done and what was the murder weapon. Then the Ghost writes down secretly on this Detective\'s investigation sheet how many of their answers are correct.
+
+The game can end in two ways:
+If a Detective gives all correct answers. In this case, they win, together with the Ghost player.
+If all Detectives run out of interaction cards. In this case, if no one has guessed everything correctly then, whoever guessed correctly the most information is the sole winner of the game!',
+)
+
+g8 = Game.create!(
+  title: 'The Fox in the Forest',
+  tagline: 'In this trick-taking game for 2, you must win more than your rival—but not too much! ',
+  year: 2017,
+  designer: 'Joshua Buergel',
+  artist: 'Jennifer L. Meyer',
+  publisher: 'Foxtrot Games, Renegade Game Studios',
+  min_players: 2,
+  max_players: 2,
+  min_playtime: 30,
+  max_playtime: 30,
+  age: 10,
+  header_img: "https://cf.geekdo-images.com/spcy6nvsfq-hxYgwEpmidQ__itemrep/img/U2Q0x4h3qcRzYSiNuj-HJl8mGLk=/fit-in/246x300/filters:strip_icc()/pic3496085.jpg",
+  description: 'The Fox in the Forest is a trick-taking game for two players. Aside from the normal ranked- and suited-cards used to win tricks, fairy characters such as the Fox and the Witch have special abilities that let you change the trump suit, lead even after you lose a trick, and more.
+
+You score points by winning more tricks than your opponent, but don\'t get greedy! Win too many tricks, and you will fall like the villain in so many fairy tales...
+
+',
+)
+
+g9 = Game.create!(
+  title: 'Gloom',
+  tagline: 'Use transparent cards to tell tragic tales of misery and misfortune.',
+  year: 2005,
+  designer: 'Keith Baker',
+  artist: 'Michelle Nephew, J. Scott Reeves, Todd Remick',
+  publisher: 'Atlas Games',
+  min_players: 2,
+  max_players: 4,
+  min_playtime: 60,
+  max_playtime: 60,
+  age: 13,
+  header_img: "https://cf.geekdo-images.com/jD7_Ir8gL_9AXC-wjnqjHg__itemrep/img/TrY9FNVXHtplKsxn2pr4xvGCq0w=/fit-in/246x300/filters:strip_icc()/pic2080481.jpg",
+  description: 'The world of Gloom is a sad and benighted place. The sky is gray, the tea is cold, and a new tragedy lies around every corner. Debt, disease, heartache, and packs of rabid flesh-eating mice—just when it seems like things can\'t get any worse, they do. But some say that one\'s reward in the afterlife is based on the misery endured in life. If so, there may yet be hope—if not in this world, then in the peace that lies beyond.
+
+In the Gloom card game, you assume control of the fate of an eccentric family of misfits and misanthropes. The goal of the game is sad, but simple: you want your characters to suffer the greatest tragedies possible before passing on to the well-deserved respite of death. You\'ll play horrible mishaps like Pursued by Poodles or Mocked by Midgets on your own characters to lower their Self-Worth scores, while trying to cheer your opponents\' characters with marriages and other happy occasions that pile on positive points. The player with the lowest total Family Value wins.
+
+Printed on transparent plastic cards, Gloom features an innovative design by noted RPG author Keith Baker. Multiple modifier cards can be played on top of the same character card; since the cards are transparent, elements from previously played modifier cards either show through or are obscured by those played above them. You\'ll immediately and easily know the worth of every character, no matter how many modifiers they have. You\'ve got to see (through) this game to believe it!
+
+Each of the three expansions for Gloom adds one more player, thus with all three expansions, this should be playable with seven players.',
+)
+
+g10 = Game.create!(
+  title: 'King of Tokyo: Dark Edition',
+  tagline: 'Fight for dominance in this upgraded pulp edition of a dice-rolling monster battle.',
+  year: 2020,
+  designer: 'Richard Garfield',
+  artist: 'Paul Mafayon',
+  publisher: 'IELLO ',
+  min_players: 2,
+  max_players: 6,
+  min_playtime: 30,
+  max_playtime: 30,
+  age: 8,
+  header_img: "https://cf.geekdo-images.com/mTn-dbIPgdf-_l668UGi_g__itemrep/img/vXr_9xXKiAq8YPpnnQ2ehcbYBLk=/fit-in/246x300/filters:strip_icc()/pic5031257.jpg",
+  description: 'King of Tokyo: Dark Edition is a collector\'s edition [limited edition: 100 000 copies in 12 languages] of King of Tokyo, with the fight taking place in an alternative and darker world in which the struggle for control of Tokyo has never been so fierce...and wicked!
+
+This edition includes deluxe components (such as an embossed box and lightning-bolt-shaped energy) and all-new art by Paul Mafayon. The game is based on the classic KoT rules, with the addition of a new mechanism exclusive to this edition to offer a fresh gaming experience.',
+)

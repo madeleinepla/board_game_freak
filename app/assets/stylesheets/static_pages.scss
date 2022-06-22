@@ -246,10 +246,84 @@ body {
   height: 100%;
   margin: 0 auto;
   margin-top: 20px;
+  border-radius: 5px;;
 }
+
+
+//home page
 
 .home-ad {
   display: flex;
   justify-content: center;
   margin-top: 15px;
 }
+
+.home-nav {
+  display: flex;
+  flex-direction: row;
+  padding-top: 20px;
+  margin: 0 35px 0 35px;
+  font-size: 20px;
+  border-bottom: 1px solid lightgray;
+}
+
+.home-nav li {
+  padding: 10px;
+}
+
+.home-nav li:first-child {
+  border-bottom: 2px solid orangered;
+  font-weight: 600;
+}
+
+.home-top {
+  padding: 38px;
+  display: flex;
+  flex-direction: row;
+}
+
+.home-top p {
+  font-size: 14px;
+  color: rgb(129, 129, 129);
+}
+
+.home-top-feature {
+  width: 55%;
+}
+
+.home-top-feature img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.home-top-feature h1 {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 15px 0 15px 0;
+}
+
+.home-top-featurettes {
+  padding-left: 30px;
+  width: 45%;
+}
+
+.home-top-featurettes li {
+  display: flex;
+  flex-direction: row;
+  border-top: 1px solid lightgray;
+  padding: 15px 0 15px 0;
+  
+}
+
+.home-top-featurettes li:first-child {
+  border-top: none;
+  padding-top: 0;
+}
+
+.home-top-featurettes img {
+  border-radius: 5px;
+  height: 75px;
+  width: 75px;
+  margin-right: 15px;
+}
+
