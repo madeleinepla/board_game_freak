@@ -21,37 +21,39 @@ class ListForm extends React.Component {
 
       <form onSubmit={this.handleSubmit} className='list-form'>
         <table>
-          <tr>
-            <th colSpan="2">Step 1. Title and Description.</th>
-          </tr>
+          <tbody>
+            <tr>
+              <th colSpan="2">Step 1. Title and Description.</th>
+            </tr>
 
-          <tr>
-            <th>Title:</th>
-            <td>
-              <input
-              type="text"
-              value={this.state.title}
-              onChange={this.update('title')}
-            />
-            </td>
-          </tr>
+            <tr>
+              <td>Title:</td>
+              <td>
+                <input
+                type="text"
+                value={this.state.title}
+                onChange={this.update('title')}
+              />
+              </td>
+            </tr>
 
-          <tr>
-            <th>Description:</th>
-            <td>
-              <textarea
-              value={this.state.improvement}
-              rows="30" 
-              cols="90"
-              onChange={this.update('improvement')}
-            />
-            </td>
-          </tr>
+            <tr>
+              <td>Description:</td>
+              <td>
+                <textarea
+                value={this.state.body}
+                rows="30" 
+                cols="90"
+                onChange={this.update('body')}
+              />
+              </td>
+            </tr>
 
-          <tr>
-            <th></th>
-            <td><input type="submit" value='Save &amp; Continue To Step 2' /></td>
-          </tr>
+            <tr>
+              <th></th>
+              <td><input type="submit" value='Save &amp; Continue To Step 2' /></td>
+            </tr>
+          </tbody>
         </table>
       </form>
     </div>

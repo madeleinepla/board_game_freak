@@ -5,6 +5,15 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+User.destroy_all
+ActiveRecord::Base.connection.reset_pk_sequence!('users')
+
+u1 = User.create!(
+  email: 'demo_user@email.com',
+  username: 'demo_user',
+  password: '123123'
+)
+
 Game.destroy_all
 ActiveRecord::Base.connection.reset_pk_sequence!('games')
 

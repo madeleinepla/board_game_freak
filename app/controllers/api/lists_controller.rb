@@ -42,6 +42,6 @@ class Api::ListsController < ApplicationController
   private
   
   def list_params
-    params.require(:list).permit(:body, :author_id)
+    params.require(:list).permit(:title, :body, :author_id)
   end
 end

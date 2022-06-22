@@ -6,16 +6,29 @@
   display: flex;
   justify-content: center;
   padding-top: 35px;
+  font-weight: 600;
 }
 
 .list-form {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
+  align-items: center;
+  justify-content: center;
   padding: 30px;
 }
 
 .list-form tr {
-  border: 1px solid blue;
+  border: 1px solid black;
 }
+
+.list-form th {
+  padding: 10px;
+}
+
+.list-form td {
+  padding: 10px;
+  border: 1px solid black;
+  text-align: start;
+  vertical-align: top;
+}
+
