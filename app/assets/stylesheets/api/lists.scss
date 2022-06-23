@@ -89,3 +89,49 @@
   color: rgb(154, 154, 154);
 }
 
+
+
+
+.list-show-header {
+  display: flex;
+  flex-direction: row;;
+  padding: 25px;
+  
+}
+
+.list-show-header-thumbnail {
+  height: 75px;
+  width: 75px;
+  background-color: black;
+  margin-right: 20px;
+}
+
+.list-show-header-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.list-show-header h1 {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.list-show-header ul{
+  display: flex;
+  flex-direction: row;
+  font-size: 16px;
+}
+
+.list-show-header li {
+  margin: 5px 5px 0 0;
+}
+
+.list-show-header li:first-child {
+  font-weight: 600;
+}
+
+.list-show-body {
+  border-bottom: 1px solid lightgray;
+  padding: 25px;
+}

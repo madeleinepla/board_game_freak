@@ -6,6 +6,7 @@ import SignupFormContainer from "./session/signup_form_container";
 import GameIndexContainer from "./game/game_index_container";
 import GameShowContainer from "./game/game_show_container";
 import ListIndexContainer from "./list/list_index_container";
+import ListShowContainer from "./list/list_show_container";
 import CreateListFormContainer from "./list/create_list_form_container";
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
 import Home from "./home/home";
@@ -27,6 +28,7 @@ const App = () => (
         <Route exact path="/games" component={GameIndexContainer} />
         <Route path="/games/:gameId" component={GameShowContainer} />
         <Route exact path="/lists" component={ListIndexContainer} />
+        <Route path="/lists/:listId" component={ListShowContainer} />
         <ProtectedRoute path="/lists/new" component={CreateListFormContainer} />
       </Switch>
     </div>
