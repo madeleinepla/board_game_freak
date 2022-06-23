@@ -8,14 +8,26 @@ class GameShow extends React.Component {
   componentDidMount() {
     window.scrollTo(0, 0);
     this.props.requestGame(this.props.match.params.gameId)
+    // const bg = document.getElementsByClassName('game-header')
+    // bg[0].style.backgroundImage = `linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.5)), url(${this.props.game.bg_img})`
     // debugger;
   }
 
   render() {
     const { game } = this.props
-    // debugger;
+    const bg = document.getElementsByClassName('game-header')
+    if (bg[0]) {
+      bg[0].style.backgroundImage = `linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.5)), url("${game.bg_img}")`
+    }
+
+    let descriptionParagraphs = []
+    if (game.description) {
+      descriptionParagraphs = game.description.split("\n")
+    }
+
     return <div className='main-content'>
       <div className='game-header'>
+
         <div className='game-header-image'>
           <img
             src={game.header_img}
@@ -45,8 +57,16 @@ class GameShow extends React.Component {
           </div>
 
           <div className='game-header-gameplay'>
-            <p>{game.min_players} - {game.max_players} Players</p>
-            <p>{game.min_playtime} - {game.max_playtime} Min</p>
+            {
+              game.min_players === game.max_players ?
+              <p>{game.min_players} Players</p> :
+              <p>{game.min_players} - {game.max_players} Players</p>
+            }
+            {
+              game.min_playtime === game.max_playtime ?
+                <p>{game.min_playtime} Min</p> :
+                <p>{game.min_playtime} - {game.max_playtime} Min</p>
+            }
             <p>Ages: {game.age}+</p>
             <p>Weight: 3/5</p>
           </div>
@@ -72,22 +92,47 @@ class GameShow extends React.Component {
 
           <div className='game-body-main-content'>
             <div className='game-body-description'>
-              <p>{game.description}</p>
+              {
+                descriptionParagraphs.map((para, i) => {
+                 return <div key={i}>
+                    <p key={i}>{para}<br/></p>
+                  </div>
+                })
+              }
+              
             </div>
 
             <div className='game-body-awards'>
               <h1>Awards &amp; Honors</h1>
-              <p>add awards</p>
+              <p>2017 Golden Geek Board Game of the Year Winner</p>
+              <p>2017 Meeples' Choice Nominee</p>
+              <p>2018 SXSW Tabletop Game of the Year Winner</p>
             </div>
           </div>
 
           <div className='game-body-classification'>
             <h1>Classification</h1>
+
+            <h2>Type</h2>
             <ul>
-              <li>Type</li>
-              <li>Category</li>
-              <li>Mechanisms</li>
+              <li>Strategy</li>
+              <li>Thematic</li>
             </ul>
+
+            <h2>Category</h2>
+            <ul>
+              <li>Adventure</li>
+              <li>Exploration</li>
+              <li>Miniatures</li>
+            </ul>
+
+            <h2>Mechanisms</h2>
+            <ul>
+              <li>Action Retrieval</li>
+              <li>Card Play Conflict Resolution</li>
+              <li>Action Queue</li>
+            </ul>
+
           </div>
         </div>
       </div>

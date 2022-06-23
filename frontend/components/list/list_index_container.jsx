@@ -10,6 +10,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => ({
   requestLists: () => dispatch(requestLists()),
+  
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ListIndex);

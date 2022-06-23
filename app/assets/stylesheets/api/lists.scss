@@ -32,3 +32,60 @@
   vertical-align: top;
 }
 
+
+.list-index {
+  padding: 25px;
+}
+
+.list-index h1 {
+  font-size: 30px;
+  font-weight: 700;
+  border-bottom: 1px solid lightgray;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+}
+
+.list-new-btn {
+  background-color: rgb(15, 61, 186);
+  text-decoration: none;
+  padding: 8px;
+  border-radius: 5px;
+  border: none;
+}
+
+.list-new-btn * {
+  text-decoration: none;
+  color: white;
+}
+
+.list-listings {
+  margin-top: 15px;
+}
+
+.list-listing {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid lightgray;
+  padding: 15px 0 15px 0
+}
+
+.list-listing-thumbnail {
+  margin-right: 15px;
+}
+
+.list-listing-info h2 {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.list-listing-info ul {
+  display: flex;
+  flex-direction: row;
+}
+
+.list-listing-info li {
+  margin: 10px 10px 10px 0;
+  font-size: 14px;
+  color: rgb(154, 154, 154);
+}
+

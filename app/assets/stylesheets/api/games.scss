@@ -16,13 +16,22 @@
 .game-header {
   display: flex;
   flex-direction: row;
-  background-color: black;
+  // background-color: black;
+  // background-image:
+  //   linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.5)),
+  //   url("https://cf.geekdo-images.com/4Zr2B1zIgCM9qZfKhZoisQ__imagepage/img/kXfQ2kYjDENgXmRcXYrBcmuhf4U=/fit-in/900x600/filters:no_upscale():strip_icc()/pic133885.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center;
   color: white;
   width: 100%;
+  padding-bottom: 50px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
 
 .game-header-image {
-  margin: 15px;
+  margin: 30px;
 }
 
 .game-header-image img{
@@ -30,7 +39,7 @@
 }
 
 .game-header-body {
-  margin: 15px;
+  margin: 30px;
 }
 
 .game-header-title-container {
@@ -132,7 +141,7 @@
 .game-body {
   display: flex;
   flex-direction: column;
-  padding: 25px;
+  padding: 35px;
 }
 
 .game-body-description-title {
@@ -169,10 +178,21 @@
   width: 12%;
   background-color: rgb(231, 231, 231);
   margin-left: 20px;
+  padding: 15px;
+}
+
+.game-body-classification > * {
+  margin: 5px 0 5px 0;
+}
+
+.game-body-classification h2 {
+  color: rgb(35, 35, 35);
+  font-size: 14px;
+  font-weight: 700;
 }
 
 .game-body-classification li {
-  color: rgb(35, 35, 35);
+  color: rgb(40, 70, 180);
   font-size: 14px;
 }
 
