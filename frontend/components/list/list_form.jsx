@@ -1,4 +1,5 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom';
 
 class ListForm extends React.Component {
   constructor(props) {
@@ -11,8 +12,11 @@ class ListForm extends React.Component {
     return e => this.setState({ [field]: e.target.value })
   }
 
-  handleSubmit() {
+  handleSubmit(e) {
+    e.preventDefault();
     this.props.action(this.state);
+    <Redirect to="/lists" />
+
   }
 
   render() {

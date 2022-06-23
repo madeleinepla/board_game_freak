@@ -40,7 +40,7 @@ class SessionForm extends React.Component {
       }
 
       i++;
-      }, 100);
+      }, 75);
     }
 
     let j = 0;
@@ -55,7 +55,7 @@ class SessionForm extends React.Component {
       }
 
       j++;
-      }, 100);
+      }, 75);
     }
     
     displayDemoUsername();

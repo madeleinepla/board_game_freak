@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import ReactDOM from 'react-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCaretDown } from '@fortawesome/free-solid-svg-icons'
+import { faCaretDown, faPowerOff } from '@fortawesome/free-solid-svg-icons'
 
 
 const NavBar = ({ currentUser, logout }) => {
@@ -40,6 +40,7 @@ const NavBar = ({ currentUser, logout }) => {
         <div className="dropdown-content">
           <Link to="/lists">Hot</Link>
           <a href="#">Recent</a>
+          <Link to="/lists/mylists">My FreakLists</Link>
           <Link to="/lists/new">Create New</Link>
         </div>
       </div>
@@ -56,7 +57,8 @@ const NavBar = ({ currentUser, logout }) => {
           <div className="dropdown-content">
             <a href="#">Profile</a>
             <a href="#">Account</a>
-            <button onClick={logout}>Sign Out</button>
+            <Link to="/lists/mylists">FreakLists</Link>
+            <button onClick={logout}><FontAwesomeIcon icon={faPowerOff} /> Sign Out</button>
           </div>
         </div>
         : 

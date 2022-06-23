@@ -298,8 +298,19 @@ body {
 }
 
 .home-top-feature img:hover {
-  opacity: 0.5;
+  // opacity: 0.5;
   cursor: not-allowed;
+  animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
 }
 
 .home-top-feature h1 {
@@ -321,8 +332,9 @@ body {
 }
 
 .home-top-featurettes li:hover {
-  opacity: 0.5;
+  // opacity: 0.5;
   cursor: not-allowed;
+  animation: fadeIn 1s;
 }
 
 .home-top-featurettes li:first-child {
@@ -381,7 +393,8 @@ body {
 }
 
 .home-hot-carousel-item:hover {
-  opacity: 0.5;
+  // opacity: 0.5;
+  animation: fadeIn 1s;
 }
 
 .home-hot-thumbnail {

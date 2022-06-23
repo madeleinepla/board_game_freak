@@ -6,6 +6,7 @@ class GameShow extends React.Component {
   }
 
   componentDidMount() {
+    window.scrollTo(0, 0);
     this.props.requestGame(this.props.match.params.gameId)
     // debugger;
   }
