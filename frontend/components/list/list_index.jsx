@@ -12,7 +12,7 @@ class ListIndex extends React.Component {
 
   render() {
     const { lists } = this.props;
-    // debugger;
+    debugger;
     return (
       <div className='main-content'>
         <div className='list-index'>
@@ -22,6 +22,8 @@ class ListIndex extends React.Component {
           <ul className='list-listings'>
             {
               lists.map((list, i) => {
+                let postDate = new Date(list.created_at)
+                postDate = postDate.toDateString().split(" ").slice(1,3).join(" ");
                 // debugger;
                 return <li key={i} className='list-listing'>
                   <div className='list-listing-thumbnail'>
@@ -35,7 +37,7 @@ class ListIndex extends React.Component {
                       <li>•</li>
                       <li>likes</li>
                       <li>•</li>
-                      <li>time posted</li>
+                      <li>{postDate}</li>
                     </ul>
                   </div>
                 </li>
