@@ -8,9 +8,10 @@ Rails.application.routes.draw do
 
     resources :games, only: [:show, :index]
 
-    resources :lists, only: [:create, :update, :show, :index, :destroy]
+    resources :lists, only: [:create, :update, :show, :index, :destroy] do
+        resources :list_items
+    end
 
-    resources :list_items
   end
 
   root to: 'static_pages#root'

@@ -9,6 +9,7 @@ import ListIndexContainer from "./list/list_index_container";
 import ListShowContainer from "./list/list_show_container";
 import CreateListFormContainer from "./list/create_list_form_container";
 import EditListFormContainer from "./list/edit_list_form_container";
+import CreateListItemFormContainer from "./list_item/create_list_item_form_container";
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
 import Home from "./home/home";
 import Footer from "./footer/footer";
@@ -32,6 +33,7 @@ const App = () => (
         <ProtectedRoute exact path="/lists/new" component={CreateListFormContainer} />
         <Route exact path="/lists/:listId" component={ListShowContainer} />
         <ProtectedRoute exact path="/lists/:listId/edit" component={EditListFormContainer} />
+        <ProtectedRoute exact path="/list_items/new" component={CreateListItemFormContainer} />
       </Switch>
     </div>
 

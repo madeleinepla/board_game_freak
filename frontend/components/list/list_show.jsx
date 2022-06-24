@@ -67,7 +67,7 @@ class ListShow extends React.Component {
         }
 
         <button className='list-edit-btn'><Link to={`/lists/${list.id}/edit`}>Edit Description</Link></button>
-        <button className='listitem-new-btn'><Link to={'/lists_item/new'}>+ Add Item</Link></button>
+        <button className='list-item-new-btn'><Link to={'/list_items/new'}>+ Add Item</Link></button>
       </div>
 
       

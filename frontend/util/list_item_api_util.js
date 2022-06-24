@@ -1,29 +1,29 @@
-export const fetchListItem = listId => (
+export const fetchListItem = listItemId => (
   $.ajax({
-    url: `/api/lists/${listId}`,
+    url: `/api/list_items/${listItemId}`,
     method: 'GET'
   })
 );
 
-export const createListItem = (list) => (
+export const createListItem = (listItem) => (
   $.ajax({
-    url: '/api/lists',
+    url: '/api/list_items',
     method: 'POST',
-    data: { list }
+    data: { listItem }
   })
 )
 
-export const updateListItem = (list) => (
+export const updateListItem = (listItem) => (
   $.ajax({
-    url: `/api/lists/${list.id}`,
+    url: `/api/list_items/${listItem.id}`,
     method: 'PATCH',
     data: { list }
   })
 )
 
-export const deleteListItem = (listId) => (
+export const deleteListItem = (listItemId) => (
   $.ajax({
-    url: `/api/lists/${listId}`,
+    url: `/api/list_items/${listItemId}`,
     method: 'DELETE'
   })
 )

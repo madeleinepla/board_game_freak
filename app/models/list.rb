@@ -6,7 +6,7 @@ class List < ApplicationRecord
     foreign_key: :author_id,
     class_name: :User
 
-    has_many :list_items,
+  has_many :list_items, dependent: :destroy,
     primary_key: :id,
     foreign_key: :list_id,
     class_name: :ListItem
