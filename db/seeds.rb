@@ -248,3 +248,73 @@ g10 = Game.create!(
 
     This edition includes deluxe components (such as an embossed box and lightning-bolt-shaped energy) and all-new art by Paul Mafayon. The game is based on the classic KoT rules, with the addition of a new mechanism exclusive to this edition to offer a fresh gaming experience.',
 )
+
+Classification.destroy_all
+ActiveRecord::Base.connection.reset_pk_sequence!('classifications')
+
+# Catan
+c1 = Classification.create!(
+  game_id: 1,
+  main_class: 'Type',
+  sub_class: 'Family'
+)
+
+c2 = Classification.create!(
+  game_id: 1,
+  main_class: 'Type',
+  sub_class: 'Strategy'
+)
+
+c3 = Classification.create!(
+  game_id: 1,
+  main_class: 'Category',
+  sub_class: 'Economic'
+)
+
+c4 = Classification.create!(
+  game_id: 1,
+  main_class: 'Category',
+  sub_class: 'Negotiation'
+)
+
+c5 = Classification.create!(
+  game_id: 1,
+  main_class: 'Mechanisms',
+  sub_class: 'Dice Rolling'
+)
+
+c6 = Classification.create!(
+  game_id: 1,
+  main_class: 'Mechanisms',
+  sub_class: 'Hexagon Grid'
+)
+
+c7 = Classification.create!(
+  game_id: 1,
+  main_class: 'Mechanisms',
+  sub_class: 'Income'
+)
+
+c8 = Classification.create!(
+  game_id: 1,
+  main_class: 'Mechanisms',
+  sub_class: 'Modular Board'
+)
+
+c9 = Classification.create!(
+  game_id: 1,
+  main_class: 'Mechanisms',
+  sub_class: 'Networking and Route Building'
+)
+
+# c1 = Classification.create!(
+#   game_id: ,
+#   main_class: ,
+#   sub_class:
+# )
+
+# c1 = Classification.create!(
+#   game_id: ,
+#   main_class: ,
+#   sub_class:
+# )

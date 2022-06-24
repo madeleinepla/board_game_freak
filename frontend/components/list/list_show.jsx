@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class ListShow extends React.Component {
   constructor(props) {
@@ -56,6 +57,8 @@ class ListShow extends React.Component {
         }
       </div>
 
+      <button className='listitem-new-btn'><Link to={'/lists_item/new'}>+ Add Item</Link></button>
+      
       <p>List item 1</p>
       <p>List item 2</p>
       <p>List item 3</p>

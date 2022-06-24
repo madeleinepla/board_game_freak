@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class GameShow extends React.Component {
   constructor(props) {
@@ -14,7 +15,7 @@ class GameShow extends React.Component {
   }
 
   render() {
-    const { game } = this.props
+    const { game, type, category, mechanisms } = this.props
     const bg = document.getElementsByClassName('game-header')
     if (bg[0]) {
       bg[0].style.backgroundImage = `linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.5)), url("${game.bg_img}")`
@@ -24,6 +25,8 @@ class GameShow extends React.Component {
     if (game.description) {
       descriptionParagraphs = game.description.split("\n")
     }
+
+    // debugger;
 
     return <div className='main-content'>
       <div className='game-header'>
@@ -115,22 +118,35 @@ class GameShow extends React.Component {
 
             <h2>Type</h2>
             <ul>
-              <li>Strategy</li>
-              <li>Thematic</li>
+              {
+                type.map((el, i) => {
+                  return <li key={i}>
+                    <Link to="/games">{el}</Link>
+                  </li>
+                })
+              }
             </ul>
 
             <h2>Category</h2>
             <ul>
-              <li>Adventure</li>
-              <li>Exploration</li>
-              <li>Miniatures</li>
+              {
+                category.map((el, i) => {
+                  return <li key={i}>
+                    <Link to="/games">{el}</Link>
+                  </li>
+                })
+              }
             </ul>
 
             <h2>Mechanisms</h2>
             <ul>
-              <li>Action Retrieval</li>
-              <li>Card Play Conflict Resolution</li>
-              <li>Action Queue</li>
+              {
+                mechanisms.map((el, i) => {
+                  return <li key={i}>
+                    <Link to="/games">{el}</Link>
+                  </li>
+                })
+              }
             </ul>
 
           </div>

@@ -30,6 +30,7 @@ const App = () => (
         <Route exact path="/lists" component={ListIndexContainer} />
         <Route path="/lists/:listId" component={ListShowContainer} />
         <ProtectedRoute path="/lists/new" component={CreateListFormContainer} />
+        <ProtectedRoute path="/list_item/new" component={<h1>New List Item Form</h1>} />
       </Switch>
     </div>
 
