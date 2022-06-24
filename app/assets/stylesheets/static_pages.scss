@@ -369,39 +369,39 @@ body {
   margin: 10px 0 10px 0;
 }
 
-.home-hot-carousel {
+.home-hot-carousel, .home-lists-carousel {
   display: flex;
   flex-direction: row;
-  
 }
 
-.home-hot-carousel-item {
+.home-hot-carousel-item, .home-lists-carousel-item {
   width: 20%;
   padding: 15px 15px 15px 0;
   text-decoration: none;
   color: black;
 }
 
-.home-hot-carousel-item:hover {
+.home-hot-carousel-item:hover, .home-lists-carousel-item:hover {
   opacity: 0.5;
   transition: 0.3s;
 }
 
-.home-hot-thumbnail {
+.home-hot-thumbnail, .home-lists-thumbnail {
   overflow: hidden;
   height: 150px;
   border-radius: 5px;
+  background-color: black;
 }
 
 .home-hot-thumbnail img{
   margin: auto 0;
 }
 
-.home-hot-info * {
+.home-hot-info *, .home-lists-info * {
   margin-top: 10px;
 }
 
-.home-hot-info h1{
+.home-hot-info h1, .home-lists-info h1{
   font-weight: 600;
 }
 

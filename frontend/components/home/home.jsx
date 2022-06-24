@@ -1,15 +1,19 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { requestGames } from '../../actions/game_actions';
+import { requestLists } from '../../actions/list_actions';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faThumbsUp } from '@fortawesome/free-regular-svg-icons';
 
 class Home extends React.Component {
   componentDidMount() {
     this.props.requestGames();
+    this.props.requestLists();
   }
 
   render() {
-    const { games } = this.props;
+    const { games, lists } = this.props;
     // debugger;
     return <div>
       <div className='home-ad'>
@@ -127,7 +131,24 @@ class Home extends React.Component {
           </div>
 
           <div className='home-lists-carousel'>
-            add once lists are made
+            {
+              lists.slice(0, 5).map(list => {
+                return <Link key={list.id} to={`/lists/${list.id}`} className='home-lists-carousel-item'>
+                  <div className='home-lists-thumbnail'>
+                    {/* <img
+                      src={game.header_img}
+                      alt={`${game.title} thumbnail`}
+                    /> */}
+                    <h1>List game pictures</h1>
+                  </div>
+
+                  <div className='home-lists-info'>
+                    <h1>{list.title}</h1>
+                    <p>{list.author.username} • <FontAwesomeIcon icon={faThumbsUp} /> likes</p>
+                  </div>
+                </Link>
+              })
+            }
           </div>
         </div>
       </div>
@@ -139,15 +160,18 @@ class Home extends React.Component {
 
 const mSTP = (state) => {
   const games = Object.values(state.entities.games)
+  const lists = Object.values(state.entities.lists)
   // debugger;
   return {
-    games
+    games,
+    lists
   }
 }
 
 const mDTP = (dispatch) => {
   return {
-    requestGames: () => dispatch(requestGames())
+    requestGames: () => dispatch(requestGames()),
+    requestLists: () => dispatch(requestLists())
   }
 }
 

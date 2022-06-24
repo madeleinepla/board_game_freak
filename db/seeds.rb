@@ -307,14 +307,528 @@ c9 = Classification.create!(
   sub_class: 'Networking and Route Building'
 )
 
-# c1 = Classification.create!(
-#   game_id: ,
-#   main_class: ,
-#   sub_class:
-# )
+#Gloomhaven
 
-# c1 = Classification.create!(
-#   game_id: ,
-#   main_class: ,
-#   sub_class:
-# )
+Classification.create!(
+  game_id: 2,
+  main_class: 'Type',
+  sub_class: 'Strategy'
+)
+
+Classification.create!(
+  game_id: 2,
+  main_class: 'Type',
+  sub_class: 'Thematic'
+)
+
+Classification.create!(
+  game_id: 2,
+  main_class: 'Category',
+  sub_class: 'Adventure'
+)
+
+Classification.create!(
+  game_id: 2,
+  main_class: 'Category',
+  sub_class: 'Exploration'
+)
+
+Classification.create!(
+  game_id: 2,
+  main_class: 'Category',
+  sub_class: 'Fantasy'
+)
+
+Classification.create!(
+  game_id: 2,
+  main_class: 'Category',
+  sub_class: 'Fighting'
+)
+
+Classification.create!(
+  game_id: 2,
+  main_class: 'Category',
+  sub_class: 'Miniatures'
+)
+
+Classification.create!(
+  game_id: 2,
+  main_class: 'Mechanisms',
+  sub_class: 'Action Queue'
+)
+
+Classification.create!(
+  game_id: 2,
+  main_class: 'Mechanisms',
+  sub_class: 'Actional Retrieval'
+)
+
+Classification.create!(
+  game_id: 2,
+  main_class: 'Mechanisms',
+  sub_class: 'Campaign / Battle Card Driven'
+)
+
+Classification.create!(
+  game_id: 2,
+  main_class: 'Mechanisms',
+  sub_class: 'Card Play Conflict Resolution'
+)
+
+Classification.create!(
+  game_id: 2,
+  main_class: 'Mechanisms',
+  sub_class: 'Communication Limits'
+)
+
+# Nemesis
+
+Classification.create!(
+  game_id: 3,
+  main_class: 'Type',
+  sub_class: 'Thematic'
+)
+
+Classification.create!(
+  game_id: 3,
+  main_class: 'Category',
+  sub_class: 'Adventure'
+)
+
+Classification.create!(
+  game_id: 3,
+  main_class: 'Category',
+  sub_class: 'Horror'
+)
+
+Classification.create!(
+  game_id: 3,
+  main_class: 'Category',
+  sub_class: 'Miniatures'
+)
+
+Classification.create!(
+  game_id: 3,
+  main_class: 'Category',
+  sub_class: 'Science Fiction'
+)
+
+Classification.create!(
+  game_id: 3,
+  main_class: 'Mechanisms',
+  sub_class: 'Campaign / Battle Card Driven'
+)
+
+Classification.create!(
+  game_id: 3,
+  main_class: 'Mechanisms',
+  sub_class: 'Cooperative Game'
+)
+
+Classification.create!(
+  game_id: 3,
+  main_class: 'Mechanisms',
+  sub_class: 'Dice Rolling'
+)
+
+Classification.create!(
+  game_id: 3,
+  main_class: 'Mechanisms',
+  sub_class: 'Hidden Roles'
+)
+
+Classification.create!(
+  game_id: 3,
+  main_class: 'Mechanisms',
+  sub_class: 'Modular Board'
+)
+
+# Clue
+
+Classification.create!(
+  game_id: 4,
+  main_class: 'Type',
+  sub_class: 'Family'
+)
+
+Classification.create!(
+  game_id: 4,
+  main_class: 'Category',
+  sub_class: 'Movies / TV / Radio theme'
+)
+
+Classification.create!(
+  game_id: 4,
+  main_class: 'Category',
+  sub_class: 'Murder / Mystery'
+)
+
+Classification.create!(
+  game_id: 4,
+  main_class: 'Mechanisms',
+  sub_class: 'Deduction'
+)
+
+Classification.create!(
+  game_id: 4,
+  main_class: 'Mechanisms',
+  sub_class: 'Grid Movement'
+)
+
+Classification.create!(
+  game_id: 4,
+  main_class: 'Mechanisms',
+  sub_class: 'Memory'
+)
+
+Classification.create!(
+  game_id: 4,
+  main_class: 'Mechanisms',
+  sub_class: 'Roll / Spin and Move'
+)
+
+# Scythe
+
+Classification.create!(
+  game_id: 5,
+  main_class: 'Type',
+  sub_class: 'Strategy'
+)
+
+Classification.create!(
+  game_id: 5,
+  main_class: 'Category',
+  sub_class: 'Economic'
+)
+
+Classification.create!(
+  game_id: 5,
+  main_class: 'Category',
+  sub_class: 'Fighting'
+)
+
+Classification.create!(
+  game_id: 5,
+  main_class: 'Category',
+  sub_class: 'Miniatures'
+)
+
+Classification.create!(
+  game_id: 5,
+  main_class: 'Category',
+  sub_class: 'Science Fiction'
+)
+
+Classification.create!(
+  game_id: 5,
+  main_class: 'Category',
+  sub_class: 'Territory Building'
+)
+
+Classification.create!(
+  game_id: 5,
+  main_class: 'Mechanisms',
+  sub_class: 'Card Play Conflict Resolution'
+)
+
+Classification.create!(
+  game_id: 5,
+  main_class: 'Mechanisms',
+  sub_class: 'Contracts'
+)
+
+Classification.create!(
+  game_id: 5,
+  main_class: 'Mechanisms',
+  sub_class: 'End Game Bonuses'
+)
+
+Classification.create!(
+  game_id: 5,
+  main_class: 'Mechanisms',
+  sub_class: 'Force Commitment'
+)
+
+Classification.create!(
+  game_id: 5,
+  main_class: 'Mechanisms',
+  sub_class: 'Grid Movement'
+)
+
+# Grind House
+
+Classification.create!(
+  game_id: 6,
+  main_class: 'Type',
+  sub_class: 'Thematic'
+)
+
+Classification.create!(
+  game_id: 6,
+  main_class: 'Category',
+  sub_class: 'Card Game'
+)
+
+Classification.create!(
+  game_id: 6,
+  main_class: 'Category',
+  sub_class: 'Dice'
+)
+
+Classification.create!(
+  game_id: 6,
+  main_class: 'Category',
+  sub_class: 'Horror'
+)
+Classification.create!(
+  game_id: 6,
+  main_class: 'Category',
+  sub_class: 'Mature / Adult'
+)
+
+Classification.create!(
+  game_id: 6,
+  main_class: 'Mechanisms',
+  sub_class: 'Dice Rolling'
+)
+Classification.create!(
+  game_id: 6,
+  main_class: 'Mechanisms',
+  sub_class: 'Player Elimination'
+)
+
+Classification.create!(
+  game_id: 6,
+  main_class: 'Mechanisms',
+  sub_class: 'Team-Based Game'
+)
+Classification.create!(
+  game_id: 6,
+  main_class: 'Mechanisms',
+  sub_class: 'Voting'
+)
+
+# Paranormal Detectives
+
+Classification.create!(
+  game_id: 7,
+  main_class: 'Type',
+  sub_class: 'Party'
+)
+
+Classification.create!(
+  game_id: 7,
+  main_class: 'Category',
+  sub_class: 'Deduction'
+)
+
+Classification.create!(
+  game_id: 7,
+  main_class: 'Category',
+  sub_class: 'Horror'
+)
+
+Classification.create!(
+  game_id: 7,
+  main_class: 'Category',
+  sub_class: 'Murder / Mystery'
+)
+Classification.create!(
+  game_id: 7,
+  main_class: 'Category',
+  sub_class: 'Party Game'
+)
+
+Classification.create!(
+  game_id: 7,
+  main_class: 'Mechanisms',
+  sub_class: 'Acting'
+)
+Classification.create!(
+  game_id: 7,
+  main_class: 'Mechanisms',
+  sub_class: 'Hand Management'
+)
+
+Classification.create!(
+  game_id: 7,
+  main_class: 'Mechanisms',
+  sub_class: 'Line Drawing'
+)
+Classification.create!(
+  game_id: 7,
+  main_class: 'Mechanisms',
+  sub_class: 'Pattern Recognition'
+)
+
+Classification.create!(
+  game_id: 7,
+  main_class: 'Mechanisms',
+  sub_class: 'Variable Player Powers'
+)
+
+# The Fox in the Forest
+
+Classification.create!(
+  game_id: 8,
+  main_class: 'Type',
+  sub_class: 'Family'
+)
+
+Classification.create!(
+  game_id: 8,
+  main_class: 'Category',
+  sub_class: 'Animals'
+)
+
+Classification.create!(
+  game_id: 8,
+  main_class: 'Category',
+  sub_class: 'Card Game'
+)
+
+Classification.create!(
+  game_id: 8,
+  main_class: 'Category',
+  sub_class: 'Fantasy'
+)
+
+Classification.create!(
+  game_id: 8,
+  main_class: 'Mechanisms',
+  sub_class: 'Hand Management'
+)
+
+Classification.create!(
+  game_id: 8,
+  main_class: 'Mechanisms',
+  sub_class: 'Trick-taking'
+)
+
+# Gloom
+
+Classification.create!(
+  game_id: 9,
+  main_class: 'Type',
+  sub_class: 'Thematic'
+)
+
+Classification.create!(
+  game_id: 9,
+  main_class: 'Category',
+  sub_class: 'Card Game'
+)
+
+Classification.create!(
+  game_id: 9,
+  main_class: 'Category',
+  sub_class: 'Horror'
+)
+
+Classification.create!(
+  game_id: 9,
+  main_class: 'Category',
+  sub_class: 'Humor'
+)
+
+Classification.create!(
+  game_id: 9,
+  main_class: 'Mechanisms',
+  sub_class: 'Hand Management'
+)
+
+Classification.create!(
+  game_id: 9,
+  main_class: 'Mechanisms',
+  sub_class: 'Layering'
+)
+
+Classification.create!(
+  game_id: 9,
+  main_class: 'Mechanisms',
+  sub_class: 'Lose a Turn'
+)
+
+Classification.create!(
+  game_id: 9,
+  main_class: 'Mechanisms',
+  sub_class: 'Storytelling'
+)
+
+Classification.create!(
+  game_id: 9,
+  main_class: 'Mechanisms',
+  sub_class: 'Take That'
+)
+
+
+
+# King of Tokyo: Dark Edition
+
+Classification.create!(
+  game_id: 10,
+  main_class: 'Type',
+  sub_class: 'Family'
+)
+
+Classification.create!(
+  game_id: 10,
+  main_class: 'Type',
+  sub_class: 'Party'
+)
+
+Classification.create!(
+  game_id: 10,
+  main_class: 'Category',
+  sub_class: 'Dice'
+)
+
+Classification.create!(
+  game_id: 10,
+  main_class: 'Category',
+  sub_class: 'Fighting'
+)
+
+Classification.create!(
+  game_id: 10,
+  main_class: 'Category',
+  sub_class: 'Movies / TV / Radio theme'
+)
+
+Classification.create!(
+  game_id: 10,
+  main_class: 'Category',
+  sub_class: 'Science Fiction'
+)
+
+Classification.create!(
+  game_id: 10,
+  main_class: 'Mechanisms',
+  sub_class: 'Dice Rolling'
+)
+
+Classification.create!(
+  game_id: 10,
+  main_class: 'Mechanisms',
+  sub_class: 'King of the Hill'
+)
+
+Classification.create!(
+  game_id: 10,
+  main_class: 'Mechanisms',
+  sub_class: 'Open Drafting'
+)
+
+Classification.create!(
+  game_id: 10,
+  main_class: 'Mechanisms',
+  sub_class: 'Player Elimination'
+)
+
+Classification.create!(
+  game_id: 10,
+  main_class: 'Mechanisms',
+  sub_class: 'Push Your Luck'
+)
+
+

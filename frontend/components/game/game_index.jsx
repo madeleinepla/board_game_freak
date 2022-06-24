@@ -15,22 +15,25 @@ class GameIndex extends React.Component {
     return (
       <div className='main-content'>
         <table className='index-table'>
-          <tr className='index-table-headers'>
-            <th className='table-rank'>Board Game Rank</th>
-            <th className='table-img'></th>
-            <th className='table-title'>Title</th>
-            <th className='table-your-rating'>Your Rating</th>
-            <th className='table-freak-rating'>Freak Rating</th>
-            <th className='table-avg-rating'>Avg Rating</th>
-            <th className='table-num-voters'>Num Voters</th>
-            <th className='table-status'>Status</th>
-            <th className='table-your-plays'>Your Plays</th>
-            <th className='table-shop'>Shop</th>
-          </tr>
+          <thead>
+            <tr className='index-table-headers'>
+              <th className='table-rank'>Board Game Rank</th>
+              <th className='table-img'></th>
+              <th className='table-title'>Title</th>
+              <th className='table-your-rating'>Your Rating</th>
+              <th className='table-freak-rating'>Freak Rating</th>
+              <th className='table-avg-rating'>Avg Rating</th>
+              <th className='table-num-voters'>Num Voters</th>
+              <th className='table-status'>Status</th>
+              <th className='table-your-plays'>Your Plays</th>
+              <th className='table-shop'>Shop</th>
+            </tr>
+          </thead>
 
+          <tbody>
           {
-            games.map(game => (
-              <tr>
+            games.map((game, i) => (
+              <tr key={i}>
                 <td className='table-rank'>{game.id}</td>
                 <td className='table-img'>
                   <Link to={`/games/${game.id}`}>
@@ -55,6 +58,7 @@ class GameIndex extends React.Component {
             )
           )
         }
+          </tbody>
         </table>
       </div>
     )

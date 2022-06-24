@@ -24,7 +24,17 @@ class ListShow extends React.Component {
     }
 
     let editDate = new Date(list.updated_at)
-    editDate = editDate.toDateString().split(" ").slice(1, 3).join(" ");
+    let now = new Date(Date.now());
+    let yesterday = new Date();
+    yesterday.setDate(yesterday.getDate() - 1);
+
+    if (editDate.toDateString() == now.toDateString()) {
+      editDate = 'Today';
+    } else if (editDate.toDateString() == yesterday.toDateString()) {
+      editDate = 'Yesterday';
+    } else {
+      editDate = editDate.toDateString().split(" ").slice(1, 3).join(" ");
+    }
 
     return <div className='main-content'>
       <div className='list-show-header'>
@@ -41,7 +51,7 @@ class ListShow extends React.Component {
             <li>author name</li>
             <li>{ list.author ? list.author.username : ''}</li>
             <li>•</li>
-            <li>{editDate}</li>
+            <li>Edited {editDate}</li>
           </ul>
         </div>
 
@@ -55,9 +65,12 @@ class ListShow extends React.Component {
             </div>
           })
         }
+
+        <button className='list-edit-btn'><Link to={`/lists/${list.id}/edit`}>Edit Description</Link></button>
+        <button className='listitem-new-btn'><Link to={'/lists_item/new'}>+ Add Item</Link></button>
       </div>
 
-      <button className='listitem-new-btn'><Link to={'/lists_item/new'}>+ Add Item</Link></button>
+      
       
       <p>List item 1</p>
       <p>List item 2</p>

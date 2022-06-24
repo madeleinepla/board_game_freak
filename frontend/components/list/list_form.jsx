@@ -20,6 +20,7 @@ class ListForm extends React.Component {
   }
 
   render() {
+    // debugger;
     return <div className='main-content'>
       <h1 className='list-form-title'>{this.props.formType}</h1>
 

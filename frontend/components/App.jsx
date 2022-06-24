@@ -8,6 +8,7 @@ import GameShowContainer from "./game/game_show_container";
 import ListIndexContainer from "./list/list_index_container";
 import ListShowContainer from "./list/list_show_container";
 import CreateListFormContainer from "./list/create_list_form_container";
+import EditListFormContainer from "./list/edit_list_form_container";
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
 import Home from "./home/home";
 import Footer from "./footer/footer";
@@ -28,9 +29,9 @@ const App = () => (
         <Route exact path="/games" component={GameIndexContainer} />
         <Route path="/games/:gameId" component={GameShowContainer} />
         <Route exact path="/lists" component={ListIndexContainer} />
-        <Route path="/lists/:listId" component={ListShowContainer} />
-        <ProtectedRoute path="/lists/new" component={CreateListFormContainer} />
-        <ProtectedRoute path="/list_item/new" component={<h1>New List Item Form</h1>} />
+        <ProtectedRoute exact path="/lists/new" component={CreateListFormContainer} />
+        <Route exact path="/lists/:listId" component={ListShowContainer} />
+        <ProtectedRoute exact path="/lists/:listId/edit" component={EditListFormContainer} />
       </Switch>
     </div>
 

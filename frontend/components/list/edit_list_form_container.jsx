@@ -1,53 +1,44 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { requestReport, updateReport } from '../../actions/report_actions';
-import ReportForm from './report_form';
+import { requestList, updateList } from '../../actions/list_actions';
+import ListForm from './list_form';
 
-/*
-Export a container component for the `EditReportForm` component given below that
-will be used to edit an existing report. The `EditReportForm` component should
-fetch the report being edited when it successfully mounts to the DOM and will
-only render the `ReportForm` once it has received that report.
-
-In the container, pass in the report being edited as a `report` prop along with
-a `formType` prop set to the string 'Update Report'. The edit form should
-pre-fill each field with the report's values. Additionally, map in a function
-that will dispatch `requestReport` as a prop of the same name, and one that will
-dispatch the appropriate action to the store on form submission as an `action`
-prop.
-
-**Do NOT modify the `render` function provided for the `EditReportForm`.**
-*/
-
-class EditReportForm extends React.Component {
+class EditListForm extends React.Component {
   componentDidMount() {
-    this.props.requestReport(this.props.report.id)
+    this.props.requestList(this.props.match.params.listId)
   }
 
   render() {
-    // DO NOT MODIFY THIS FUNCTION
-    const { action, formType, report } = this.props;
+    const { action, formType, list, history } = this.props;
+    // debugger;
 
-    // Hint: The report will not exist on the first render - what do we need to 
-    // do to get it?
-    if (!report) return null;
+    if (!list) return null;
     return (
-      <ReportForm
+      <ListForm
         action={action}
         formType={formType}
-        report={report} />
+        list={list} 
+        history={history}
+      />
     );
   }
 }
 
-const mSTP = (state, ownProps) => ({
-  report: state.reports[ownProps.match.params.reportId],
-  formType: 'Update Report'
-})
+// const mSTP = (state, ownProps) => ({
+//   report: state.lists[ownProps.match.params.listId],
+//   formType: 'Edit FreakList'
+// })
+const mSTP = (state, { match }) => {
+  // debugger;
+  return {
+  list: state.entities.lists[match.params.listId],
+  formType: 'Edit FreakList'
+  }
+}
 
 const mDTP = dispatch => ({
-  action: report => dispatch(updateReport(report)),
-  requestReport: (reportId) => dispatch(requestReport(reportId))
+  action: list => dispatch(updateList(list)),
+  requestList: (listId) => dispatch(requestList(listId))
 })
 
-export default connect(mSTP, mDTP)(EditReportForm);
+export default connect(mSTP, mDTP)(EditListForm);

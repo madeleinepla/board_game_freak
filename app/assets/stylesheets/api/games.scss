@@ -192,8 +192,13 @@
 }
 
 .game-body-classification li {
+  line-height: 1.25;
+}
+
+.game-body-classification li * {
   color: rgb(40, 70, 180);
   font-size: 14px;
+  text-decoration: none;
 }
 
 
