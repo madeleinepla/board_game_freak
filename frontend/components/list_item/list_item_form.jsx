@@ -8,19 +8,24 @@ class ListItemForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this)
   }
 
+  // componentDidMount() {
+  //   this.setState({ list_id: this.props.match.params.listId })
+  // }
+
   update(field) {
     return e => this.setState({ [field]: e.target.value })
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.action(this.state);
-    this.props.history.push('/lists');
+    const listId = this.props.match.params.listId;
+    this.props.action(listId, this.state);
+    this.props.history.push(`/lists/${listId}`);
 
   }
 
   render() {
-    debugger;
+    // debugger;
     return <div className='main-content'>
       <h1 className='list-item-form-title'>{this.props.formType}</h1>
 

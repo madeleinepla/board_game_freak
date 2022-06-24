@@ -1,6 +1,7 @@
 class Api::ListItemsController < ApplicationController
   def create
     @list_item = ListItem.new(list_item_params)
+    
     if @list_item.save
       render :show
     else
@@ -37,6 +38,7 @@ class Api::ListItemsController < ApplicationController
   private
   
   def list_item_params
-    params.require(:list_item).permit(:title, :body, :list_id, :game_id)
+    debugger
+    params.require(:listItem).permit(:title, :body, :list_id, :game_id)
   end
 end

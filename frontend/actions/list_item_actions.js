@@ -13,22 +13,27 @@ const removeListItem = listItemId => ({
   listItemId
 })
 
-export const requestListItem = (listItemId) => dispatch => (
-  ListItemApiUtil.fetchListItem(listItemId)
+export const requestListItem = (listId, listItemId) => dispatch => (
+  ListItemApiUtil.fetchListItem(listId, listItemId)
     .then(listItem => dispatch(receiveListItem(listItem)))
 );
 
-export const createListItem = (listItem) => dispatch => (
-  ListItemApiUtil.createListItem(listItem)
+// export const createListItem = (listId, listItem) => dispatch => (
+//   ListItemApiUtil.createListItem(listId, listItem)
+//     .then(listItem => dispatch(receiveListItem(listItem)))
+// )
+
+export const createListItem = (listId, listItem) => dispatch => (
+  ListItemApiUtil.createListItem(listId, listItem)
+    .then(listItem => console.log(listItem))
+)
+
+export const updateListItem = (listId, listItem) => dispatch => (
+  ListItemApiUtil.updateListItem(listId, listItem)
     .then(listItem => dispatch(receiveListItem(listItem)))
 )
 
-export const updateListItem = (listItem) => dispatch => (
-  ListItemApiUtil.updateListItem(listItem)
-    .then(listItem => dispatch(receiveListItem(listItem)))
-)
-
-export const deleteListItem = (listItemId) => dispatch => (
-  ListItemApiUtil.deleteListItem(listItemId)
+export const deleteListItem = (listId, listItemId) => dispatch => (
+  ListItemApiUtil.deleteListItem(listId, listItemId)
     .then(() => dispatch(removeListItem(listItemId)))
 )

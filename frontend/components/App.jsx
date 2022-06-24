@@ -33,7 +33,7 @@ const App = () => (
         <ProtectedRoute exact path="/lists/new" component={CreateListFormContainer} />
         <Route exact path="/lists/:listId" component={ListShowContainer} />
         <ProtectedRoute exact path="/lists/:listId/edit" component={EditListFormContainer} />
-        <ProtectedRoute exact path="/list_items/new" component={CreateListItemFormContainer} />
+        <ProtectedRoute exact path="/lists/:listId/list_items/new" component={CreateListItemFormContainer} />
       </Switch>
     </div>
 

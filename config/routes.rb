@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     resources :games, only: [:show, :index]
 
     resources :lists, only: [:create, :update, :show, :index, :destroy] do
-        resources :list_items
+      resources :list_items
     end
 
   end
