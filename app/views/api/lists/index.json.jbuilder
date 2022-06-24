@@ -5,5 +5,6 @@
     json.title list.title
     json.body list.body
     json.created_at list.created_at
+    json.author list.author
   end
 end

@@ -7,10 +7,13 @@ class ListShow extends React.Component {
 
   componentDidMount() {
     window.scrollTo(0, 0);
-    this.props.requestList(this.props.match.params.listId)
+    // this.props.requestUsers();
+    // debugger;
+    this.props.requestList(this.props.match.params.listId);
   }
 
   render() {
+    // const { list, author } = this.props
     const { list } = this.props
     // debugger;
 
@@ -18,6 +21,9 @@ class ListShow extends React.Component {
     if (list.body) {
       bodyParagraphs = list.body.split("\n")
     }
+
+    let editDate = new Date(list.updated_at)
+    editDate = editDate.toDateString().split(" ").slice(1, 3).join(" ");
 
     return <div className='main-content'>
       <div className='list-show-header'>
@@ -32,9 +38,9 @@ class ListShow extends React.Component {
           </h1>
           <ul>
             <li>author name</li>
-            <li>author username</li>
+            <li>{ list.author ? list.author.username : ''}</li>
             <li>•</li>
-            <li>last edited</li>
+            <li>{editDate}</li>
           </ul>
         </div>
 
@@ -49,6 +55,10 @@ class ListShow extends React.Component {
           })
         }
       </div>
+
+      <p>List item 1</p>
+      <p>List item 2</p>
+      <p>List item 3</p>
     </div>
   }
 }

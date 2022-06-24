@@ -28,8 +28,8 @@ const NavBar = ({ currentUser, logout }) => {
         </button>
         <div className="dropdown-content">
           <Link to="/games">All Boardgames</Link>
-          <a href="#">Categories</a>
-          <a href="#">Artists</a>
+          <Link to="/games">Categories</Link>
+          <Link to="/games">Artists</Link>
         </div>
       </div>
 
@@ -39,7 +39,7 @@ const NavBar = ({ currentUser, logout }) => {
         </button>
         <div className="dropdown-content">
           <Link to="/lists">Hot</Link>
-          <a href="#">Recent</a>
+          <Link to="/lists">Recent</Link>
           <Link to="/lists/mylists">My FreakLists</Link>
           <Link to="/lists/new">Create New</Link>
         </div>
