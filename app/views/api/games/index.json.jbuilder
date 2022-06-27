@@ -10,5 +10,10 @@
     json.year game.year
     json.tagline game.tagline
     json.header_img game.header_img
+    json.classifications game.classifications
   end
+
+  # json.(game, :id, :title, :tagline, :description, :year, :designer, :artist, 
+  # :publisher, :min_players, :max_players, :min_playtime, :max_playtime, :age, :header_img, :bg_img)
+  
 end

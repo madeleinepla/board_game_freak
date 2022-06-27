@@ -4,6 +4,7 @@ import { Route, Switch } from "react-router-dom";
 import LoginFormContainer from "./session/login_form_container";
 import SignupFormContainer from "./session/signup_form_container";
 import GameIndexContainer from "./game/game_index_container";
+import GameClassContainer from "./game/game_class_container";
 import GameShowContainer from "./game/game_show_container";
 import ListIndexContainer from "./list/list_index_container";
 import ListShowContainer from "./list/list_show_container";
@@ -28,7 +29,10 @@ const App = () => (
         <AuthRoute exact path="/login" component={LoginFormContainer} />
         <AuthRoute exact path="/signup" component={SignupFormContainer} />
         <Route exact path="/games" component={GameIndexContainer} />
-        <Route path="/games/:gameId" component={GameShowContainer} />
+        <Route exact path="/games/types" component={GameClassContainer}></Route>
+        <Route exact path="/games/categories" component={GameClassContainer}></Route>
+        <Route exact path="/games/mechanics" component={GameClassContainer}></Route>
+        <Route exact path="/games/:gameId" component={GameShowContainer} />
         <Route exact path="/lists" component={ListIndexContainer} />
         <ProtectedRoute exact path="/lists/new" component={CreateListFormContainer} />
         <Route exact path="/lists/:listId" component={ListShowContainer} />

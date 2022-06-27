@@ -28,8 +28,9 @@ const NavBar = ({ currentUser, logout }) => {
         </button>
         <div className="dropdown-content">
           <Link to="/games">All Boardgames</Link>
-          <Link to="/games">Categories</Link>
-          <Link to="/games">Artists</Link>
+          <Link to="/games/types">Types</Link>
+          <Link to="/games/categories">Categories</Link>
+          <Link to="/games/mechanics">Mechanics</Link>
         </div>
       </div>
 
