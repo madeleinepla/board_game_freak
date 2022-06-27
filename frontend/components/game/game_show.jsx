@@ -120,8 +120,9 @@ class GameShow extends React.Component {
             <ul>
               {
                 type.map((el, i) => {
+                  let query = "?" + el.split(" ").join("-")
                   return <li key={i}>
-                    <Link to="/games">{el}</Link>
+                    <Link to={`/games${query}`}>{el}</Link>
                   </li>
                 })
               }
@@ -131,8 +132,9 @@ class GameShow extends React.Component {
             <ul>
               {
                 category.map((el, i) => {
+                  let query = "?" + el.split(" ").join("-")
                   return <li key={i}>
-                    <Link to="/games">{el}</Link>
+                    <Link to={`/games${query}`}>{el}</Link>
                   </li>
                 })
               }
@@ -142,8 +144,9 @@ class GameShow extends React.Component {
             <ul>
               {
                 mechanisms.map((el, i) => {
+                  let query = "?" + el.split(" ").join("-")
                   return <li key={i}>
-                    <Link to="/games">{el}</Link>
+                    <Link to={`/games${query}`}>{el}</Link>
                   </li>
                 })
               }
