@@ -4,6 +4,6 @@ class FixGameTable < ActiveRecord::Migration[5.2]
     # remove_column :games, :mechanisms
     # remove_column :games, :awards
 
-    add_column :games, :header_img, :string, null: false
+    # add_column :games, :header_img, :string, null: false
   end
 end
