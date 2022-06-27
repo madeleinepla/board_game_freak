@@ -10,7 +10,7 @@ GameClass extends React.Component {
   render() {
     const { games, path, game_classes } = this.props;
     // debugger;
-    return <div>
+    return <div className='main-content'>
       <div className='game-class-title'>
         <h1>Board Game {path.charAt(0).toUpperCase() + path.slice(1)}</h1>
       </div>
@@ -18,7 +18,11 @@ GameClass extends React.Component {
       <div className='game-class-body'>
         <ul>
           {
-            game_classes.map((game_class => <Link to={`/games`}><li>{game_class}</li></Link> )) 
+            game_classes.map((game_class, i) => {
+              let class_url = game_class.split(" ").join("-");
+              return <li key={i}><Link to={`/games?${class_url}`}>{game_class}</Link></li>
+              
+            }) 
           }
         </ul>
       </div>
