@@ -28,8 +28,6 @@ class ListItemForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const title = this.props.games[this.state.game_id - 1].title;
-    this.setState({ title: title });
     const listId = this.props.match.params.listId;
     this.props.action(listId, this.state);
     this.props.history.push(`/lists/${listId}`);
@@ -48,7 +46,7 @@ class ListItemForm extends React.Component {
               <td>Enter Board Game:</td>
               <td>
                 <select value={this.state.value} id="game" onChange={this.update('game_id')}>
-                  <option value="" disabled defaultValue>Select Game</option>
+                  <option value="" disabled selected>Select Game</option>
                   {
                     games.map((game, i) => <option key={i} value={[game.id,game.title]}>{game.title}</option>)
                   }

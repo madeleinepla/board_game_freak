@@ -1,3 +1,81 @@
 // Place all the styles related to the api/list_items controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.list-item {
+  border-bottom: 0.5px solid rgba(0, 0, 0, .6);
+  padding: 20px 0 35px 0;
+  display: flex;
+  flex-direction: row;
+}
+
+.list-item-thumbnail {
+  height: 170px;
+  width: 170px;
+  overflow: hidden;
+  padding: 15px;
+  background-image: linear-gradient(to bottom right, rgb(188, 191, 208), rgb(81, 85, 94));
+  border-radius: 5px;
+  border: 0.5px solid rgba(0, 0, 0, .6);
+  box-shadow: inset 0 0 10px rgb(55, 55, 55);
+  margin-left: 25px;
+}
+
+.list-item-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.list-item-main {
+  margin-left: 20px;
+}
+
+.list-item-info h1 {
+  // display: flex;
+  // flex-direction: column;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.list-item-info > div{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 10px 0 10px 0;
+}
+
+.list-item-prof-pic {
+  height: 40px;
+  width: 40px;
+  background-color: black;
+  margin-right: 15px;
+  border-radius: 3px;
+}
+
+.list-item-btns {
+  margin: -23px 25px 0 25px;
+  background-color: lightgray;
+  border: 0.5px solid rgba(0, 0, 0, .6);
+  border-radius: 5px;
+  padding: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: gray;
+}
+
+.list-item-btns > * {
+  background-color: white;
+  color: gray;
+  border: 0.5px solid rgba(0, 0, 0, .6);
+  border-radius: 5px;
+  padding: 5px 10px 5px 10px;
+  margin-right: 5px;
+}
+
+.list-item-btns *:hover {
+  color: blue;
+  transition: 0.3s;
+}

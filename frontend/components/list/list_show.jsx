@@ -1,6 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import ListItemShowContainer from '../list_item/list_item_show_container';
+// import ListItemShowContainer from '../list_item/list_item_show_container';
+import ListItem from '../list_item/list_item'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faThumbsUp } from '@fortawesome/free-regular-svg-icons';
 
 class ListShow extends React.Component {
   constructor(props) {
@@ -13,8 +16,10 @@ class ListShow extends React.Component {
   }
 
   render() {
-    const { list } = this.props
-    debugger;
+    const { list, currentUserId, deleteListItem } = this.props
+    // debugger;
+
+    if (!(list.body && list.list_items)) return null;
 
     let bodyParagraphs = []
     if (list.body) {
@@ -46,7 +51,7 @@ class ListShow extends React.Component {
             {list.title}
           </h1>
           <ul>
-            <li>author name</li>
+            {/* <li>author name</li> */}
             <li>{ list.author ? list.author.username : ''}</li>
             <li>•</li>
             <li>Edited {editDate}</li>
@@ -64,14 +69,29 @@ class ListShow extends React.Component {
           })
         }
 
-        <button className='list-edit-btn'><Link to={`/lists/${list.id}/edit`}>Edit Description</Link></button>
-        <button className='list-item-new-btn'><Link to={`/lists/${list.id}/list_items/new`}>+ Add Item</Link></button>
+        {
+          list.author.id === currentUserId ?
+          <div>
+            <button><FontAwesomeIcon icon={faThumbsUp} /> likes</button>
+            <button className='list-edit-btn'><Link to={`/lists/${list.id}/edit`}>Edit Description</Link></button>
+            <button className='list-item-new-btn'><Link to={`/lists/${list.id}/list_items/new`}>+ Add Item</Link></button>
+          </div> :
+          <button><FontAwesomeIcon icon={faThumbsUp} /> likes</button>
+        }
+        
       </div>
 
       {
-        list.list_items ?
-        list.list_items.map((item) => <ListItemShowContainer></ListItemShowContainer>) :
-        ''
+        list.list_items.map((item, i) => {
+          return <ListItem 
+            key={i}
+            order={i} 
+            item={item} 
+            author={list.author} 
+            currentUserId={currentUserId} 
+            deleteListItem={deleteListItem}
+          />
+        })
       }
     </div>
   }
