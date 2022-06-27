@@ -44,7 +44,6 @@ export const fetchListItem = (listId, listItemId) => (
 // )
 
 export const createListItem = (listId, listItem) => {
-  debugger;
   return $.ajax({
     url: `/api/lists/${listId}/list_items`,
     method: 'POST',

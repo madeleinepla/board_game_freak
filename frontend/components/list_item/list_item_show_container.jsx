@@ -4,9 +4,9 @@ import { requestListItem } from '../../actions/list_item_actions';
 import { selectListItem } from '../../reducers/selectors';
 
 const mSTP = (state, { match }) => {
+  debugger;
   const listItemId = parseInt(match.params.listItemId);
   const listItem = selectListItem(state.entities, listItemId);
-  // debugger;
   return {
     listItemId,
     listItem,

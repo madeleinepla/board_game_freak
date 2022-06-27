@@ -73,9 +73,9 @@ const NavBar = ({ currentUser, logout }) => {
       
     </div>
 
-    <div className='navbar-search'>
-      {/* <SearchContainer></SearchContainer> */}
-    </div>
+    {/* <div className='navbar-search'>
+      <SearchContainer></SearchContainer>
+    </div> */}
   </div>
 };
 

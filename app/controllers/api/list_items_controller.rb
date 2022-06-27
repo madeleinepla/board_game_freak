@@ -38,7 +38,6 @@ class Api::ListItemsController < ApplicationController
   private
   
   def list_item_params
-    debugger
     params.require(:listItem).permit(:title, :body, :list_id, :game_id)
   end
 end

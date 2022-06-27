@@ -4,10 +4,10 @@ import { requestList } from '../../actions/list_actions';
 import { selectList } from '../../reducers/selectors';
 
 const mSTP = (state, { match }) => {
+  // debugger;
   const listId = parseInt(match.params.listId);
   const list = selectList(state.entities, listId);
 
-  // debugger;
   return {
     listId,
     list

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import ListItemShowContainer from '../list_item/list_item_show_container';
 
 class ListShow extends React.Component {
   constructor(props) {
@@ -8,15 +9,12 @@ class ListShow extends React.Component {
 
   componentDidMount() {
     window.scrollTo(0, 0);
-    // this.props.requestUsers();
-    // debugger;
     this.props.requestList(this.props.match.params.listId);
   }
 
   render() {
-    // const { list, author } = this.props
     const { list } = this.props
-    // debugger;
+    debugger;
 
     let bodyParagraphs = []
     if (list.body) {
@@ -70,11 +68,11 @@ class ListShow extends React.Component {
         <button className='list-item-new-btn'><Link to={`/lists/${list.id}/list_items/new`}>+ Add Item</Link></button>
       </div>
 
-      
-      
-      <p>List item 1</p>
-      <p>List item 2</p>
-      <p>List item 3</p>
+      {
+        list.list_items ?
+        list.list_items.map((item) => <ListItemShowContainer></ListItemShowContainer>) :
+        ''
+      }
     </div>
   }
 }

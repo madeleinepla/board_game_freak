@@ -13,7 +13,7 @@ class ListItemShow extends React.Component {
 
   render() {
     const { listItem } = this.props
-    // debugger;
+    debugger;
 
     let bodyParagraphs = []
     if (listItem.body) {
