@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import ReactDOM from 'react-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCaretDown, faPowerOff } from '@fortawesome/free-solid-svg-icons'
+import SearchContainer from '../search/search_container';
 
 
 const NavBar = ({ currentUser, logout }) => {
@@ -72,9 +73,9 @@ const NavBar = ({ currentUser, logout }) => {
       
     </div>
 
-    {/* <div className='navbar-search'>
-      <input type="text" value='search'/>
-    </div> */}
+    <div className='navbar-search'>
+      {/* <SearchContainer></SearchContainer> */}
+    </div>
   </div>
 };
 

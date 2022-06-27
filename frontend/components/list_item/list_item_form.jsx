@@ -8,23 +8,36 @@ class ListItemForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this)
   }
 
-  // componentDidMount() {
-  //   this.setState({ list_id: this.props.match.params.listId })
-  // }
+  componentDidMount() {
+    // this.setState({ list_id: this.props.match.params.listId })
+    this.props.requestGames()
+  }
 
   update(field) {
-    return e => this.setState({ [field]: e.target.value })
+    // debugger;
+    // return e => this.setState({ [field]: e.target.value })
+    if(field === 'game_id') {
+      return e => {
+        let gameInfo = e.target.value.split(",");
+        return this.setState({ game_id: gameInfo[0], title: gameInfo[1] })
+      }
+    } else {
+      return e => this.setState({ [field]: e.target.value })
+    }
   }
 
   handleSubmit(e) {
     e.preventDefault();
+    const title = this.props.games[this.state.game_id - 1].title;
+    this.setState({ title: title });
+    debugger;
     const listId = this.props.match.params.listId;
     this.props.action(listId, this.state);
     this.props.history.push(`/lists/${listId}`);
-
   }
 
   render() {
+    const { games } = this.props;
     // debugger;
     return <div className='main-content'>
       <h1 className='list-item-form-title'>{this.props.formType}</h1>
@@ -35,11 +48,12 @@ class ListItemForm extends React.Component {
             <tr>
               <td>Enter Board Game:</td>
               <td>
-                <input
-                  type="text"
-                  value={this.state.title}
-                  onChange={this.update('title')}
-                />
+                <select value={this.state.value} id="game" onChange={this.update('game_id')}>
+                  {
+                    games.map((game, i) => <option key={i} value={[game.id,game.title]}>{game.title}</option>)
+                  }
+                </select>
+                
               </td>
             </tr>
 

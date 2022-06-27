@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import { createListItem } from '../../actions/list_item_actions';
+import { requestGames } from '../../actions/game_actions';
 import ListItemForm from './list_item_form';
 
 const mSTP = (state, { match }) => {
@@ -9,14 +10,16 @@ const mSTP = (state, { match }) => {
       title: '',
       body: '',
       list_id: parseInt(match.params.listId),
-      game_id: 1
+      game_id: ''
     },
-    formType: 'Add Item'
+    formType: 'Add Item',
+    games: Object.values(state.entities.games)
   }
 }
 
 const mDTP = dispatch => ({
-  action: (listId, listItem) => dispatch(createListItem(listId, listItem))
+  action: (listId, listItem) => dispatch(createListItem(listId, listItem)),
+  requestGames: () => dispatch(requestGames()),
 })
 
 export default connect(mSTP, mDTP)(ListItemForm);
