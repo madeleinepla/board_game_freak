@@ -14,8 +14,9 @@ class ListForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    this.props.errors.list = []
     this.props.action(this.state)
-      .then(() => (this.props.history.push(`/lists/${this.props.list.id}`)))
+      .then(() => (this.props.history.push(`/lists/mylists`)))
   }
 
   renderErrors() {
@@ -39,7 +40,7 @@ class ListForm extends React.Component {
 
       <form onSubmit={this.handleSubmit} className='list-form'>
         <h2 className='list-form-err'>{this.renderErrors()}</h2> 
-        {this.props.errors.list = []}
+        {/* {this.props.errors.list = []} */}
 
         <table>
           <tbody>

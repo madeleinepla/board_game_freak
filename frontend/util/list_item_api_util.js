@@ -35,14 +35,6 @@ export const fetchListItem = (listId, listItemId) => (
   })
 );
 
-// export const createListItem = (listId, listItem) => (
-//   $.ajax({
-//     url: `/api/lists/${listId}/list_items`,
-//     method: 'POST',
-//     data: { listItem }
-//   })
-// )
-
 export const createListItem = (listId, listItem) => {
   return $.ajax({
     url: `/api/lists/${listId}/list_items`,
@@ -65,3 +57,15 @@ export const deleteListItem = (listId, listItemId) => (
     method: 'DELETE'
   })
 )
+
+export const postLikeToItem = (listItemId) => $.ajax({
+  url: `/api/list_item_likes`,
+  method: 'POST',
+  data: { listItemId },
+});
+
+export const deleteLikeFromItem = (listItemId) => $.ajax({
+  url: `/api/list_item_likes`,
+  method: 'DELETE',
+  data: { listItemId },
+});

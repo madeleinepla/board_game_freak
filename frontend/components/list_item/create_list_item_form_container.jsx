@@ -6,6 +6,7 @@ import ListItemForm from './list_item_form';
 const mSTP = (state, { match }) => {
   // debugger;
   return {
+    errors: state.errors,
     listItem: {
       title: '',
       body: '',

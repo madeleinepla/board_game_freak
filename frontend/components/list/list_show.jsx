@@ -16,7 +16,7 @@ class ListShow extends React.Component {
   }
 
   render() {
-    const { list, currentUserId, deleteListItem, likeList, unlikeList } = this.props
+    const { list, currentUserId, deleteList, deleteListItem, likeList, unlikeList } = this.props
     // debugger;
 
     if (!(list.body && list.list_items)) return null;
@@ -40,10 +40,19 @@ class ListShow extends React.Component {
     }
 
     let likeButtonAction;
-    if (list.liked_by_current_user) {
-      likeButtonAction = () => unlikeList(list.id);
+    if (currentUserId) {
+      if (list.liked_by_current_user) {
+        likeButtonAction = () => unlikeList(list.id);
+      } else {
+        likeButtonAction = () => likeList(list.id);
+      }
     } else {
-      likeButtonAction = () => likeList(list.id);
+      likeButtonAction = () => this.props.history.push('/login')
+    }
+
+    const handleDelete = () => {
+      deleteList(list.id)
+        .then(() => (this.props.history.push(`/lists/mylists`)))
     }
 
     return <div className='main-content'>
@@ -84,6 +93,7 @@ class ListShow extends React.Component {
             </button>
             <button className='list-edit-btn'><Link to={`/lists/${list.id}/edit`}>Edit Description</Link></button>
             <button className='list-item-new-btn'><Link to={`/lists/${list.id}/list_items/new`}>+ Add Item</Link></button>
+            <button className='list-item-delete-btn' onClick={() => handleDelete()}>Delete</button>
           </div> :
           <div className='list-btns'>
             <button onClick={likeButtonAction} className={list.liked_by_current_user ? 'liked' : ''}>

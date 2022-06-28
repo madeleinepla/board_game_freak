@@ -58,7 +58,7 @@ const ListItem = ({ order, item, author, currentUserId, deleteListItem }) => {
       author.id === currentUserId ?
       <div className='list-item-btns'>
         <button><FontAwesomeIcon icon={faThumbsUp} /> likes</button>
-        <button className='list-item-edit-btn'><Link to={`/list_items/${item.id}/edit`}>Edit</Link></button>
+          <button className='list-item-edit-btn'><Link to={`/lists/${item.list_id}/list_items/${item.id}/edit`}>Edit</Link></button>
         <button className='list-item-delete-btn' onClick={() => handleClick()}>Delete</button>
       </div> :
         <div className='list-item-btns'>

@@ -11,6 +11,7 @@ import ListShowContainer from "./list/list_show_container";
 import CreateListFormContainer from "./list/create_list_form_container";
 import EditListFormContainer from "./list/edit_list_form_container";
 import CreateListItemFormContainer from "./list_item/create_list_item_form_container";
+import EditListItemFormContainer from "./list_item/edit_list_item_form_container";
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
 import Home from "./home/home";
 import Footer from "./footer/footer";
@@ -40,6 +41,7 @@ const App = () => (
         <Route exact path="/lists/:listId" component={ListShowContainer} />
         <ProtectedRoute exact path="/lists/:listId/edit" component={EditListFormContainer} />
         <ProtectedRoute exact path="/lists/:listId/list_items/new" component={CreateListItemFormContainer} />
+        <ProtectedRoute exact path="/lists/:listId/list_items/:listItemId/edit" component={EditListItemFormContainer} />
       </Switch>
     </div>
 

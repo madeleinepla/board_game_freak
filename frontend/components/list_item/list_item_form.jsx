@@ -28,9 +28,22 @@ class ListItemForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    this.props.errors.listItem = []
     const listId = this.props.match.params.listId;
-    this.props.action(listId, this.state);
-    this.props.history.push(`/lists/${listId}`);
+    this.props.action(listId, this.state)
+      .then(() => (this.props.history.push(`/lists/${listId}`)))
+  }
+
+  renderErrors() {
+    return (
+      <ul>
+        {this.props.errors.listItem.map((error, i) => (
+          <li key={`error-${i}`}>
+            {error}
+          </li>
+        ))}
+      </ul>
+    );
   }
 
   render() {
@@ -40,6 +53,8 @@ class ListItemForm extends React.Component {
       <h1 className='list-item-form-title'>{this.props.formType}</h1>
 
       <form onSubmit={this.handleSubmit} className='list-item-form'>
+        <h2 className='list-item-form-err'>{this.renderErrors()}</h2>
+        {/* {this.props.errors.listItem = []} */}
         <table>
           <tbody>
             <tr>

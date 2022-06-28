@@ -5,7 +5,7 @@ class Api::ListItemsController < ApplicationController
     if @list_item.save
       render :show
     else
-      render @list_item.errors.full_messages, status: 401
+      render json: ["Error - Missing game and/or comments"], status: 401
     end
   end
   
@@ -16,7 +16,7 @@ class Api::ListItemsController < ApplicationController
     elsif !@list_item
       render json: ['Could not locate list item'], status: 400
     else
-      render json: @list_item.errors.full_messages, status: 401
+      render json: ["Error - Missing game and/or comments"], status: 401
     end
   end
   
