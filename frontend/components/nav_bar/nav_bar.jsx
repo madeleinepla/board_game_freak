@@ -1,12 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import ReactDOM from 'react-dom'
+// import { useHistory } from "react-router";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCaretDown, faPowerOff } from '@fortawesome/free-solid-svg-icons'
-import SearchContainer from '../search/search_container';
+// import SearchContainer from '../search/search_container';
 
 
 const NavBar = ({ currentUser, logout }) => {
+
+  // const history = useHistory();
+  // const handleLogout = () => history.push('/');
 
   return <div className='navbar'>
     
@@ -40,8 +44,8 @@ const NavBar = ({ currentUser, logout }) => {
           FreakLists <FontAwesomeIcon icon={faCaretDown} className='caret' />
         </button>
         <div className="dropdown-content">
-          <Link to="/lists">Hot</Link>
-          <Link to="/lists">Recent</Link>
+          <Link to="/lists/hot">Hot</Link>
+          <Link to="/lists/recent">Recent</Link>
           <Link to="/lists/mylists">My FreakLists</Link>
           <Link to="/lists/new">Create New</Link>
         </div>

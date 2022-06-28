@@ -16,7 +16,6 @@ class ListForm extends React.Component {
     e.preventDefault();
     this.props.action(this.state);
     this.props.history.push('/lists');
-
   }
 
   render() {

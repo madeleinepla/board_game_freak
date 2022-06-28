@@ -71,12 +71,14 @@ class ListShow extends React.Component {
 
         {
           list.author.id === currentUserId ?
-          <div>
+          <div className='list-btns'>
             <button><FontAwesomeIcon icon={faThumbsUp} /> likes</button>
             <button className='list-edit-btn'><Link to={`/lists/${list.id}/edit`}>Edit Description</Link></button>
             <button className='list-item-new-btn'><Link to={`/lists/${list.id}/list_items/new`}>+ Add Item</Link></button>
           </div> :
-          <button><FontAwesomeIcon icon={faThumbsUp} /> likes</button>
+          <div className='list-btns'>
+            <button><FontAwesomeIcon icon={faThumbsUp} /> likes</button>
+          </div>
         }
         
       </div>

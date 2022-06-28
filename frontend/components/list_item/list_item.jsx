@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faThumbsUp } from '@fortawesome/free-regular-svg-icons';
+import { useHistory } from "react-router-dom";
 
 const ListItem = ({ order, item, author, currentUserId, deleteListItem }) => {
   let bodyParagraphs = []
@@ -9,9 +10,13 @@ const ListItem = ({ order, item, author, currentUserId, deleteListItem }) => {
     bodyParagraphs = item.body.split("\n")
   }
 
+  let history = useHistory();
   const handleClick = () => {
     deleteListItem(item.list_id, item.id);
+    // history.push(`/lists/${item.list_id}`)
+    history.go(0)
   }
+
   // debugger;
   return <div>
     <div className='list-item'>

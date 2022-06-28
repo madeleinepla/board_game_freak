@@ -10,16 +10,15 @@ class ListIndex extends React.Component {
 
   componentDidMount() {
     this.props.requestLists();
-    // this.props.requestUsers();
   }
 
   render() {
-    const { lists } = this.props;
+    const { lists, orderBy } = this.props;
     // debugger;
     return (
       <div className='main-content'>
         <div className='list-index'>
-          <h1>FreakLists</h1>
+          <h1>{orderBy} FreakLists</h1>
           <button className='list-new-btn'><Link to={'/lists/new'}>+ Create FreakList</Link></button>
           
           <ul className='list-listings'>
@@ -39,13 +38,22 @@ class ListIndex extends React.Component {
                   postDate = postDate.toDateString().split(" ").slice(1,3).join(" ");
                 }
 
-                // debugger;
                 return <li key={i} className='list-listing'>
-                  <div className='list-listing-thumbnail'>
-                    <Link to={`/lists/${list.id}`}>
-                      image
+                  <div >
+                    <Link className='list-listing-thumbnail' to={`/lists/${list.id}`}>
+                      {
+                        list.list_items.map((list_item, i) => {
+                          if(i < 3 && list_item.game) {
+                            let thumbnailImg = list.list_items[i].game.header_img
+                            return <div key={i} className='list-listing-thumbnail-sub'>
+                              <img src={thumbnailImg} alt="" />
+                            </div>
+                          }
+                        })
+                      }
                     </Link>
                   </div>
+
 
                   <div className='list-listing-info'>
                     <h2><Link to={`/lists/${list.id}`}>{list.title}</Link></h2>

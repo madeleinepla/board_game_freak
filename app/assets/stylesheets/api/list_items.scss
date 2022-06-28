@@ -63,7 +63,7 @@
 
 a {
   text-decoration: none;
-  color: gray;
+  color: inherit
 }
 
 .list-item-btns > * {
@@ -77,5 +77,7 @@ a {
 
 .list-item-btns *:hover {
   color: blue;
+  border-color: blue;
+  background-color: lightgray;
   transition: 0.3s;
 }

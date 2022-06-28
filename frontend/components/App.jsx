@@ -33,7 +33,9 @@ const App = () => (
         <Route exact path="/games/categories" component={GameClassContainer}></Route>
         <Route exact path="/games/mechanics" component={GameClassContainer}></Route>
         <Route exact path="/games/:gameId" component={GameShowContainer} />
-        <Route exact path="/lists" component={ListIndexContainer} />
+        <Route exact path="/lists/hot" component={ListIndexContainer} />
+        <Route exact path="/lists/recent" component={ListIndexContainer} />
+        <ProtectedRoute exact path="/lists/mylists" component={ListIndexContainer} />
         <ProtectedRoute exact path="/lists/new" component={CreateListFormContainer} />
         <Route exact path="/lists/:listId" component={ListShowContainer} />
         <ProtectedRoute exact path="/lists/:listId/edit" component={EditListFormContainer} />
