@@ -4,6 +4,7 @@ import ListForm from './list_form';
 
 const mSTP = state => {
   return {
+    errors: state.errors,
     list: {
       title: '',
       body: '',

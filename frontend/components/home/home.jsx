@@ -133,13 +133,19 @@ class Home extends React.Component {
           <div className='home-lists-carousel'>
             {
               lists.slice(0, 5).map(list => {
+                // debugger;
                 return <Link key={list.id} to={`/lists/${list.id}`} className='home-lists-carousel-item'>
                   <div className='home-lists-thumbnail'>
-                    {/* <img
-                      src={game.header_img}
-                      alt={`${game.title} thumbnail`}
-                    /> */}
-                    <h1>List game pictures</h1>
+                    {
+                      list.list_items.map((list_item, i) => {
+                        if (i < 3 && list_item.game) {
+                          let thumbnailImg = list.list_items[i].game.header_img
+                          return <div key={i} className='home-lists-thumbnail-sub'>
+                            <img src={thumbnailImg} alt="" />
+                          </div>
+                        }
+                      })
+                    }
                   </div>
 
                   <div className='home-lists-info'>

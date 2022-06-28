@@ -388,6 +388,8 @@ body {
 }
 
 .home-hot-thumbnail, .home-lists-thumbnail {
+  display: flex;
+  justify-content: center;
   overflow: hidden;
   height: 150px;
   border-radius: 5px;
@@ -413,6 +415,29 @@ body {
   border-top: 1px solid lightgray;
   border-bottom: 1px solid lightgray;
   margin-top: 15px;
+}
+
+.home-lists-thumbnail {
+  display: flex;
+  flex-direction: row;
+  margin-right: 15px;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: gray;
+}
+
+.home-lists-thumbnail-sub {
+  width: 33%;
+  background-color: gray;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  border: 1px solid white;
+}
+
+.home-lists-thumbnail img {
+  height: 100%;
+  object-fit: contain;
 }
 
 
