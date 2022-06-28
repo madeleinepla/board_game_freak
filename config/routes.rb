@@ -12,6 +12,8 @@ Rails.application.routes.draw do
       resources :list_items
     end
 
+    resources :list_likes, only: [:create, :destroy]
+
   end
 
   root to: 'static_pages#root'

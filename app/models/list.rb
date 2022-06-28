@@ -10,4 +10,9 @@ class List < ApplicationRecord
     primary_key: :id,
     foreign_key: :list_id,
     class_name: :ListItem
+
+  has_many :list_likes, dependent: :destroy,
+    primary_key: :id,
+    foreign_key: :list_id,
+    class_name: :ListLike
 end

@@ -79,6 +79,18 @@
   padding: 10px;
 }
 
+.session-form-err {
+  color: red;
+  margin-bottom: 10px;
+  font-weight: 600;
+  font-size: 14px;
+  margin-left: 15px;
+}
+
+.session-form-err * {
+  list-style-type: circle;
+}
+
 .session-submit, .session-demo {
   background-color: rgb(35, 41, 82);
   color: white;

@@ -5,7 +5,7 @@ class Api::ListsController < ApplicationController
       render :show
     else
       # render @list.errors.full_messages, status: 401
-      render json: ["List must have title and description"], status: 401
+      render json: ["Error - Missing title and/or description"], status: 401
     end
   end
   

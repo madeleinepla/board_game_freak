@@ -23,7 +23,7 @@ class ListForm extends React.Component {
     debugger;
     return (
       <ul>
-        {this.props.errors.session.map((error, i) => (
+        {this.props.errors.list.map((error, i) => (
           <li key={`error-${i}`}>
             {error}
           </li>
@@ -37,9 +37,10 @@ class ListForm extends React.Component {
     return <div className='main-content'>
       <h1 className='list-form-title'>{this.props.formType}</h1>
 
-      {this.renderErrors()}
 
       <form onSubmit={this.handleSubmit} className='list-form'>
+        <h2 className='list-form-err'>{this.renderErrors()}</h2> 
+        
         <table>
           <tbody>
             <tr>

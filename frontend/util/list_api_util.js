@@ -34,3 +34,15 @@ export const deleteList = (listId) => (
     method: 'DELETE'
   })
 )
+
+export const postLikeToList = (listId) => $.ajax({
+  url: '/api/list_likes',
+  method: 'POST',
+  data: { listId },
+});
+
+export const deleteLikeFromList = (listId) => $.ajax({
+  url: '/api/list_likes',
+  method: 'DELETE',
+  data: { listId },
+});

@@ -130,7 +130,7 @@ class SessionForm extends React.Component {
             </label>
             <br />
 
-            {this.renderErrors()}
+            <h2 className='session-form-err'>{this.renderErrors()}</h2>
 
             <br />
 

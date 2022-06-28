@@ -10,6 +10,11 @@ class User < ApplicationRecord
     foreign_key: :author_id,
     class_name: :List
 
+  has_many :list_likes,
+    primary_key: :id,
+    foreign_key: :user_id,
+    class_name: :ListLike
+
   after_initialize :ensure_session_token
 
   def self.find_by_credentials(username, password)
