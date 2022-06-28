@@ -45,7 +45,11 @@ export const createList = (list) => dispatch => (
 
 export const updateList = (list) => dispatch => (
   ListApiUtil.updateList(list)
-    .then(list => dispatch(receiveList(list)))
+    .then(list => (dispatch(receiveList(list))
+  ), err => (
+    dispatch(receiveErrors(err.responseJSON))
+  ))
+  
 )
 
 export const deleteList = (listId) => dispatch => (
@@ -55,10 +59,10 @@ export const deleteList = (listId) => dispatch => (
 
 export const likeList = (listId) => dispatch => (
   ListApiUtil.postLikeToList(listId)
-    .then(list => dispatch(receiveSingleChirp(list)))
+    .then(list => dispatch(receiveList(list)))
 )
 
 export const unlikeList = (listId) => dispatch => (
   ListApiUtil.deleteLikeFromList(listId)
-    .then(list => dispatch(receiveSingleChirp(list)))
+    .then(list => dispatch(receiveList(list)))
 )

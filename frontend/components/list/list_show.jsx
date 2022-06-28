@@ -16,7 +16,7 @@ class ListShow extends React.Component {
   }
 
   render() {
-    const { list, currentUserId, deleteListItem } = this.props
+    const { list, currentUserId, deleteListItem, likeList, unlikeList } = this.props
     // debugger;
 
     if (!(list.body && list.list_items)) return null;
@@ -37,6 +37,13 @@ class ListShow extends React.Component {
       editDate = 'Yesterday';
     } else {
       editDate = editDate.toDateString().split(" ").slice(1, 3).join(" ");
+    }
+
+    let likeButtonAction;
+    if (list.liked_by_current_user) {
+      likeButtonAction = () => unlikeList(list.id);
+    } else {
+      likeButtonAction = () => likeList(list.id);
     }
 
     return <div className='main-content'>
@@ -72,12 +79,16 @@ class ListShow extends React.Component {
         {
           list.author.id === currentUserId ?
           <div className='list-btns'>
-            <button><FontAwesomeIcon icon={faThumbsUp} /> likes</button>
+            <button onClick={likeButtonAction} className={list.liked_by_current_user ? 'liked' : ''}>
+              <FontAwesomeIcon icon={faThumbsUp} /> | {list.likes}
+            </button>
             <button className='list-edit-btn'><Link to={`/lists/${list.id}/edit`}>Edit Description</Link></button>
             <button className='list-item-new-btn'><Link to={`/lists/${list.id}/list_items/new`}>+ Add Item</Link></button>
           </div> :
           <div className='list-btns'>
-            <button><FontAwesomeIcon icon={faThumbsUp} /> likes</button>
+            <button onClick={likeButtonAction} className={list.liked_by_current_user ? 'liked' : ''}>
+              <FontAwesomeIcon icon={faThumbsUp} /> | {list.likes}
+            </button>
           </div>
         }
         

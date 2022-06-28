@@ -14,13 +14,12 @@ class ListForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    debugger;
-    this.props.action(this.state);
-    // this.props.history.push('/lists/mylists');
+    this.props.action(this.state)
+      .then(() => (this.props.history.push(`/lists/${this.props.list.id}`)))
   }
 
   renderErrors() {
-    debugger;
+    // debugger;
     return (
       <ul>
         {this.props.errors.list.map((error, i) => (
@@ -40,7 +39,8 @@ class ListForm extends React.Component {
 
       <form onSubmit={this.handleSubmit} className='list-form'>
         <h2 className='list-form-err'>{this.renderErrors()}</h2> 
-        
+        {this.props.errors.list = []}
+
         <table>
           <tbody>
             <tr>

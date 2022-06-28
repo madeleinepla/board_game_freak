@@ -60,7 +60,7 @@ class ListIndex extends React.Component {
                     <ul>
                       <li>{list.author.username}</li>
                       <li>•</li>
-                      <li><FontAwesomeIcon icon={faThumbsUp} /> likes</li>
+                      <li><FontAwesomeIcon icon={faThumbsUp} /> {list.likes}</li>
                       <li>•</li>
                       <li>{postDate}</li>
                     </ul>

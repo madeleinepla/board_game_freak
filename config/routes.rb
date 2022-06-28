@@ -12,7 +12,8 @@ Rails.application.routes.draw do
       resources :list_items
     end
 
-    resources :list_likes, only: [:create, :destroy]
+    resources :list_likes, only: [:create]
+    delete '/list_likes', to: 'list_likes#destroy'
 
   end
 

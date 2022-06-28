@@ -1,5 +1,9 @@
 json.(@list, :id, :title, :author_id, :title, :body, :created_at, :updated_at)
 json.author @list.author
+json.likes @list.list_likes.count
+if current_user
+  json.liked_by_current_user !!@list.list_likes.find_by(user_id: current_user.id)
+end
 # json.list_items @list.list_items
 json.list_items @list.list_items.each do |list_item|
   json.id list_item.id

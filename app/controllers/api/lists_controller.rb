@@ -16,7 +16,7 @@ class Api::ListsController < ApplicationController
     elsif !@list
       render json: ['Could not locate list'], status: 400
     else
-      render json: @list.errors.full_messages, status: 401
+      render json: ["Error - Missing title and/or description"], status: 401
     end
   end
   

@@ -131,6 +131,7 @@ class SessionForm extends React.Component {
             <br />
 
             <h2 className='session-form-err'>{this.renderErrors()}</h2>
+            {this.props.errors.session = []}
 
             <br />
 

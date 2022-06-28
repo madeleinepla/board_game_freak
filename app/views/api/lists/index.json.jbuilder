@@ -6,6 +6,7 @@
     json.body list.body
     json.created_at list.created_at
     json.author list.author
+    json.likes list.list_likes.count
     
     json.list_items list.list_items.each do |list_item|
       json.id list_item.id
