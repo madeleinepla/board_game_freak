@@ -5,21 +5,23 @@ import { faThumbsUp } from '@fortawesome/free-regular-svg-icons';
 import { useHistory } from "react-router-dom";
 
 const ListItem = ({ order, item, author, currentUserId, deleteListItem, likeItem, unlikeItem }) => {
+
   const [liked, updateLike] = useState(item.liked_by_current_user);
+  const [likes, updateLikes] = useState(item.likes)
   
   useEffect(() => {
     // debugger
-    const likeBtn = document.getElementById('like-btn')
+    const likeBtn = document.getElementById(`like-btn-${item.id}`)
+    // console.log(item.liked_by_current_user)
     console.log(liked)
-    console.log(likeBtn)
     if (liked) {
-      // likeBtn.classList.add("liked")
-      // likeBtn.style.color = 'blue'
+      likeBtn.classList.add("liked");
       console.log(likeBtn)
+      console.log(likes)
     } else {
-      // likeBtn.classList.remove("liked")
-      // likeBtn.style.color = 'black'
+      likeBtn.classList.remove("liked");
       console.log(likeBtn)
+      console.log(likes)
     }
     
     // debugger
@@ -35,15 +37,17 @@ const ListItem = ({ order, item, author, currentUserId, deleteListItem, likeItem
   // debugger;
   let likeButtonAction;
   if (currentUserId) {
-    if (item.liked_by_current_user) {
+    if (liked) {
       likeButtonAction = () => {
-        return unlikeItem(item.id)
-          .then(() => updateLike(!liked))
+        unlikeItem(item.id)
+        updateLike(!liked)
+        updateLikes(likes - 1)
       }
     } else {
       likeButtonAction = () => {
-        return likeItem(item.id)
-          .then(() => updateLike(!liked))
+        likeItem(item.id)
+        updateLike(!liked)
+        updateLikes(likes + 1)
       }
     }
   } else {
@@ -51,8 +55,6 @@ const ListItem = ({ order, item, author, currentUserId, deleteListItem, likeItem
   }
 
   const handleDelete = () => {
-    // deleteListItem(item.list_id, item.id);
-    // history.go(0)
     deleteListItem(item.list_id, item.id)
       .then(() => (history.go(0)))
   }
@@ -97,15 +99,15 @@ const ListItem = ({ order, item, author, currentUserId, deleteListItem, likeItem
     {
       author.id === currentUserId ?
       <div className='list-item-btns'>
-        <button onClick={likeButtonAction} id="like-btn" className={item.liked_by_current_user ? 'liked' : ''}>
-          <FontAwesomeIcon icon={faThumbsUp} /> | {item.likes}
+          <button onClick={likeButtonAction} id={`like-btn-${item.id}`} className={item.liked_by_current_user ? 'liked' : ''}>
+          <FontAwesomeIcon icon={faThumbsUp} /> | {likes}
         </button>
         <button className='list-item-edit-btn'><Link to={`/lists/${item.list_id}/list_items/${item.id}/edit`}>Edit</Link></button>
         <button className='list-item-delete-btn' onClick={() => handleDelete()}>Delete</button>
       </div> :
       <div className='list-item-btns'>
-          <button onClick={likeButtonAction} id="like-btn" className={item.liked_by_current_user ? 'liked' : ''}>
-          <FontAwesomeIcon icon={faThumbsUp} /> | {item.likes}
+          <button onClick={likeButtonAction} id={`like-btn-${item.id}`} className={item.liked_by_current_user ? 'liked' : ''}>
+          <FontAwesomeIcon icon={faThumbsUp} /> | {likes}
         </button>
       </div>
     }
