@@ -53,7 +53,7 @@ class ListItemForm extends React.Component {
     const { games } = this.props;
     if (games.length === 0) return null;
 
-    debugger;
+    // debugger;
     return <div className='main-content'>
       <h1 className='list-item-form-title'>{this.props.formType}</h1>
 
@@ -65,7 +65,7 @@ class ListItemForm extends React.Component {
             <tr>
               <td>Enter Board Game:</td>
               <td>
-                <select value='default' id="game" onChange={this.update('game_id')}>
+                <select value={this.props.formType === 'Add Item' ? 'default' : [this.state.game_id, this.state.title]} id="game" onChange={this.update('game_id')}>
                   <option value="default" disabled>Select Game</option>
                   {
                     games.map((game, i) => <option key={i} value={[game.id,game.title]}>{game.title}</option>)
