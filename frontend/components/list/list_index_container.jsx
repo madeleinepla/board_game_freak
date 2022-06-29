@@ -10,6 +10,8 @@ const mapStateToProps = (state, { match }) => {
 
   if (orderBy === 'hot') {
     orderBy = "Hot"
+    lists = lists.sort((a, b) => (a.likes < b.likes ? 1 : -1)
+    )
   } else if (orderBy === 'recent') {
     orderBy = "Recent"
     lists = lists.sort(
