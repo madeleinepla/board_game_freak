@@ -30,7 +30,7 @@ class ListItemForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.errors.listItem = []
-    debugger;
+    // debugger;
     const listId = this.props.match.params.listId;
     
     this.props.action(listId, this.state)
@@ -52,6 +52,7 @@ class ListItemForm extends React.Component {
   render() {
     const { games } = this.props;
     if (games.length === 0) return null;
+    const game = games.filter(game => game.id === parseInt(this.state.game_id))
 
     // debugger;
     return <div className='main-content'>
@@ -59,7 +60,7 @@ class ListItemForm extends React.Component {
 
       <form onSubmit={this.handleSubmit} className='list-item-form'>
         <h2 className='list-item-form-err'>{this.renderErrors()}</h2>
-        {/* {this.props.errors.listItem = []} */}
+
         <table>
           <tbody>
             <tr>
@@ -81,7 +82,7 @@ class ListItemForm extends React.Component {
                 <td>Image: </td>
                 <td>
                   <img
-                    src={this.state.game.header_img}
+                    src={game[0].header_img}
                     height="100"
                   />
                 </td>
