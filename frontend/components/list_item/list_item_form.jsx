@@ -10,6 +10,7 @@ class ListItemForm extends React.Component {
 
   componentDidMount() {
     // this.setState({ list_id: this.props.match.params.listId })
+    // debugger;
     this.props.requestGames()
   }
 
@@ -29,7 +30,9 @@ class ListItemForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.errors.listItem = []
+    debugger;
     const listId = this.props.match.params.listId;
+    
     this.props.action(listId, this.state)
       .then(() => (this.props.history.push(`/lists/${listId}`)))
   }
@@ -48,7 +51,9 @@ class ListItemForm extends React.Component {
 
   render() {
     const { games } = this.props;
-    // debugger;
+    if (games.length === 0) return null;
+
+    debugger;
     return <div className='main-content'>
       <h1 className='list-item-form-title'>{this.props.formType}</h1>
 
@@ -60,8 +65,8 @@ class ListItemForm extends React.Component {
             <tr>
               <td>Enter Board Game:</td>
               <td>
-                <select value={this.state.value} id="game" onChange={this.update('game_id')}>
-                  <option value="" disabled selected>Select Game</option>
+                <select value='default' id="game" onChange={this.update('game_id')}>
+                  <option value="default" disabled>Select Game</option>
                   {
                     games.map((game, i) => <option key={i} value={[game.id,game.title]}>{game.title}</option>)
                   }
@@ -69,7 +74,6 @@ class ListItemForm extends React.Component {
                 
               </td>
             </tr>
-
             {
               this.state.game_id === '' ? ''
               :
@@ -77,7 +81,7 @@ class ListItemForm extends React.Component {
                 <td>Image: </td>
                 <td>
                   <img
-                    src={games[this.state.game_id - 1].header_img}
+                    src={this.state.game.header_img}
                     height="100"
                   />
                 </td>

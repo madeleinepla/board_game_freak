@@ -4,7 +4,8 @@ import { requestGames } from '../../actions/game_actions';
 import ListItemForm from './list_item_form';
 
 const mSTP = (state, { match }) => {
-  // debugger;
+  const games = Object.values(state.entities.games).sort((a, b) => (a.title > b.title ? 1 : -1))
+  debugger;
   return {
     errors: state.errors,
     listItem: {
@@ -14,7 +15,7 @@ const mSTP = (state, { match }) => {
       game_id: ''
     },
     formType: 'Add Item',
-    games: Object.values(state.entities.games)
+    games: games
   }
 }
 
