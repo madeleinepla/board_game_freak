@@ -16,7 +16,7 @@ class ListShow extends React.Component {
   }
 
   render() {
-    const { list, currentUserId, deleteList, deleteListItem, likeList, unlikeList } = this.props
+    const { list, currentUserId, deleteList, likeList, unlikeList, deleteListItem, likeItem, unlikeItem} = this.props
     // debugger;
 
     if (!(list.body && list.list_items)) return null;
@@ -113,6 +113,8 @@ class ListShow extends React.Component {
             author={list.author} 
             currentUserId={currentUserId} 
             deleteListItem={deleteListItem}
+            likeItem={likeItem}
+            unlikeItem={unlikeItem}
           />
         })
       }

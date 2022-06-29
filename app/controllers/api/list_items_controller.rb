@@ -29,6 +29,7 @@ class Api::ListItemsController < ApplicationController
     @list_item = ListItem.find(params[:id])
     if @list_item
       @list_item.destroy
+      @list = @list_item.list
       render :show
     else
       render ['Could not find list item']

@@ -10,4 +10,9 @@ class ListItem < ApplicationRecord
     primary_key: :id,
     foreign_key: :game_id,
     class_name: :Game
+
+  has_many :list_item_likes, dependent: :destroy,
+    primary_key: :id,
+    foreign_key: :list_item_id,
+    class_name: :ListItemLike
 end

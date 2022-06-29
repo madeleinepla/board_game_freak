@@ -52,5 +52,5 @@ export const likeItem = (listItemId) => dispatch => (
 
 export const unlikeItem = (listItemId) => dispatch => (
   ListItemApiUtil.deleteLikeFromItem(listItemId)
-    .then(listItem => dispatch(receiveList(listItem)))
+    .then(listItem => dispatch(receiveListItem(listItem)))
 )

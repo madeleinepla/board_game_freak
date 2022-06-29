@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import ListShow from './list_show';
 import { deleteList, likeList, requestList, unlikeList } from '../../actions/list_actions';
 import { selectList } from '../../reducers/selectors';
-import { deleteListItem } from '../../actions/list_item_actions';
+import { deleteListItem, likeItem, unlikeItem } from '../../actions/list_item_actions';
 
 const mSTP = (state, { match }) => {
   // debugger;
@@ -20,9 +20,11 @@ const mSTP = (state, { match }) => {
 const mDTP = dispatch => ({
   requestList: (listId) => dispatch(requestList(listId)),
   deleteList: (listId) => dispatch(deleteList(listId)),
-  deleteListItem: (listId, listItemId) => dispatch(deleteListItem(listId, listItemId)),
   likeList: (listId) => dispatch(likeList(listId)),
-  unlikeList: (listId) => dispatch(unlikeList(listId))
+  unlikeList: (listId) => dispatch(unlikeList(listId)),
+  deleteListItem: (listId, listItemId) => dispatch(deleteListItem(listId, listItemId)),
+  likeItem: (listItemId) => dispatch(likeItem(listItemId)),
+  unlikeItem: (listItemId) => dispatch(unlikeItem(listItemId)),
 })
 
 export default connect(mSTP, mDTP)(ListShow);

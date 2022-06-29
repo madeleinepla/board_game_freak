@@ -5,15 +5,20 @@ class User < ApplicationRecord
   validates :password_digest, :session_token, presence: true
   validates :password, length: { minimum: 6 }, allow_nil: true
 
-  has_many :lists,
+  has_many :lists, dependent: :destroy,
     primary_key: :id,
     foreign_key: :author_id,
     class_name: :List
 
-  has_many :list_likes,
+  has_many :list_likes, dependent: :destroy,
     primary_key: :id,
     foreign_key: :user_id,
     class_name: :ListLike
+
+  has_many :list_item_likes, dependent: :destroy,
+    primary_key: :id,
+    foreign_key: :user_id,
+    class_name: :ListItemLike
 
   after_initialize :ensure_session_token
 
