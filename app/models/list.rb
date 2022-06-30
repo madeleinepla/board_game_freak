@@ -15,4 +15,9 @@ class List < ApplicationRecord
     primary_key: :id,
     foreign_key: :list_id,
     class_name: :ListLike
+
+  has_many :list_comments, dependent: :destroy,
+    primary_key: :id,
+    foreign_key: :list_id,
+    class_name: :ListComment
 end

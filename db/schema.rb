@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_29_140403) do
+ActiveRecord::Schema.define(version: 2022_06_30_135604) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,16 @@ ActiveRecord::Schema.define(version: 2022_06_29_140403) do
     t.datetime "updated_at", null: false
     t.string "header_img", null: false
     t.string "bg_img"
+  end
+
+  create_table "list_comments", force: :cascade do |t|
+    t.text "body", null: false
+    t.integer "user_id", null: false
+    t.integer "list_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["list_id"], name: "index_list_comments_on_list_id"
+    t.index ["user_id"], name: "index_list_comments_on_user_id"
   end
 
   create_table "list_item_likes", force: :cascade do |t|

@@ -3,11 +3,15 @@ class Api::ListLikesController < ApplicationController
     @list_like = ListLike.new
     @list_like.user_id = current_user.id
     @list_like.list_id = params[:listId]
+    
     if @list_like.save
       @list = @list_like.list
       render 'api/lists/show'
+
+      # render json: ['success']
     else
-      render json: @list_like.errors.full_messages, status: 401
+
+      render json: ['something went wrong']
     end
   end
 

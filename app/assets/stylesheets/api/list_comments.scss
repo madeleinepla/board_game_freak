@@ -1,0 +1,142 @@
+// Place all the styles related to the api/list_comments controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.comment-form {
+  background-color: lightgray;
+  display: flex;
+  flex-direction: row;
+  border: 0.5px solid rgba(0, 0, 0, .6);
+  border-radius: 5px;
+  padding: 15px;
+  margin: 60px 25px -35px 25px;
+}
+
+.comment-form-prof-pic {
+  height: 40px;
+  width: 40px;
+  background-color: black;
+  margin-right: 15px;
+  border-radius: 3px;
+}
+
+.comment-form-input {
+  width:100%
+}
+
+#comment-form-text-area {
+  border-radius: 5px;
+  border: 0.5px solid rgba(0, 0, 0, .6);
+  padding: 10px;
+  color: gray;
+  font-size: 16px;
+  width: 97%;
+}
+
+#comment-form-btns {
+  margin-top: 15px;
+}
+
+#comment-form-btns input{
+  background-color: rgb(42, 77, 172);
+  color: white;
+  font-weight: 600;
+  padding: 8px 25px 8px 25px;
+  border-radius: 5px;
+  border: 0.5px solid rgba(0, 0, 0, .6);
+  margin-right: 10px;
+}
+
+#comment-form-btns input:hover {
+  color: rgb(224, 224, 224);
+  background-color: rgb(41, 62, 121);
+  transition: 0.3s;
+}
+
+#comment-form-btns button {
+  background-color: white;
+  color: gray;
+  border: 0.5px solid rgba(0, 0, 0, .6);
+  border-radius: 5px;
+  padding: 8px 15px 8px 15px;
+}
+
+#comment-form-btns button:hover {
+  color: blue;
+  border-color: blue;
+  background-color: lightgray;
+  transition: 0.3s;
+}
+
+
+
+.comment-index{
+  padding-bottom: 25px;
+}
+
+.list-comments {
+  margin-top: 60px;
+}
+
+.single-comment {
+  display: flex;
+  flex-direction: row;
+  border: 0.5px solid rgba(0, 0, 0, .6);
+  border-radius: 5px;
+  padding: 20px 30px 20px 30px;
+  margin: 10px 25px 10px 25px;
+}
+
+.comment-thumbnail{
+  height: 64px;
+  width: 64px;
+  background-color: black;
+  margin-right: 35px;
+  border-radius: 3px;
+}
+
+.comment-body {
+  width: 100%;
+}
+
+.comment-body ul {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  color: gray;
+}
+
+.comment-body li {
+  margin-right: 5px;
+  font-size: 14px;
+}
+
+.comment-body ul li:first-child {
+  color: black;
+  font-weight: 800;
+  font-size: 16px;
+}
+
+.comment-body p {
+  margin: 15px 0 15px 0;
+}
+
+.comment-body div {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.comment-body button {
+  background-color: white;
+  color: gray;
+  border: 0.5px solid rgba(0, 0, 0, .6);
+  border-radius: 5px;
+  padding: 5px 10px 5px 10px;
+  margin-right: 5px;
+}
+
+.comment-body button:hover {
+  color: blue;
+  border-color: blue;
+  background-color: lightgray;
+  transition: 0.3s;
+}

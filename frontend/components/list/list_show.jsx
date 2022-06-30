@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import ListItem from '../list_item/list_item'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faThumbsUp } from '@fortawesome/free-regular-svg-icons';
+import ListCommentContainer from '../comment/list_comment_container';
+import CommentIndexContainer from '../comment/comment_index_container';
 
 class ListShow extends React.Component {
   constructor(props) {
@@ -118,6 +120,15 @@ class ListShow extends React.Component {
           />
         })
       }
+
+      <ListCommentContainer 
+        listId={list.id}
+        history={this.props.history}
+      />
+      <CommentIndexContainer
+        listId={list.id}
+        history={this.props.history}
+      />
     </div>
   }
 }

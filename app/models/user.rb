@@ -15,6 +15,11 @@ class User < ApplicationRecord
     foreign_key: :user_id,
     class_name: :ListLike
 
+  has_many :list_comments,
+    primary_key: :id,
+    foreign_key: :user_id,
+    class_name: :ListComment
+
   has_many :list_item_likes, dependent: :destroy,
     primary_key: :id,
     foreign_key: :user_id,

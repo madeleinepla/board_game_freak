@@ -5,23 +5,17 @@ import { faThumbsUp } from '@fortawesome/free-regular-svg-icons';
 import { useHistory } from "react-router-dom";
 
 const ListItem = ({ order, item, author, currentUserId, deleteListItem, likeItem, unlikeItem }) => {
-
+  debugger;
   const [liked, updateLike] = useState(item.liked_by_current_user);
   const [likes, updateLikes] = useState(item.likes)
-  
+  debugger;
   useEffect(() => {
     // debugger
     const likeBtn = document.getElementById(`like-btn-${item.id}`)
-    // console.log(item.liked_by_current_user)
-    console.log(liked)
     if (liked) {
       likeBtn.classList.add("liked");
-      console.log(likeBtn)
-      console.log(likes)
     } else {
       likeBtn.classList.remove("liked");
-      console.log(likeBtn)
-      console.log(likes)
     }
     
     // debugger
