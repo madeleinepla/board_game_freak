@@ -13,12 +13,13 @@ class ListShow extends React.Component {
   }
 
   componentDidMount() {
+    // debugger;
     window.scrollTo(0, 0);
     this.props.requestList(this.props.match.params.listId);
   }
 
   render() {
-    const { list, currentUserId, deleteList, likeList, unlikeList, deleteListItem, likeItem, unlikeItem} = this.props
+    const { list, currentUserId, deleteList, likeList, unlikeList, deleteListItem, requestListItem, likeItem, unlikeItem} = this.props
     // debugger;
 
     if (!(list.body && list.list_items)) return null;
@@ -56,6 +57,7 @@ class ListShow extends React.Component {
       deleteList(list.id)
         .then(() => (this.props.history.push(`/lists/mylists`)))
     }
+    
 
     return <div className='main-content'>
       <div className='list-show-header'>
@@ -115,8 +117,11 @@ class ListShow extends React.Component {
             author={list.author} 
             currentUserId={currentUserId} 
             deleteListItem={deleteListItem}
+            requestListItem={requestListItem}
+            requestList={this.props.requestList}
             likeItem={likeItem}
             unlikeItem={unlikeItem}
+            history={this.props.history}
           />
         })
       }
