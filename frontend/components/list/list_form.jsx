@@ -18,10 +18,10 @@ class ListForm extends React.Component {
     this.props.action(this.state)
       // .then(() => (this.props.history.push(`/lists/mylists`)))
       .then(() => {
-        if(this.props.formType === 'Create Freaklist') {
-          return this.props.history.push(`/lists/mylists`)
-        } else {
+        if (this.props.list.id) {
           return this.props.history.push(`/lists/${this.props.list.id}`)
+        } else {
+          return this.props.history.push(`/lists/mylists`)
         }
       })
   }
