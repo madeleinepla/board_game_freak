@@ -1,6 +1,7 @@
 import CommentIndex from './comment_index';
 import { connect } from 'react-redux';
 import { requestListComments, deleteListComment } from '../../actions/list_comment_actions';
+import { requestList } from '../../actions/list_actions';
 // import { requestUsers } from '../../actions/user_actions';
 
 const mapStateToProps = (state, ownProps) => {
@@ -9,12 +10,14 @@ const mapStateToProps = (state, ownProps) => {
   const comments = Object.values(state.entities.listComments).filter(comment => comment.list_id === listId)
 
   return {
-    comments
+    comments,
+    listId
   }
 }
 
 const mapDispatchToProps = (dispatch) => ({
   requestListComments: () => dispatch(requestListComments()),
+  requestList: (listId) => dispatch(requestList(listId)),
   deleteListComment: (commentId) => dispatch(deleteListComment(commentId)),
 });
 

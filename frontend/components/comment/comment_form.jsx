@@ -12,6 +12,7 @@ class CommentForm extends React.Component {
   }
 
   // componentDidMount() {
+  //   debugger;
   //   this.props.requestList(this.props.listId)
   // }
 
@@ -40,8 +41,9 @@ class CommentForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    this.handleCollapse(e);
     this.props.action(this.state)
-      .then(() => (this.props.history.go(0)))
+      .then(() => (this.props.requestListComments()))
   }
 
   render() {

@@ -117,7 +117,6 @@ class ListShow extends React.Component {
             author={list.author} 
             currentUserId={currentUserId} 
             deleteListItem={deleteListItem}
-            requestListItem={requestListItem}
             requestList={this.props.requestList}
             likeItem={likeItem}
             unlikeItem={unlikeItem}
