@@ -21,6 +21,9 @@ class CommentForm extends React.Component {
   }
 
   handleExpand() {
+    if (!this.props.currentUserId) {
+      this.props.history.push('/login')
+    }
     this.collapsed = false
     const area = document.getElementById('comment-form-text-area')
     area.value = this.state.body;
@@ -72,7 +75,7 @@ class CommentForm extends React.Component {
 
         }
         <div id='comment-form-btns' style={{display: 'none'}}>
-          <input type="submit" value='Post' />
+          <input className='comment-submit-btn' type="submit" value='Post'/>
           <button onClick={this.handleCollapse}>Cancel</button>
         </div>
       </form>

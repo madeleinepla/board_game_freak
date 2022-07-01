@@ -128,6 +128,7 @@ class ListShow extends React.Component {
       <ListCommentContainer 
         listId={list.id}
         history={this.props.history}
+        currentUserId={currentUserId} 
       />
       <CommentIndexContainer
         listId={list.id}
