@@ -15,4 +15,9 @@ class ListItem < ApplicationRecord
     primary_key: :id,
     foreign_key: :list_item_id,
     class_name: :ListItemLike
+
+  has_many :list_item_comments, dependent: :destroy,
+    primary_key: :id,
+    foreign_key: :list_item_id,
+    class_name: :ListItemComment
 end

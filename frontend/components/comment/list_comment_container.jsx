@@ -15,7 +15,7 @@ const mSTP = (state, ownProps) => {
 
 const mDTP = dispatch => ({
   action: comment => dispatch(createListComment(comment)),
-  requestListComments: () => dispatch(requestListComments())
+  requestComments: () => dispatch(requestListComments())
 })
 
 export default connect(mSTP, mDTP)(CommentForm);

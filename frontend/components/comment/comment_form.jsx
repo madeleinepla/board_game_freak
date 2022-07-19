@@ -11,11 +11,6 @@ class CommentForm extends React.Component {
     this.handleCollapse = this.handleCollapse.bind(this)
   }
 
-  // componentDidMount() {
-  //   debugger;
-  //   this.props.requestList(this.props.listId)
-  // }
-
   update(field) {
     return e => this.setState({ [field]: e.target.value })
   }
@@ -47,7 +42,7 @@ class CommentForm extends React.Component {
     this.handleCollapse(e);
     this.setState({ body: '' })
     this.props.action(this.state)
-      .then(() => (this.props.requestListComments()))
+      .then(() => (this.props.requestComments()))
   }
 
   render() {
