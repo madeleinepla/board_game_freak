@@ -1,5 +1,4 @@
 import { connect } from 'react-redux';
-import { requestList } from '../../actions/list_actions';
 import { createListComment, requestListComments } from '../../actions/list_comment_actions';
 import CommentForm from './comment_form';
 

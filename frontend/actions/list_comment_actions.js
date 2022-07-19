@@ -34,6 +34,12 @@ export const createListComment = (comment) => dispatch => (
     .then(comment => dispatch(receiveListComment(comment)))
 )
 
+export const updateListComment = (comment) => dispatch => (
+  ListCommentApiUtil.updateListComment(comment)
+    .then(comment => dispatch(receiveListComment(comment)))
+
+)
+
 export const deleteListComment = (commentId) => dispatch => (
   ListCommentApiUtil.deleteListComment(commentId)
     .then(() => dispatch(removeListComment(commentId)))

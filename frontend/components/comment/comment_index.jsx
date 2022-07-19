@@ -1,4 +1,5 @@
 import React from 'react';
+import EditCommentForm from './edit_comment_form';
 // import { Link } from 'react-router-dom';
 
 class CommentIndex extends React.Component {
@@ -48,9 +49,13 @@ class CommentIndex extends React.Component {
                     </ul>
                     <p>{comment.body}</p>
                     <div>
+                      <button>Edit</button>
                       <button onClick={() => this.props.deleteListComment(comment.id)}>Delete</button>
                     </div>
                   </div>
+                  <EditCommentForm
+                    commentId={comment.id}
+                  />
                 </li>
               })
             }

@@ -76,34 +76,24 @@ class ListItem extends React.Component {
             }
           </div>
 
-          <ListItemCommentContainer
-            listItemId={item.id}
-            history={this.props.history}
-            currentUserId={currentUserId}
-          />
-
         </div>
       </div>
       {
         author.id === currentUserId ?
-          <div className='list-item-btns'>
-            <button onClick={likeButtonAction} id={`like-btn-${item.id}`} className={item.liked_by_current_user ? 'liked' : ''}>
-              <FontAwesomeIcon icon={faThumbsUp} /> | {item.likes}
-            </button>
+        <div className='list-item-btns'>
+          <button onClick={likeButtonAction} id={`like-btn-${item.id}`} className={item.liked_by_current_user ? 'liked' : ''}>
+            <FontAwesomeIcon icon={faThumbsUp} /> | {item.likes}
+          </button>
 
-            <button>
-
-            </button>
-
-            <button className='list-item-edit-btn'><Link to={`/lists/${item.list_id}/list_items/${item.id}/edit`}>Edit</Link></button>
-            
-            <button className='list-item-delete-btn' onClick={() => handleDelete()}>Delete</button>
-          </div> :
-          <div className='list-item-btns'>
-            <button onClick={likeButtonAction} id={`like-btn-${item.id}`} className={item.liked_by_current_user ? 'liked' : ''}>
-              <FontAwesomeIcon icon={faThumbsUp} /> | {item.likes}
-            </button>
-          </div>
+          <button className='list-item-edit-btn'><Link to={`/lists/${item.list_id}/list_items/${item.id}/edit`}>Edit</Link></button>
+          
+          <button className='list-item-delete-btn' onClick={() => handleDelete()}>Delete</button>
+        </div> :
+        <div className='list-item-btns'>
+          <button onClick={likeButtonAction} id={`like-btn-${item.id}`} className={item.liked_by_current_user ? 'liked' : ''}>
+            <FontAwesomeIcon icon={faThumbsUp} /> | {item.likes}
+          </button>
+        </div>
       }
     </div>
   }
