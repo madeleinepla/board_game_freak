@@ -37,7 +37,7 @@ class ListItem extends React.Component {
 
     const handleDelete = () => {
       deleteListItem(item.list_id, item.id)
-        // .then(() => (history.go(0)))
+        .then(() => this.props.requestList(this.props.item.list_id))
     }
 
     // debugger;

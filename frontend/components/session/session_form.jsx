@@ -10,6 +10,7 @@ class SessionForm extends React.Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleDemoUser = this.handleDemoUser.bind(this);
+    this.props.errors.session = []
   }
 
   update(field) {
@@ -83,7 +84,10 @@ class SessionForm extends React.Component {
 
         <form onSubmit={this.handleSubmit} className="session-form-box">
           <img 
-            src="https://cf.geekdo-static.com/images/logos/bgg-primary-logo-b1.svg" alt="BGG Logo" 
+            src="https://i.ibb.co/Yt6PG0k/session-logo.png" 
+            width="173"
+            height="90"
+            alt="BGG Logo" 
           />
           
           {this.props.formType === 'signup' ?

@@ -1,16 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import ReactDOM from 'react-dom'
-// import { useHistory } from "react-router";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCaretDown, faPowerOff } from '@fortawesome/free-solid-svg-icons'
-// import SearchContainer from '../search/search_container';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCaretDown, faPowerOff } from '@fortawesome/free-solid-svg-icons';
 
 
 const NavBar = ({ currentUser, logout }) => {
-
-  // const history = useHistory();
-  // const handleLogout = () => history.push('/');
 
   return <div className='navbar'>
     
@@ -21,7 +15,7 @@ const NavBar = ({ currentUser, logout }) => {
             width="80"
             height="38"
             aria-hidden="true"
-            src="https://cf.geekdo-static.com/images/logos/navbar-logo-bgg-b2.svg"
+            src="https://i.ibb.co/Q9vqCck/navlogo.png"
             alt="boardgame geek logo">
           </img>
         </Link>

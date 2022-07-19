@@ -18,6 +18,9 @@ import Footer from "./footer/footer";
 
 const App = () => (
   <div>
+    <head>
+      
+    </head>
     
 
     <header>

@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import ReactDOM from 'react-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookSquare, faTwitter, faInstagramSquare, faYoutubeSquare, faTwitch, faDiscord } from '@fortawesome/free-brands-svg-icons'
 
@@ -10,7 +9,9 @@ const Footer = () => {
       <div className="footer-logo">
         <Link to="/">
           <img 
-            src="https://cf.geekdo-static.com/images/logos/bgg-primary-logo-reverse.svg" 
+            src="https://i.ibb.co/qnQMjCw/footer-logo.png" 
+            height="77"
+            width="150"
             alt="Board Game Geek" 
           />
         </Link>

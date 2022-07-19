@@ -18,7 +18,7 @@ class Home extends React.Component {
     return <div>
       <div className='home-ad'>
         <img 
-          src="https://tpc.googlesyndication.com/simgad/6733309159117902287" 
+          src="https://i.ibb.co/cyt4SR2/home-page-ad1.png" 
           border="0" 
           width="1200" 
           height="125" 
@@ -35,7 +35,7 @@ class Home extends React.Component {
         <div className='home-top'>
           <div className='home-top-feature'>
             <img 
-              src="https://cf.geekdo-images.com/o4MCll6rZQKGv_U5JEXtxVV2MWY=/825x450/filters:strip_icc()/https%3A%2F%2Fcf.geekdo-static.com%2Fcms%2F2022%2F06%2F13210641%2FApril-Store-Update-Hero-Image.png" 
+              src="https://i.ibb.co/3prQWmR/home-page-feat.webp" 
               alt="June Store Update - Treebeard is Back! Primary Thumbnail" 
             />
 
@@ -47,7 +47,7 @@ class Home extends React.Component {
             <ul>
               <li>
                 <img 
-                  src="https://cf.geekdo-images.com/9VCO-3Ny_fFRLoXi16cmzdOj1xo=/80x80/filters:strip_icc()/https%3A%2F%2Fcf.geekdo-static.com%2Fcms%2F2022%2F06%2F21101755%2Fgamem.png" 
+                  src="https://i.ibb.co/0FFM5pW/home-page-featurette1.webp" 
                   alt="Report from Tokyo Game Market: Spring 2022 Secondary Thumbnail"  
                 />
                 <div className='featurette-info'>
@@ -57,7 +57,7 @@ class Home extends React.Component {
               </li>
               <li>
                 <img 
-                  src="https://cf.geekdo-images.com/MbCmKU6nxWyVZFKzVr64_j_NI7w=/80x80/filters:strip_icc()/https%3A%2F%2Fcf.geekdo-static.com%2Fcms%2F2022%2F06%2F08182611%2Fgen-sq.jpeg" 
+                  src="https://i.ibb.co/DkfbcR0/home-page-featurette2.webp" 
                   alt="Gen Con 2022 Preview Secondary Thumbnail" 
                 />
                 <div className='featurette-info'>
@@ -67,7 +67,7 @@ class Home extends React.Component {
               </li>
               <li>
                 <img 
-                  src="https://cf.geekdo-images.com/L2jZoD-qDOtyl5t3vk2vwV5psYo=/80x80/filters:strip_icc()/https%3A%2F%2Fcf.geekdo-static.com%2Fcms%2F2022%2F06%2F08190006%2FBGG.CON-2022-CMS-Thumbnail.png" 
+                  src="https://i.ibb.co/qF028GL/home-page-featurette3.webp" 
                   alt="BGG.CON 2022 - Badges Go On Sale June 15th Secondary Thumbnail"  
                 />
                 <div className='featurette-info'>
@@ -77,7 +77,7 @@ class Home extends React.Component {
               </li>
               <li>
                 <img 
-                  src="https://cf.geekdo-images.com/7PwpcyJSTJwXJeyDpLIdLIL5YAc=/80x80/filters:strip_icc()/https%3A%2F%2Fcf.geekdo-static.com%2Fcms%2F2022%2F06%2F20080132%2Fzauberberg.jpeg" 
+                  src="https://i.ibb.co/7bM822t/home-page-featurette4.webp" 
                   alt="Zauberberg Wins 2022 Kinderspiel des Jahres Secondary Thumbnail" 
                 />
                 <div className='featurette-info'>
@@ -118,7 +118,7 @@ class Home extends React.Component {
 
         <div className='home-ad'>
           <img 
-            src="https://tpc.googlesyndication.com/simgad/3509397579391731738" 
+            src="https://i.ibb.co/C28DXgY/home-page-ad2.png" 
             border="0" 
             width="1200" 
             height="125" 
