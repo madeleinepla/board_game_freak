@@ -23,7 +23,7 @@
   width:100%
 }
 
-#comment-form-text-area {
+.comment-form-text-area {
   border-radius: 5px;
   border: 0.5px solid rgba(0, 0, 0, .6);
   padding: 10px;
@@ -32,7 +32,7 @@
   width: 97%;
 }
 
-#comment-form-btns {
+.comment-form-btns {
   margin-top: 15px;
 }
 
@@ -78,7 +78,7 @@
   transition: 0.3s;
 }
 
-#comment-form-btns button {
+.comment-form-btns button {
   background-color: white;
   color: gray;
   border: 0.5px solid rgba(0, 0, 0, .6);
@@ -165,4 +165,12 @@
   border-color: blue;
   background-color: lightgray;
   transition: 0.3s;
+}
+
+.comment-form-hidden {
+  display: none;
+}
+
+.comment-form-show {
+  display: block;
 }

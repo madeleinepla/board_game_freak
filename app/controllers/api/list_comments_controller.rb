@@ -8,6 +8,19 @@ class Api::ListCommentsController < ApplicationController
     end
   end
 
+  def update
+    @list_comment = ListComment.find(params[:id])
+    # debugger
+    
+    if @list_comment && @list_comment.update(:body => params[:comment][:body])
+      render :show
+    elsif !@list_comment
+      render json: ['Could not locate comment'], status: 400
+    else
+      render json: ["Error - something went wrong"], status: 401
+    end
+  end
+
   def show
     @list_comment = ListComment.find(params[:id])
     render :show

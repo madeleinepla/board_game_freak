@@ -3,12 +3,15 @@ import { createListComment, requestListComments } from '../../actions/list_comme
 import CommentForm from './comment_form';
 
 const mSTP = (state, ownProps) => {
+  // debugger
   return {
     comment: {
       body: '',
       user_id: state.session.id,
       list_id: ownProps.listId
-    }
+    },
+    currentUserId: state.session.id,
+    actionType: "create"
   }
 }
 

@@ -5,11 +5,23 @@ import EditCommentForm from './edit_comment_form';
 class CommentIndex extends React.Component {
   constructor(props) {
     super(props);
+    this.editCommentHandler = this.editCommentHandler.bind(this)
   }
 
   componentDidMount() {
     // debugger;
     this.props.requestListComments();
+  }
+
+  editCommentHandler(commentId) {
+    const comment = document.getElementById(`comment-${commentId}`)
+    comment.classList.remove("comment-form-hidden");
+    comment.classList.add("comment-form-show");
+    // const area = document.getElementById('comment-form-text-area')
+    // area.value = this.state.body;
+    // area.rows = '8';
+    // const btns = document.getElementById('comment-form-btns')
+    // btns.style.display = "block"
   }
 
   render() {
@@ -36,29 +48,38 @@ class CommentIndex extends React.Component {
                   postDate = postDate.toDateString().split(" ").slice(1, 3).join(" ");
                 }
 
-                return <li key={i} className='single-comment'>
-                  <div className='comment-thumbnail'>
-                    prof pic
-                  </div>
-
-                  <div className='comment-body'>
-                    <ul>
-                      <li>{comment.user.username}</li>
-                      <li>•</li>
-                      <li>{postDate}</li>
-                    </ul>
-                    <p>{comment.body}</p>
-                    <div>
-                      <button>Edit</button>
-                      <button onClick={() => this.props.deleteListComment(comment.id)}>Delete</button>
+                return <div key={i}>
+                  <li  className='single-comment'>
+                    <div className='comment-thumbnail'>
+                      prof pic
                     </div>
+  
+                    <div className='comment-body'>
+                      <ul>
+                        <li>{comment.user.username}</li>
+                        <li>•</li>
+                        <li>{postDate}</li>
+                      </ul>
+                      <p>{comment.body}</p>
+                      <div>
+                        <button onClick={() => this.editCommentHandler(comment.id)}>
+                          Edit
+                        </button>
+                        <button onClick={() => this.props.deleteListComment(comment.id)}>Delete</button>
+                      </div>
+                    </div>
+                  </li>
+
+                  <div id={`comment-${comment.id}`} className="comment-form-hidden">
+                    <EditCommentForm
+                      commentId={comment.id}
+                    />
                   </div>
-                  <EditCommentForm
-                    commentId={comment.id}
-                  />
-                </li>
+                </div>
               })
             }
+
+
 
           </ul>
         </div>
