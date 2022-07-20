@@ -1,21 +1,51 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faStar } from '@fortawesome/free-solid-svg-icons';
 
 class GameShow extends React.Component {
   constructor(props) {
     super(props);
+    this.state = this.props.rating
+    this.handleSubmit = this.handleSubmit.bind(this)
+    this.update = this.update.bind(this)
   }
 
   componentDidMount() {
     window.scrollTo(0, 0);
-    this.props.requestGame(this.props.match.params.gameId)
-    // const bg = document.getElementsByClassName('game-header')
-    // bg[0].style.backgroundImage = `linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.5)), url(${this.props.game.bg_img})`
-    // debugger;
+    this.props.requestGame(this.props.match.params.gameId);
+  }
+
+  update(e) {
+    this.setState({ score: parseInt(e.target.value) });
+    const btn = document.getElementById("game-rating-submit-btn")
+    btn.style.display = "block"
+
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    debugger
+
+    this.props.rateGame(this.state)
+      .then(() => this.props.requestGame(this.props.gameId))
+  }
+
+  setStars() {
+    let stars = []
+    for(let i = 1; i < 11; i++) {
+      stars.push(<div key={i} >
+        <input type="radio" name="rating" value={i} />
+        <label htmlFor={i} id={`${i}-stars`} className={i <= this.props.game.user_rating.score ? "starred" : "not-starred"}>★</label>
+      </div>)
+    }
+
+    return stars
   }
 
   render() {
     const { game, type, category, mechanisms } = this.props
+    debugger
     const bg = document.getElementsByClassName('game-header')
     if (bg[0]) {
       bg[0].style.backgroundImage = `linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.5)), url("${game.bg_img}")`
@@ -78,6 +108,37 @@ class GameShow extends React.Component {
             <p>Designer: {game.designer}</p>
             <p>Artist: {game.artist}</p>
             <p>Publisher: {game.publisher}</p>
+          </div>
+
+          <div className='game-header-rating'>
+            <form onSubmit={this.handleSubmit} onChange={this.update} className='game-rating-form'>
+              <p>My Rating: </p>
+
+              {this.setStars()}
+
+              {/* <input type="radio" name="rating" id="1-stars" value="1" />
+              <label htmlFor="1">★</label>
+              <input type="radio" name="rating" id="2-stars" value="2"/>
+              <label htmlFor="2">★</label>
+              <input type="radio" name="rating" id="3-stars" value="3"/>
+              <label htmlFor="3">★</label>
+              <input type="radio" name="rating" id="4-stars" value="4" />
+              <label htmlFor="4">★</label>
+              <input type="radio" name="rating" id="5-stars" value="5" />
+              <label htmlFor="5">★</label>
+              <input type="radio" name="rating" id="6-stars" value="6" />
+              <label htmlFor="6">★</label>
+              <input type="radio" name="rating" id="7-stars" value="7" />
+              <label htmlFor="7">★</label>
+              <input type="radio" name="rating" id="8-stars" value="8" />
+              <label htmlFor="8">★</label>
+              <input type="radio" name="rating" id="9-stars" value="9" />
+              <label htmlFor="9">★</label>
+              <input type="radio" name="rating" id="10-stars" value="10" />
+              <label htmlFor="10">★</label> */}
+
+              <input type="submit" id="game-rating-submit-btn" value='Submit Rating' style={{display: "none"}}/>
+            </form>
           </div>
 
           <div className='game-header-primary-actions'>

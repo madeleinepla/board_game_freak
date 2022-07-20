@@ -11,3 +11,20 @@ export const fetchGame = gameId => (
     method: 'GET'
   })
 );
+
+export const postRatingToGame = (rating) => $.ajax({
+  url: '/api/ratings',
+  method: 'POST',
+  data: { rating },
+});
+
+export const updateRatingToGame = (rating) => $.ajax({
+  url: `/api/ratings/${rating.id}`,
+  method: 'POST',
+  data: { rating },
+});
+
+export const deleteRatingFromGame = (ratingId) => $.ajax({
+  url: `/api/ratings/${ratingId}`,
+  method: 'DELETE',
+});

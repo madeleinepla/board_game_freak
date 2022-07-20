@@ -66,7 +66,7 @@ class CommentForm extends React.Component {
     this.handleCollapse(e);
     // this.setState({ body: '' })
     this.props.action(this.state)
-      .then(()=> this.setState({ body: '' }))
+      // .then(()=> this.setState({ body: '' }))
       .then(() => (this.props.requestComments()))
   }
 

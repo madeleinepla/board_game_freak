@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import GameShow from './game_show';
-import { requestGame } from '../../actions/game_actions';
+import { rateGame, requestGame } from '../../actions/game_actions';
 import { selectGame } from '../../reducers/selectors';
 
 // const mSTP = (state, ownProps) => ({
@@ -20,12 +20,6 @@ const mSTP = (state, { match }) => {
     }
   }
 
-  // if (game.classifications) {
-  //   const type = getClassification('Type');
-  //   const category = getClassification('Category');
-  //   const mechanisms = getClassification('Mechanisms');
-  // }
-
   const type = getClassification('Type');
   const category = getClassification('Category');
   const mechanisms = getClassification('Mechanisms');
@@ -35,12 +29,18 @@ const mSTP = (state, { match }) => {
     game,
     type,
     category,
-    mechanisms
+    mechanisms,
+    rating: {
+      userId: state.session.id,
+      gameId: gameId,
+      score: ""
+    }
   }
 }
 
 const mDTP = dispatch => ({
-  requestGame: (gameId) => dispatch(requestGame(gameId))
+  requestGame: (gameId) => dispatch(requestGame(gameId)),
+  rateGame: (rating) => dispatch(rateGame(rating))
 })
 
 export default connect(mSTP, mDTP)(GameShow);
