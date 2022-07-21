@@ -28,6 +28,8 @@ class CommentForm extends React.Component {
   }
 
   update(field) {
+    let btn = document.getElementsByClassName('comment-submit-btn');
+    btn.disabled = false;
     return e => this.setState({ [field]: e.target.value })
   }
 
@@ -100,7 +102,12 @@ class CommentForm extends React.Component {
           id={`comment-form-btns-${this.idTag}`} 
           className="comment-form-btns" 
           style={this.props.actionType == "create" ? { display: 'none' } : { display: 'block' }}>
-            <input className='comment-submit-btn' type="submit" value='Post'/>
+            {
+              this.state.body == "" ?
+              <input className='comment-submit-btn' type="submit" value='Post' disabled/> :
+              <input className='comment-submit-btn' type="submit" value='Post' />
+            }
+            
             <button onClick={this.handleCollapse}>Cancel</button>
         </div>
       </form>

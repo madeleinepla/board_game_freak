@@ -78,6 +78,10 @@
   transition: 0.3s;
 }
 
+.comment-submit-btn:disabled {
+  background-color: grey;
+}
+
 .comment-form-btns button {
   background-color: white;
   color: gray;

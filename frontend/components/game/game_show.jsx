@@ -18,6 +18,10 @@ class GameShow extends React.Component {
   }
 
   update(e) {
+    if (!this.props.currentUserId) {
+      this.props.history.push('/login')
+    }
+
     const newScore = e.target.value
     this.setState({ score: parseInt(newScore) });
 
