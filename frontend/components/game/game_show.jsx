@@ -46,6 +46,9 @@ class GameShow extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+
+    const btn = document.getElementById("game-rating-submit-btn")
+    btn.style.display = "none"
     
     if (this.props.game.user_rating) {
       this.props.updateRateGame(this.state)
@@ -69,7 +72,7 @@ class GameShow extends React.Component {
     for(let i = 1; i < 11; i++) {
       if (i == score) {
         stars.push(<div key={i} >
-          <input type="radio" id={`${i}-stars`} name="rating" value={i} defaultChecked />
+          <input type="radio" id={`${i}-stars`} name="rating" value={i} style={{display: "none" }} defaultChecked />
           <label
             htmlFor={`${i}-stars`}
             id={`${i}-stars-label`}
@@ -78,7 +81,7 @@ class GameShow extends React.Component {
         </div>)
       } else {
         stars.push(<div key={i} >
-          <input type="radio" id={`${i}-stars`}name="rating" value={i} />
+          <input type="radio" id={`${i}-stars`} name="rating" value={i} style={{ display: "none" }} />
           <label 
             htmlFor={`${i}-stars`}
             id={`${i}-stars-label`}
@@ -159,20 +162,23 @@ class GameShow extends React.Component {
           <div className='game-header-rating'>
             <form onSubmit={this.handleSubmit} onChange={this.update} className='game-rating-form'>
               <p>My Rating </p>
-
-              {this.setStars()}
-
-              {
-                game.user_rating ?
-                <div>
-                  <input type="submit" id="game-rating-submit-btn" value="Update Rating" style={{display: "none"}}/>
-                  <button onClick={this.removeRating}>Remove Rating</button>
-                </div> :
-                <div>
-                    <input type="submit" id="game-rating-submit-btn" value="Add Rating" style={{ display: "none" }}/>
-                </div>
-              }
               
+              <div className='rating-body'>
+                <div className='rating-stars'>
+                  {this.setStars()}
+                </div>
+
+                {
+                  game.user_rating ?
+                  <div className='game-rating-btns'>
+                    <input type="submit" id="game-rating-submit-btn" value="Update Rating" style={{ display: "none" }}/>
+                    <button onClick={this.removeRating}>Remove Rating</button>
+                  </div> :
+                  <div className='game-rating-btns'>
+                    <input type="submit" id="game-rating-submit-btn" value="Add Rating" style={{ display: "none" }}/>
+                  </div>
+                }
+              </div>
             </form>
           </div>
 

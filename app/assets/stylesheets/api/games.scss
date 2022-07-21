@@ -5,21 +5,9 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
-// .main-content {
-//   background-color: #efefef;
-//   width: 97%;
-//   height: 100%;
-//   margin: 0 auto;
-//   margin-top: 20px;
-// }
-
 .game-header {
   display: flex;
   flex-direction: row;
-  // background-color: black;
-  // background-image:
-  //   linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.5)),
-  //   url("https://cf.geekdo-images.com/4Zr2B1zIgCM9qZfKhZoisQ__imagepage/img/kXfQ2kYjDENgXmRcXYrBcmuhf4U=/fit-in/900x600/filters:no_upscale():strip_icc()/pic133885.jpg");
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: center;
@@ -136,13 +124,22 @@
 }
 
 
-.game-header-rating form {
+.game-rating-form {
   display: flex;
   flex-direction: row;
 }
 
-.game-header-rating label {
-  transform: translateX(-20px);
+.game-rating-form > p {
+  margin-right: 10px;
+}
+
+.rating-stars {
+  display: flex;
+  flex-direction: row;
+}
+
+.rating-stars *{
+  margin: 1px;
 }
 
 .starred{
@@ -153,6 +150,22 @@
   color: gray;
 }
 
+.game-rating-btns {
+  display: flex;
+  flex-direction: row;
+  margin-top: 5px;;
+}
+
+.game-rating-btns *{
+  border: none;
+  background-color: transparent;
+  color: white;
+  font-size: 12px;
+  cursor: pointer;
+  text-decoration-line: underline;
+  text-decoration-style: dotted;
+  text-decoration-color: white;
+}
 
 
 .game-body {
