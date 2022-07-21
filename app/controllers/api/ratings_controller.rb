@@ -30,9 +30,9 @@ class Api::RatingsController < ApplicationController
   end
 
   def destroy
-    @rating = Rating.find_by(user_id: current_user.id, game_id: params[:gameId])
+    @rating = Rating.find(params[:id])
     @rating.destroy
-    @game = Game.find(params[:gameId])
+    @game = @rating.game
     render 'api/games/show'
   end
 end
