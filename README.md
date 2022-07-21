@@ -1,24 +1,23 @@
-# README
+#README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+BoardGameFreak, a BoardGameGeek clone, is an online forum for board gaming hobbyists and a game database that holds reviews, images and videos for tabletop games.
 
-Things you may want to cover:
+### [Live](https://board-game-freak1.herokuapp.com/#/)
 
-* Ruby version
+![BGF-gif](./app/assets/images/boardgame.gif)
 
-* System dependencies
+## Features
+### User Authentication
+### Games
+### Lists
+### Likes & Comments
+### Ratings
 
-* Configuration
+## Planned Features
+### Profiles
+### Search
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Technologies Used
+Front End: React, Redux
+Back End: Postgresql, Ruby on Rails
+Hosting: Heroku
