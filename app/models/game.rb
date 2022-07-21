@@ -8,6 +8,11 @@ class Game < ApplicationRecord
     foreign_key: :game_id,
     class_name: :Classification
 
+  has_many :ratings,
+    primary_key: :id, 
+    foreign_key: :game_id,
+    class_name: :Rating
+
   has_many :list_items,
     primary_key: :id,
     foreign_key: :game_id,

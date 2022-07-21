@@ -11,7 +11,8 @@ const mapStateToProps = (state, ownProps) => {
 
   return {
     comments,
-    listId
+    listId,
+    currentUserId: state.session.id
   }
 }
 

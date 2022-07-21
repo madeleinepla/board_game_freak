@@ -23,3 +23,18 @@ export const requestGame = (gameId) => dispatch => (
   GameApiUtil.fetchGame(gameId)
     .then(game => dispatch(receiveGame(game)))
 );
+
+export const rateGame = (rating) => dispatch => (
+  GameApiUtil.postRatingToGame(rating)
+    .then(game => dispatch(receiveGame(game)))
+)
+
+export const updateRateGame = (rating) => dispatch => (
+  GameApiUtil.updateRatingToGame(rating)
+    .then(game => dispatch(receiveGame(game)))
+)
+
+export const unrateGame = (ratingId) => dispatch => (
+  GameApiUtil.deleteRatingFromGame(ratingId)
+    .then(game => dispatch(receiveGame(game)))
+)

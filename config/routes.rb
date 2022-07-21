@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
     resources :games, only: [:show, :index]
 
+    resources :ratings, only: [:create, :update, :destroy]
+
     resources :lists, only: [:create, :update, :show, :index, :destroy] do
       resources :list_items
     end
