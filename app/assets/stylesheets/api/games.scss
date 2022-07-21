@@ -136,6 +136,23 @@
 }
 
 
+.game-header-rating form {
+  display: flex;
+  flex-direction: row;
+}
+
+.game-header-rating label {
+  transform: translateX(-20px);
+}
+
+.starred{
+  color: gold;
+}
+
+.not-starred{
+  color: gray;
+}
+
 
 
 .game-body {

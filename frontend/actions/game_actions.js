@@ -29,7 +29,12 @@ export const rateGame = (rating) => dispatch => (
     .then(game => dispatch(receiveGame(game)))
 )
 
-export const unlikeList = (listId) => dispatch => (
-  ListApiUtil.deleteLikeFromList(listId)
-    .then(list => dispatch(receiveList(list)))
+export const updateRateGame = (rating) => dispatch => (
+  GameApiUtil.updateRatingToGame(rating)
+    .then(game => dispatch(receiveGame(game)))
+)
+
+export const unrateGame = (ratingId) => dispatch => (
+  GameApiUtil.deleteRatingFromGame(ratingId)
+    .then(game => dispatch(receiveGame(game)))
 )

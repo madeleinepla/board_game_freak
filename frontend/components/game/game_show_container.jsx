@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import GameShow from './game_show';
-import { rateGame, requestGame } from '../../actions/game_actions';
+import { rateGame, requestGame, unrateGame, updateRateGame } from '../../actions/game_actions';
 import { selectGame } from '../../reducers/selectors';
 
 // const mSTP = (state, ownProps) => ({
@@ -23,6 +23,7 @@ const mSTP = (state, { match }) => {
   const type = getClassification('Type');
   const category = getClassification('Category');
   const mechanisms = getClassification('Mechanisms');
+
   // debugger;
   return {
     gameId,
@@ -40,7 +41,9 @@ const mSTP = (state, { match }) => {
 
 const mDTP = dispatch => ({
   requestGame: (gameId) => dispatch(requestGame(gameId)),
-  rateGame: (rating) => dispatch(rateGame(rating))
+  rateGame: (rating) => dispatch(rateGame(rating)),
+  updateRateGame: (rating) => dispatch(updateRateGame(rating)),
+  unrateGame: (ratingId) => dispatch(unrateGame(ratingId))
 })
 
 export default connect(mSTP, mDTP)(GameShow);

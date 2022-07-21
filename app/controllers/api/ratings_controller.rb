@@ -18,8 +18,7 @@ class Api::RatingsController < ApplicationController
   end
 
   def update
-    @rating = Rating.find_by(user_id: current_user.id, game_id: params[:gameId])
-    # debugger
+    @rating = Rating.find_by(user_id: current_user.id, game_id: params[:rating][:gameId])
     
     if @rating && @rating.update(:score => params[:rating][:score])
       render json: ['success'], status: 200

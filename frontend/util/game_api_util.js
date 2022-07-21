@@ -20,7 +20,7 @@ export const postRatingToGame = (rating) => $.ajax({
 
 export const updateRatingToGame = (rating) => $.ajax({
   url: `/api/ratings/${rating.id}`,
-  method: 'POST',
+  method: 'PATCH',
   data: { rating },
 });
 

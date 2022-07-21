@@ -17,35 +17,73 @@ class GameShow extends React.Component {
   }
 
   update(e) {
-    this.setState({ score: parseInt(e.target.value) });
+    const newScore = e.target.value
+    this.setState({ score: parseInt(newScore) });
+
+    for (let i = 1; i < 11; i++) {
+      let star = document.getElementById(`${i}-stars-label`)
+
+      if (i <= newScore) {
+        star.classList.remove("not-starred")
+        star.classList.add("starred")
+      } else {
+        star.classList.remove("starred")
+        star.classList.add("not-starred")
+      }
+    }
+
     const btn = document.getElementById("game-rating-submit-btn")
     btn.style.display = "block"
-
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    debugger
-
-    this.props.rateGame(this.state)
-      .then(() => this.props.requestGame(this.props.gameId))
+    
+    if (this.props.game.user_rating) {
+      this.props.updateRateGame(this.state)
+        .then(() => this.props.requestGame(this.props.gameId))
+    } else {
+      this.props.rateGame(this.state)
+        .then(() => this.props.requestGame(this.props.gameId))
+    }
   }
 
   setStars() {
     let stars = []
-    for(let i = 1; i < 11; i++) {
-      stars.push(<div key={i} >
-        <input type="radio" name="rating" value={i} />
-        <label htmlFor={i} id={`${i}-stars`} className={i <= this.props.game.user_rating.score ? "starred" : "not-starred"}>★</label>
-      </div>)
+    let score;
+    
+    if( this.props.game.user_rating) {
+      score = this.props.game.user_rating.score
+    } else {
+      score = 0
     }
 
+    for(let i = 1; i < 11; i++) {
+      if (i == score) {
+        stars.push(<div key={i} >
+          <input type="radio" id={`${i}-stars`} name="rating" value={i} defaultChecked />
+          <label
+            htmlFor={`${i}-stars`}
+            id={`${i}-stars-label`}
+            className={i <= score ? "starred" : "not-starred"}
+            >★</label>
+        </div>)
+      } else {
+        stars.push(<div key={i} >
+          <input type="radio" id={`${i}-stars`}name="rating" value={i} />
+          <label 
+            htmlFor={`${i}-stars`}
+            id={`${i}-stars-label`}
+            className={i <= score ? "starred" : "not-starred"}>★</label>
+        </div>)
+      }
+    }
     return stars
   }
 
   render() {
     const { game, type, category, mechanisms } = this.props
-    debugger
+
     const bg = document.getElementsByClassName('game-header')
     if (bg[0]) {
       bg[0].style.backgroundImage = `linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.5)), url("${game.bg_img}")`
@@ -112,7 +150,7 @@ class GameShow extends React.Component {
 
           <div className='game-header-rating'>
             <form onSubmit={this.handleSubmit} onChange={this.update} className='game-rating-form'>
-              <p>My Rating: </p>
+              <p>My Rating </p>
 
               {this.setStars()}
 
