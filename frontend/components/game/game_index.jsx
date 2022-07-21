@@ -12,6 +12,11 @@ class GameIndex extends React.Component {
 
   render() {
     const { games } = this.props;
+
+    if (games.length == 0) {
+      return null
+    }
+    // debugger
     return (
       <div className='main-content'>
         <table className='index-table'>
@@ -21,7 +26,7 @@ class GameIndex extends React.Component {
               <th className='table-img'></th>
               <th className='table-title'>Title</th>
               <th className='table-your-rating'>Your Rating</th>
-              <th className='table-freak-rating'>Freak Rating</th>
+              {/* <th className='table-freak-rating'>Freak Rating</th> */}
               <th className='table-avg-rating'>Avg Rating</th>
               <th className='table-num-voters'>Num Voters</th>
               <th className='table-status'>Status</th>
@@ -47,10 +52,14 @@ class GameIndex extends React.Component {
                   </div>
                   <p>{game.tagline}</p>
                 </td>
-                <td className='table-your-rating'>N/A</td>
-                <td className='table-freak-rating'>8.5</td>
-                <td className='table-avg-rating'>8.6</td>
-                <td className='table-num-voters'>5000</td>
+                <td className='table-your-rating'>{game.user_rating ? game.user_rating.score : "none"}</td>
+                {/* <td className='table-freak-rating'>8.5</td> */}
+                <td className='table-avg-rating'>
+                  {
+                    (game.ratings.map(rating => rating.score).reduce(function (pv, cv) { return pv + cv; }, 0)) / game.ratings.length || "none"
+                  }
+                </td>
+                <td className='table-num-voters'>{game.ratings.length || 0}</td>
                 <td className='table-status'></td>
                 <td className='table-your-plays'></td>
                 <td className='table-shop'>link to shopping</td>

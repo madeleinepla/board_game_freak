@@ -11,6 +11,11 @@
     json.tagline game.tagline
     json.header_img game.header_img
     json.classifications game.classifications
+    json.ratings game.ratings
+
+    if current_user
+      json.user_rating game.ratings.find_by(user_id: current_user.id)
+    end
   end
 
   # json.(game, :id, :title, :tagline, :description, :year, :designer, :artist, 

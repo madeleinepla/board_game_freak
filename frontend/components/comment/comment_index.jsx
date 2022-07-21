@@ -61,12 +61,16 @@ class CommentIndex extends React.Component {
                         <li>{postDate}</li>
                       </ul>
                       <p>{comment.body}</p>
-                      <div>
-                        <button onClick={() => this.editCommentHandler(comment.id)}>
-                          Edit
-                        </button>
-                        <button onClick={() => this.props.deleteListComment(comment.id)}>Delete</button>
-                      </div>
+                      {
+                        comment.user.id == this.props.currentUserId ?
+                          <div>
+                            <button onClick={() => this.editCommentHandler(comment.id)}>
+                              Edit
+                            </button>
+                            <button onClick={() => this.props.deleteListComment(comment.id)}>Delete</button>
+                          </div> :
+                          null
+                      }
                     </div>
                   </li>
 

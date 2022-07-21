@@ -62,9 +62,9 @@ class CommentForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    debugger
+    // debugger
     this.handleCollapse(e);
-    // this.setState({ body: '' })
+    this.setState({ body: '' })
     this.props.action(this.state)
       // .then(()=> this.setState({ body: '' }))
       .then(() => (this.props.requestComments()))
