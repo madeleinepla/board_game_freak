@@ -31,6 +31,7 @@ const mSTP = (state, { match }) => {
     type,
     category,
     mechanisms,
+    currentUserId: state.session.id,
     rating: {
       userId: state.session.id,
       gameId: gameId,

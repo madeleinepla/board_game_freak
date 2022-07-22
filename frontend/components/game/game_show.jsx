@@ -18,6 +18,8 @@ class GameShow extends React.Component {
   }
 
   update(e) {
+    e.preventDefault();
+
     if (!this.props.currentUserId) {
       this.props.history.push('/login')
     }
@@ -27,7 +29,7 @@ class GameShow extends React.Component {
 
     for (let i = 1; i < 11; i++) {
       let star = document.getElementById(`${i}-stars-label`)
-
+      
       if (i <= newScore) {
         star.classList.remove("not-starred")
         star.classList.add("starred")
@@ -36,14 +38,14 @@ class GameShow extends React.Component {
         star.classList.add("not-starred")
       }
     }
-
+    
     const btn = document.getElementById("game-rating-submit-btn")
     btn.style.display = "block"
   }
 
   removeRating(e) {
     e.preventDefault();
-    debugger
+
     this.props.unrateGame(this.props.game.user_rating.id)
       .then(() => this.props.requestGame(this.props.gameId))
   }
@@ -97,6 +99,7 @@ class GameShow extends React.Component {
   }
 
   render() {
+    debugger
     const { game, type, category, mechanisms } = this.props
 
     const bg = document.getElementsByClassName('game-header')
