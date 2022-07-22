@@ -21,7 +21,8 @@ class Api::RatingsController < ApplicationController
     @rating = Rating.find_by(user_id: current_user.id, game_id: params[:rating][:gameId])
     
     if @rating && @rating.update(:score => params[:rating][:score])
-      render json: ['success'], status: 200
+      @game = @rating.game
+      render 'api/games/show'
     elsif !@rating
       render json: ['Could not locate comment'], status: 400
     else

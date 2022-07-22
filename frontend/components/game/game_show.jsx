@@ -99,7 +99,6 @@ class GameShow extends React.Component {
   }
 
   render() {
-    debugger
     const { game, type, category, mechanisms } = this.props
 
     const bg = document.getElementsByClassName('game-header')
