@@ -10,6 +10,11 @@ class User < ApplicationRecord
     foreign_key: :user_id,
     class_name: :Rating
 
+  has_many :rated_games, 
+    :through => :ratings,
+    :source => :game
+
+
   has_many :lists, dependent: :destroy,
     primary_key: :id,
     foreign_key: :author_id,
