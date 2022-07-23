@@ -3,6 +3,7 @@ import NavBarContainer from "./nav_bar/nav_bar_container";
 import { Route, Switch } from "react-router-dom";
 import LoginFormContainer from "./session/login_form_container";
 import SignupFormContainer from "./session/signup_form_container";
+import UserShowContainer from "./user/user_show_container";
 import GameIndexContainer from "./game/game_index_container";
 import GameClassContainer from "./game/game_class_container";
 import GameShowContainer from "./game/game_show_container";
@@ -27,6 +28,7 @@ const App = () => (
         <Route exact path="/" component={Home}></Route>
         <AuthRoute exact path="/login" component={LoginFormContainer} />
         <AuthRoute exact path="/signup" component={SignupFormContainer} />
+        <ProtectedRoute exact path="/users/:userId" component={UserShowContainer} />
         <Route exact path="/games" component={GameIndexContainer} />
         <Route exact path="/games/types" component={GameClassContainer}></Route>
         <Route exact path="/games/categories" component={GameClassContainer}></Route>

@@ -4,13 +4,7 @@ class CommentForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = props.comment;
-    // this.state = {
-    //   id: props.comment.id,
-    //   user_id: props.comment.user_id,
-    //   list_id: props.comment.list_id,
-    //   body: props.comment.body
-
-    // }
+    
     this.collapsed = true;
     this.idTag = "tag";
 
@@ -66,7 +60,10 @@ class CommentForm extends React.Component {
     e.preventDefault();
     // debugger
     this.handleCollapse(e);
-    this.setState({ body: '' })
+    
+    if (this.props.actionType == "create") {
+      this.setState({ body: '' })
+    }
     this.props.action(this.state)
       // .then(()=> this.setState({ body: '' }))
       .then(() => (this.props.requestComments()))

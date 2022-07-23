@@ -55,8 +55,9 @@ const NavBar = ({ currentUser, logout }) => {
             {currentUser.username} <FontAwesomeIcon icon={faCaretDown} className='caret' />
           </button>
           <div className="dropdown-content">
-            <a href="#">Profile</a>
-            <a href="#">Account</a>
+            {/* <a href="#">Profile</a>
+            <a href="#">Account</a> */}
+              <Link to={`/users/${currentUser.id}`}>Profile</Link>
             <Link to="/lists/mylists">FreakLists</Link>
             <button onClick={logout}><FontAwesomeIcon icon={faPowerOff} /> Sign Out</button>
           </div>
