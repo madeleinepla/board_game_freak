@@ -1,5 +1,6 @@
 # json.partial! 'api/users/user', user: @user
-json.extract! @user, :username, :id, :ratings, :rated_games, :lists, :list_likes, :list_comments
+json.extract! @user, :username, :id, :ratings, :rated_games, :lists, :list_likes, :list_comments, :created_at
+
 
 # json.set! @user.id do 
 #   json.id @user.id

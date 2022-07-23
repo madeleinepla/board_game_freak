@@ -3,10 +3,11 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .user-profile {
-  padding: 15px;
+  padding: 15px 5px;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  margin: 0 15px;
 }
 
 .profile-box {
@@ -15,6 +16,8 @@
   margin-top: 20px;
   width: 30%;
   padding: 10px;
+  height: 80vh;
+  overflow-y: auto;
 }
 
 .profile-box h1 {
@@ -27,20 +30,27 @@
   border: 2px solid rgba(#000000, 0.3);
 }
 
-.user-list {
+.user-list, .user-rating, .user-activity {
   padding: 8px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   border: 2px solid rgba(#000000, 0.3);
   border-top: none;
+  
 }
 
-.user-list a {
+.user-list a, .user-rating a {
   font-weight: 600;
 }
 
-.user-list a:hover {
+.user-list a:hover, .user-rating a:hover {
   opacity: 0.5;
   transition: 0.3s;
 }
+
+.user-rating-stars {
+  display: flex;
+  flex-direction: row;
+}
+
