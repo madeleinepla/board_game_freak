@@ -44,18 +44,22 @@ class ListItem extends React.Component {
     // debugger;
     return <div>
       <div className='list-item'>
-        <div className='list-item-thumbnail'>
-          <img
-            src={item.game.header_img}
-          />
-        </div>
+        <Link to={`/games/${item.game.id}`}>
+          <div className='list-item-thumbnail'>
+            <img
+              src={item.game.header_img}
+            />
+          </div>
+        </Link>
 
         <div className='list-item-main'>
 
           <div className='list-item-info'>
-            <h1>
-              {order + 1}. {item.title}
-            </h1>
+            <Link to={`/games/${item.game.id}`}>
+              <h1>
+                {order + 1}. {item.title}
+              </h1>
+            </Link>
 
             <div>
               <h2 className='list-item-prof-pic'>Prof Pic</h2>
