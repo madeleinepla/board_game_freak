@@ -61,7 +61,9 @@ class ListItem extends React.Component {
               <h2 className='list-item-prof-pic'>Prof Pic</h2>
 
               <ul>
-                <li>{author.username}</li>
+                <li>
+                  <Link to={`/users/${author.id}`}>{author.username}</Link>
+                </li>
               </ul>
             </div>
           </div>

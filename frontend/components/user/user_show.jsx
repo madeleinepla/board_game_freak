@@ -9,7 +9,7 @@ class UserShow extends React.Component {
   }
 
   componentDidMount() {
-    // debugger
+    debugger
     window.scrollTo(0, 0);
     this.props.requestUser(this.props.match.params.userId);
   }
@@ -18,7 +18,7 @@ class UserShow extends React.Component {
     const { user } = this.props;
     
     debugger
-    if (!user.ratings) {
+    if (!user || !user.ratings) {
       return null
     }
     

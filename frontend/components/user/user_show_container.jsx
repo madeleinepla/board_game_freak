@@ -5,7 +5,7 @@ import { requestUser } from '../../actions/user_actions';
 const mSTP = (state, { match }) => {
   const userId = match.params.userId
   const user = state.entities.users[userId]
-  // debugger;
+  debugger;
   return {
     user: user,
     currentUserId: state.session.id,

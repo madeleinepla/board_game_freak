@@ -1,6 +1,6 @@
 import React from 'react';
 import EditCommentForm from './edit_comment_form';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 class CommentIndex extends React.Component {
   constructor(props) {
@@ -56,7 +56,9 @@ class CommentIndex extends React.Component {
   
                     <div className='comment-body'>
                       <ul>
-                        <li>{comment.user.username}</li>
+                        <li>
+                          <Link to={`/users/${comment.user.id}`}>{comment.user.username}</Link>
+                        </li>
                         <li>•</li>
                         <li>{postDate}</li>
                       </ul>

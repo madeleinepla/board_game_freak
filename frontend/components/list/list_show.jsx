@@ -71,8 +71,9 @@ class ListShow extends React.Component {
             {list.title}
           </h1>
           <ul>
-            {/* <li>author name</li> */}
-            <li>{ list.author ? list.author.username : ''}</li>
+            <li>
+              <Link to={`/users/${list.author_id}`}>{list.author.username}</Link>
+            </li>
             <li>•</li>
             <li>Edited {editDate}</li>
           </ul>
