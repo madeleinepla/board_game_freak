@@ -8,6 +8,7 @@ import { faThumbsUp } from '@fortawesome/free-regular-svg-icons';
 
 class Home extends React.Component {
   componentDidMount() {
+    window.scrollTo(0, 0);
     this.props.requestGames();
     this.props.requestLists();
   }
