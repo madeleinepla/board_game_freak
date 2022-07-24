@@ -17,9 +17,9 @@ BoardGameFreak, a BoardGameGeek clone, is an online forum for board gaming hobby
 * Users can either like a whole list or just individual items on that list. Comments can be added, edited, and deleted, in case you said something you didn't mean.
 ### Ratings
 * On a game's info page, a user can give it a star rating out of 10 and edit or delete their rating. On the games browse page, the current users rating, average rating, and number of ratings can all be viewed for each game.
-## Planned Features
 ### Profiles
-* Users will have a profile featuring info about them, lists they've made, how active they are in the community, and their ratings for each game
+* Users have a profile featuring info about them, lists they've made, how active they are in the community, and their ratings for each game
+## Planned Features
 ### Search
 * Users will be able to search for games by name
 
