@@ -1,5 +1,4 @@
 import React from 'react';
-// import { Link, Routes, Route, useNavigate, Redirect } from 'react-router-dom';
 
 class ListItemForm extends React.Component {
   constructor(props) {
@@ -9,14 +8,10 @@ class ListItemForm extends React.Component {
   }
 
   componentDidMount() {
-    // this.setState({ list_id: this.props.match.params.listId })
-    // debugger;
     this.props.requestGames()
   }
 
   update(field) {
-    // debugger;
-    // return e => this.setState({ [field]: e.target.value })
     if(field === 'game_id') {
       return e => {
         let gameInfo = e.target.value.split(",");
@@ -30,7 +25,6 @@ class ListItemForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.errors.listItem = []
-    // debugger;
     const listId = this.props.match.params.listId;
     
     this.props.action(listId, this.state)
@@ -54,7 +48,6 @@ class ListItemForm extends React.Component {
     if (games.length === 0) return null;
     const game = games.filter(game => game.id === parseInt(this.state.game_id))
 
-    debugger;
     return <div className='main-content'>
       <h1 className='list-item-form-title'>{this.props.formType}</h1>
 

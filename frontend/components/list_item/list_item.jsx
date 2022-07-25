@@ -13,7 +13,6 @@ class ListItem extends React.Component {
   render() {
     const { author, item, currentUserId, deleteListItem, history, likeItem, order, unlikeItem } = this.props;
 
-    // debugger;
     let bodyParagraphs = []
     if (item.body) {
       bodyParagraphs = item.body.split("\n")
@@ -41,7 +40,6 @@ class ListItem extends React.Component {
         .then(() => this.props.requestList(this.props.item.list_id))
     }
 
-    // debugger;
     return <div>
       <div className='list-item'>
         <Link to={`/games/${item.game.id}`}>

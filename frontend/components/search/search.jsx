@@ -18,7 +18,7 @@ class Search extends React.Component {
 
   matches() {
     const matches = [];
-    debugger
+
     if (this.state.inputVal.length === 0) {
       return this.props.names;
     }

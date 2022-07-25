@@ -3,7 +3,6 @@ import { createListItemComment, requestListItemComments } from '../../actions/li
 import CommentForm from './comment_form';
 
 const mSTP = (state, ownProps) => {
-  debugger
   return {
     comment: {
       body: '',

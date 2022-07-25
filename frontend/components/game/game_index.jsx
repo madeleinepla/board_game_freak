@@ -16,7 +16,7 @@ class GameIndex extends React.Component {
     if (games.length == 0) {
       return null
     }
-    debugger
+
     return (
       <div className='main-content'>
         <table className='index-table'>

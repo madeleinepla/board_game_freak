@@ -5,7 +5,6 @@ import { requestList } from '../../actions/list_actions';
 // import { requestUsers } from '../../actions/user_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  // debugger
   const { listId } = ownProps;
   const comments = Object.values(state.entities.listComments).filter(comment => comment.list_id === listId)
 

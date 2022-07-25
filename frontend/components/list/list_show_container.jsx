@@ -5,7 +5,6 @@ import { selectList } from '../../reducers/selectors';
 import { deleteListItem, likeItem, requestListItem, unlikeItem } from '../../actions/list_item_actions';
 
 const mSTP = (state, { match }) => {
-  // debugger;
   const listId = parseInt(match.params.listId);
   const list = selectList(state.entities, listId);
   const currentUserId = state.session.id;

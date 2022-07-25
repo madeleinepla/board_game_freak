@@ -14,7 +14,7 @@ class ListIndex extends React.Component {
 
   render() {
     const { lists, orderBy } = this.props;
-    // debugger;
+
     return (
       <div className='main-content'>
         <div className='list-index'>
@@ -29,7 +29,6 @@ class ListIndex extends React.Component {
                 let yesterday = new Date();
                 yesterday.setDate(yesterday.getDate() - 1);
 
-                // debugger;
                 if (postDate.toDateString() == now.toDateString()) {
                   postDate = 'Today';
                 } else if (postDate.toDateString() == yesterday.toDateString()) {

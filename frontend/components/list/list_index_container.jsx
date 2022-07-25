@@ -28,7 +28,6 @@ const mapStateToProps = (state, { match }) => {
     })
   }
 
-  // debugger
   return {
     lists,
     orderBy

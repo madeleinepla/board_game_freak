@@ -28,7 +28,6 @@ class CommentForm extends React.Component {
   }
 
   handleExpand() {
-    // debugger
     if (!this.props.currentUserId) {
       this.props.history.push('/login')
     }
@@ -58,7 +57,6 @@ class CommentForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    // debugger
     this.handleCollapse(e);
     
     if (this.props.actionType == "create") {

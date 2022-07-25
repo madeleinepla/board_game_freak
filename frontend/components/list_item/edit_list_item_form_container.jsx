@@ -11,7 +11,6 @@ class EditListItemForm extends React.Component {
 
   render() {
     const { errors, listItem, formType, games, action, requestGames } = this.props;
-    // debugger;
 
     if (!listItem) return null;
     return (
@@ -35,7 +34,6 @@ const mSTP = (state, { match }) => {
   const listItem = state.entities.listItems[listItemId]
   const games = Object.values(state.entities.games).sort((a, b) => (a.title > b.title ? 1 : -1))
 
-  // debugger;
   return {
     errors: state.errors,
     listItem: listItem,

@@ -5,7 +5,7 @@ import ListItemForm from './list_item_form';
 
 const mSTP = (state, { match }) => {
   const games = Object.values(state.entities.games).sort((a, b) => (a.title > b.title ? 1 : -1))
-  // debugger;
+  
   return {
     errors: state.errors,
     listItem: {

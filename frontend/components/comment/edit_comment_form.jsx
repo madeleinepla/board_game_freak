@@ -10,7 +10,6 @@ class EditCommentForm extends React.Component {
 
   render() {
     const { action, comment, actionType, currentUserId, requestComments } = this.props;
-    // debugger;
 
     if (!comment) return null;
     return (
@@ -26,7 +25,6 @@ class EditCommentForm extends React.Component {
 }
 
 const mSTP = (state, ownProps) => {
-  // debugger
   return {
     comment: state.entities.listComments[ownProps.commentId],
     commentId: ownProps.commentId,

@@ -10,7 +10,6 @@ class EditListForm extends React.Component {
 
   render() {
     const { action, formType, list, history, errors } = this.props;
-    // debugger;
 
     if (!list) return null;
     return (
@@ -30,7 +29,7 @@ class EditListForm extends React.Component {
 //   formType: 'Edit FreakList'
 // })
 const mSTP = (state, { match }) => {
-  // debugger;
+
   return {
   errors: state.errors,
   list: state.entities.lists[match.params.listId],

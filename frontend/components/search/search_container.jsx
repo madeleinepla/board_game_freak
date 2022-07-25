@@ -4,7 +4,7 @@ import { requestGames } from '../../actions/game_actions';
 
 const mapStateToProps = (state) => {
   const games = Object.values(state.entities.games)
-  debugger;
+
   return {
     games
   }

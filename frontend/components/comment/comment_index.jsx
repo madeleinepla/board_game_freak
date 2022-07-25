@@ -9,7 +9,6 @@ class CommentIndex extends React.Component {
   }
 
   componentDidMount() {
-    // debugger;
     this.props.requestListComments();
   }
 
@@ -26,7 +25,6 @@ class CommentIndex extends React.Component {
 
   render() {
     let { comments } = this.props;
-    // debugger;
     return (
       <div>
         <div className='comment-index'>
@@ -39,7 +37,6 @@ class CommentIndex extends React.Component {
                 let yesterday = new Date();
                 yesterday.setDate(yesterday.getDate() - 1);
 
-                // debugger;
                 if (postDate.toDateString() == now.toDateString()) {
                   postDate = 'Today';
                 } else if (postDate.toDateString() == yesterday.toDateString()) {

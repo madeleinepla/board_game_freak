@@ -9,7 +9,6 @@ const GamesReducer = (oldState = {}, action) => {
       return action.games;
     case RECEIVE_GAME:
       newState[action.game.id] = action.game;
-      // debugger;
       return newState;
     default:
       return oldState;

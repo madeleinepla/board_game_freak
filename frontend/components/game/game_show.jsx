@@ -111,8 +111,6 @@ class GameShow extends React.Component {
       descriptionParagraphs = game.description.split("\n")
     }
 
-    // debugger;
-
     return <div className='main-content'>
       <div className='game-header'>
 

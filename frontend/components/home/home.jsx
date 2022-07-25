@@ -15,7 +15,7 @@ class Home extends React.Component {
 
   render() {
     const { games, lists } = this.props;
-    // debugger;
+
     return <div>
       <div className='home-ad'>
         <img 
@@ -134,7 +134,7 @@ class Home extends React.Component {
           <div className='home-lists-carousel'>
             {
               lists.map(list => {
-                // debugger;
+
                 return <Link key={list.id} to={`/lists/${list.id}`} className='home-lists-carousel-item'>
                   <div className='home-lists-thumbnail'>
                     {
@@ -168,7 +168,7 @@ class Home extends React.Component {
 const mSTP = (state) => {
   const games = Object.values(state.entities.games)
   const lists = Object.values(state.entities.lists).sort((a, b) => (a.likes < b.likes ? 1 : -1)).slice(0, 5)
-  // debugger;
+
   return {
     games,
     lists

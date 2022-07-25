@@ -13,7 +13,6 @@ class Api::ListItemLikesController < ApplicationController
   end
 
   def destroy
-    # debugger
     @list_item_like = ListItemLike.find_by(user_id: current_user.id, list_item_id: params[:listItemId])
     @list_item_like.destroy
     @list_item = @list_item_like.list_item

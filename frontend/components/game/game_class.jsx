@@ -9,7 +9,7 @@ GameClass extends React.Component {
 
   render() {
     const { games, path, game_classes } = this.props;
-    // debugger;
+    
     return <div className='main-content'>
       <div className='game-class-title'>
         <h1>Board Game {path.charAt(0).toUpperCase() + path.slice(1)}</h1>

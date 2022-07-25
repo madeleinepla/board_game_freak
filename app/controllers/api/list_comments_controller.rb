@@ -10,7 +10,6 @@ class Api::ListCommentsController < ApplicationController
 
   def update
     @list_comment = ListComment.find(params[:id])
-    # debugger
     
     if @list_comment && @list_comment.update(:body => params[:comment][:body])
       render :show

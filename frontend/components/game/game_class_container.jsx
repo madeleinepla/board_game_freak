@@ -26,7 +26,6 @@ const mSTP = (state, { match }) => {
   })
   game_classes.sort();
 
-  // debugger;
   return {
     games,
     path,

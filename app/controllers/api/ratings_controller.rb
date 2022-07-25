@@ -1,6 +1,5 @@
 class Api::RatingsController < ApplicationController
   def create
-    # debugger
     @rating = Rating.new
     @rating.user_id = params[:rating][:userId]
     @rating.game_id = params[:rating][:gameId]

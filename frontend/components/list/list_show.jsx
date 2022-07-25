@@ -13,14 +13,12 @@ class ListShow extends React.Component {
   }
 
   componentDidMount() {
-    // debugger;
     window.scrollTo(0, 0);
     this.props.requestList(this.props.match.params.listId);
   }
 
   render() {
-    const { list, currentUserId, deleteList, likeList, unlikeList, deleteListItem, requestListItem, likeItem, unlikeItem} = this.props
-    // debugger;
+    const { list, currentUserId, deleteList, likeList, unlikeList, deleteListItem, requestListItem, likeItem, unlikeItem} = this.props;
 
     if (!(list.body && list.list_items)) return null;
 

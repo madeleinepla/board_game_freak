@@ -24,7 +24,6 @@ const mSTP = (state, { match }) => {
   const category = getClassification('Category');
   const mechanisms = getClassification('Mechanisms');
 
-  // debugger;
   return {
     gameId,
     game,
