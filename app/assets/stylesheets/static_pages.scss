@@ -378,9 +378,15 @@ body {
   flex-direction: row;
 }
 
-.home-hot-carousel-item, .home-lists-carousel-item {
+.home-hot-carousel-item {
   width: 20%;
   padding: 15px 15px 15px 0;
+  text-decoration: none;
+  color: black;
+}
+
+.home-lists-carousel-item {
+  width: 20%;
   text-decoration: none;
   color: black;
 }

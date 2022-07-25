@@ -54,7 +54,7 @@ class ListItemForm extends React.Component {
     if (games.length === 0) return null;
     const game = games.filter(game => game.id === parseInt(this.state.game_id))
 
-    // debugger;
+    debugger;
     return <div className='main-content'>
       <h1 className='list-item-form-title'>{this.props.formType}</h1>
 
